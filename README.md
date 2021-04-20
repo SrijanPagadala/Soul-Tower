@@ -25,7 +25,7 @@
  >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
  >   * [Movies Data](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) - A Dataset for the movies.
  > * What will be the input/output of your project?
- >   * User can filter by genres, subgenres directors, ratings.
+ >   * User can filter by genres, subgenres, directors, and ratings.
  >   * Users can also input new movies.
  >   * Users can get movies reccomended to them based off a movie title they input.
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
