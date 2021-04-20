@@ -19,16 +19,15 @@
 
 ## Project Description
  > * Why is it important or interesting to you?
- > * We love Netflix, but their recommendations kinda wack. So we want to improve on that!
+ >   * We love Netflix, but their recommendations kinda wack. So we want to improve on that!
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * C++
  >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
  >   * [Movies Data](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) - A Dataset for the movies.
  > * What will be the input/output of your project?
- >   * User can filter by genres, directors, ratings.
+ >   * User can filter by genres, subgenres directors, ratings.
  >   * Users can also input new movies.
  >   * Users can get movies reccomended to them based off a movie title they input.
- > * Users will be able to filter movies based on genres and sub genres.
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * State
  >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
