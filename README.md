@@ -19,12 +19,17 @@
 
 ## Project Description
  > * Why is it important or interesting to you?
- > We love Netflix, but they're recommendations kinda wack. So we want to improve on that!
+ > * We love Netflix, but their recommendations kinda wack. So we want to improve on that!
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
+ >   * C++
+ >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework
  > * What will be the input/output of your project?
+ > * Users will be able to filter movies based on genres and sub genres.
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
- >   * Why you picked this pattern and what feature you will implement with it
+ >   * Composite
+ >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
+ >   * Why the chosen design pattern will lead to a good solution to that problem
+ >   * X
  >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
  >   * Why the chosen design pattern will lead to a good solution to that problem
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
