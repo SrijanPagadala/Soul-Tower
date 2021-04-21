@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# Netflix 2 (Movie Recommender)
+# Minecraft Dungeons 2
  > Authors: \<[Siddharth Sondhi](https://github.com/SiddharthSondhi)\>,
  >  \<[Srijan Pagadala](https://github.com/SrijanPagadala)\>,
  >  \<[Nabil Khalil](https://github.com/nabil-k)\>
@@ -19,7 +19,7 @@
 
 ## Project Description
  > * Why is it important or interesting to you?
- >   * We love Netflix, but their recommendations kinda wack. So we want to improve on that!
+ >   * We love Minecraft, but we also love RPGs too. So we combined two of our most favorite things, and made a Minecraft RPG game.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * C++
  >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
