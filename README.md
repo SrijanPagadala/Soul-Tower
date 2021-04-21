@@ -23,15 +23,16 @@
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * C++
  >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
- >   * [Movies Data](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) - A Dataset for the movies.
  > * What will be the input/output of your project?
- >   * User can filter by genres, subgenres, directors, and ratings.
- >   * Users can also input new movies.
- >   * Users can get movies reccomended to them based off a movie title they input.
+ >   * Users input choices that corresspond to numbers to make game decisions.
+ >   * GUI displays User's health, mana, and inventory.
+ >   * Console echos user input as well as prompts from the game.
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
- >   * State
- >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >   * Why the chosen design pattern will lead to a good solution to that problem
+ >   * Abstract Factory
+ >     * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
+ >       * We will have a variety of enemies in our game that will share a lot of the same behaviors. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class. 
+ >      * Why the chosen design pattern will lead to a good solution to that problem
+ >         * Using an Abstract factory will make the code base a lot more maintainable since developers can already expect what interface a entity of the type enemy will have. It will also make creating new enemies much faster since we won't have to rewrite code that all enemies would already be expected to have.
  >   * X
  >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
  >   * Why the chosen design pattern will lead to a good solution to that problem
