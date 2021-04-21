@@ -30,7 +30,7 @@
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * Abstract Factory
  >     * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >       * We will have a variety of enemies in our game that will share a lot of the same behaviors. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class. 
+ >       * Since we will have a variety of enemies in our game that will share a lot of the same behaviors. We will have the issue of figuring out how to reuse methods we believe all enemies should have in their interface. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class, and that abstract enemy class will have methods we can readily reuse.
  >      * Why the chosen design pattern will lead to a good solution to that problem
  >         * Using an Abstract factory will make the code base a lot more maintainable since developers can already expect what interface a entity of the type enemy will have. It will also make creating new enemies much faster since we won't have to rewrite code that all enemies would already be expected to have.
  >   * X
