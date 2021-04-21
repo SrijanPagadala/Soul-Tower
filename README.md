@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# Minecraft Dungeons 2
+# Soul Tower
  > Authors: \<[Siddharth Sondhi](https://github.com/SiddharthSondhi)\>,
  >  \<[Srijan Pagadala](https://github.com/SrijanPagadala)\>,
  >  \<[Nabil Khalil](https://github.com/nabil-k)\>
