@@ -14,15 +14,11 @@
  >   * Console echos user input as well as prompts from the game.
  > * Design Patterns Being Used:
  >   * Abstract Factory:
- >     * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >       * Since we will have a variety of enemies in our game that will share a lot of the same behaviors. We will have the issue of figuring out how to reuse methods we believe all enemies should have in their interface. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class, and that abstract enemy class will have methods we can readily reuse.
- >      * Why the chosen design pattern will lead to a good solution to that problem
- >         * Using an Abstract factory will make the code base a lot more maintainable since developers can already expect what interface a entity of the type enemy will have. It will also make creating new enemies much faster since we won't have to rewrite code that all enemies would already be expected to have.
+ >     * Since we will have a variety of enemies in our game that will share a lot of the same behaviors. We will have the issue of figuring out how to reuse methods we believe all enemies should have in their interface. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class, and that abstract enemy class will have methods we can readily reuse.
+ >     * Using an Abstract factory will make the code base a lot more maintainable since developers can already expect what interface a entity of the type enemy will have. It will also make creating new enemies much faster since we won't have to rewrite code that all enemies would already be expected to have.
  >   * State:
- >     * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >       * Our character will often end up in different states, for example when he is in a fight, or has to go to a shop, or is exploring, etc. Much of the functionality will be similar during these states while other details will be different. Having a State for each of these scenarios will allow us to create differences in states of what the user is allowed to do without having to retype code.  
- >     * Why the chosen design pattern will lead to a good solution to that problem
- >       * Having the ability to switch between states will allow us to quickly and cleanly switch between what the user can do. For example, the user may have the ability to attack, run, heal, etc. while the "fight" state is activated and the user may have the ability to purchase various things when the "shop" state is activated. 
+ >     * Our character will often end up in different states, for example when he is in a fight, or has to go to a shop, or is exploring, etc. Much of the functionality will be similar during these states while other details will be different. Having a State for each of these scenarios will allow us to create differences in states of what the user is allowed to do without having to retype code.  
+ >     * Having the ability to switch between states will allow us to quickly and cleanly switch between what the user can do. For example, the user may have the ability to attack, run, heal, etc. while the "fight" state is activated and the user may have the ability to purchase various things when the "shop" state is activated. 
 
 
  > ## Phase II
