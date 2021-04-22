@@ -4,7 +4,7 @@
  >  \<[Nabil Khalil](https://github.com/nabil-k)\>
 
 ## Project Description
- > * We love Minecraft, but we also love RPGs too. So we combined two of our most favorite things, and made a Minecraft text-based role-playing game (RPG).
+ > * We love Minecraft, but we love RPGs too. So we combined two of our most favorite things, and made a Minecraft text-based role-playing game (RPG).
  > * Languages/Tools/Technologies:
  >   * C++
  >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
