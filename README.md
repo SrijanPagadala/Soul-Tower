@@ -1,7 +1,7 @@
 # Soul Tower
-  Authors: \<[Siddharth Sondhi](https://github.com/SiddharthSondhi)\>,
-   \<[Srijan Pagadala](https://github.com/SrijanPagadala)\>,
-   \<[Nabil Khalil](https://github.com/nabil-k)\>
+  Authors: \[Siddharth Sondhi](https://github.com/SiddharthSondhi)\,
+   \[Srijan Pagadala](https://github.com/SrijanPagadala)\,
+   \[Nabil Khalil](https://github.com/nabil-k)\
 
 ## Project Description
   * We love Minecraft, but we love RPGs too. So we combined two of our most favorite things, and made a Minecraft text-based role-playing game (RPG).
