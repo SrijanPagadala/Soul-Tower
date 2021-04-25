@@ -4,21 +4,21 @@
    \<[Nabil Khalil](https://github.com/nabil-k)\>
 
 ## Project Description
- > * We love Minecraft, but we love RPGs too. So we combined two of our most favorite things, and made a Minecraft text-based role-playing game (RPG).
- > * Languages/Tools/Technologies:
- >   * C++
- >   * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
- > * Input/Output of The Project:
- >   * Users input choices that corresspond to numbers to make game decisions.
- >   * GUI displays User's health, mana, and inventory.
- >   * Console echos user input as well as prompts from the game.
- > * Design Patterns Being Used:
- >   * Abstract Factory:
- >     * Since we will have a variety of enemies in our game that will share a lot of the same behaviors. We will have the issue of figuring out how to reuse methods we believe all enemies should have in their interface. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class, and that abstract enemy class will have methods we can readily reuse.
- >     * Using an Abstract factory will make the code base a lot more maintainable since developers can already expect what interface an entity of the type enemy will have. It will also make creating new enemies much faster since we won't have to rewrite code that all enemies would already be expected to have.
- >   * State:
- >     * Our character will often end up in different states, for example when he is in a fight, or has to go to a shop, or is exploring, etc. Much of the functionality will be similar during these states while other details will be different. Having a State for each of these scenarios will allow us to create differences in states of what the user is allowed to do without having to retype code.  
- >     * Having the ability to switch between states will allow us to quickly and cleanly switch between what the user can do. For example, the user may have the ability to attack, run, heal, etc. while the "fight" state is activated and the user may have the ability to purchase various things when the "shop" state is activated. 
+  * We love Minecraft, but we love RPGs too. So we combined two of our most favorite things, and made a Minecraft text-based role-playing game (RPG).
+  * Languages/Tools/Technologies:
+    * C++
+    * [wxWidgets](https://www.wxwidgets.org/) - A C++ GUI Framework.
+  * Input/Output of The Project:
+    * Users input choices that corresspond to numbers to make game decisions.
+    * GUI displays User's health, mana, and inventory.
+    * Console echos user input as well as prompts from the game.
+  * Design Patterns Being Used:
+    * Abstract Factory:
+      * Since we will have a variety of enemies in our game that will share a lot of the same behaviors. We will have the issue of figuring out how to reuse methods we believe all enemies should have in their interface. Using an Abstract Factory class will allow us to create a variety of enemies from a abstract enemy class, and that abstract enemy class will have methods we can readily reuse.
+      * Using an Abstract factory will make the code base a lot more maintainable since developers can already expect what interface an entity of the type enemy will have. It will also make creating new enemies much faster since we won't have to rewrite code that all enemies would already be expected to have.
+    * State:
+      * Our character will often end up in different states, for example when he is in a fight, or has to go to a shop, or is exploring, etc. Much of the functionality will be similar during these states while other details will be different. Having a State for each of these scenarios will allow us to create differences in states of what the user is allowed to do without having to retype code.  
+      * Having the ability to switch between states will allow us to quickly and cleanly switch between what the user can do. For example, the user may have the ability to attack, run, heal, etc. while the "fight" state is activated and the user may have the ability to purchase various things when the "shop" state is activated. 
 
 
  > ## Phase II
