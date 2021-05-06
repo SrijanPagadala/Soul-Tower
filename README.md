@@ -35,14 +35,14 @@ In addition to completing the "Class Diagram" section below, you will need to
    Include a class diagram(s) for each design pattern and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
  ### Abstract Factory Diagram
  Description:
+ For our Abstract Factory diagram, we are utilizing the class CharacterType (which inherits from Entity) to be our AbstractFactory class. We have three Concrete Factories: Archer, Warrior, and Mage. Each one represents a separate character type that the player can choose. We have two Abstract Products, a Weapon class and an Armor class. Both of those have three Products. The Weapon class has child classes Bow, Sword, and Wand. The armor class has child classes Leather, Chain, and Robes. We plan to create the products (weapons/armor) in our concrete factory classes (Archer/Warrior/Mage) in the constructor and change them using setters if necessary. 
  <br/>
  ![Abstract Factory](./AbstractFactory.png?raw=true "Abstract")
  ### State Diagram
  Description:
    * The State class will be an abstract class that the GameState class, the FightState class, and the ShopState class inherit from. Each of these classes will have a display function which will allow us to display the correct information depending on whatever state is selected. The Game class will be able to set the state using the setState function. Then depending on which state is set, the correct display function will be called.
-
   <br/>
- ![Abstract Factory](./State.png?raw=true "Stage")
+ ![State](./State.png?raw=true "Stage")
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
