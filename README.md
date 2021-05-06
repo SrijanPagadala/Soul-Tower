@@ -40,6 +40,7 @@ In addition to completing the "Class Diagram" section below, you will need to
  ### State Diagram
  Description:
    * The State class will be an abstract class that the GameState class, the FightState class, and the ShopState class inherit from. Each of these classes will have a display function which will allow us to display the correct information depending on whatever state is selected. The Game class will be able to set the state using the setState function. Then depending on which state is set, the correct display function will be called.
+
   <br/>
  ![Abstract Factory](./State.png?raw=true "Stage")
  
