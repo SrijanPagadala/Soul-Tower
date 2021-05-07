@@ -20,18 +20,7 @@
       * Our character will often end up in different states, for example when he is in a fight, or has to go to a shop, or is exploring, etc. Much of the functionality will be similar during these states while other details will be different. Having a State for each of these scenarios will allow us to create differences in states of what the user is allowed to do without having to retype code.  
       * Having the ability to switch between states will allow us to quickly and cleanly switch between what the user can do. For example, the user may have the ability to attack, run, heal, etc. while the "fight" state is activated and the user may have the ability to purchase various things when the "shop" state is activated. 
 
-
-## Phase II
-In addition to completing the "Class Diagram" section below, you will need to 
-   * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
-     * Backlog, TODO, In progress, In testing, Done
-     * You can change these or add more if you'd like, but we should be able to identify at least these.
-   * There is no requirement for automation in the project board but feel free to explore those options.
-   * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
-   * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
-     * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
-     * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
-## Class Diagram
+## Class Diagrams
  ### Abstract Factory Diagram
  Description:
  For our Abstract Factory diagram, we are utilizing the class CharacterType (which inherits from Entity) to be our AbstractFactory class. We have three Concrete Factories: Archer, Warrior, and Mage. Each one represents a separate character type that the player can choose. We have two Abstract Products, a Weapon class and an Armor class. Both of those have three Products. The Weapon class has child classes Bow, Sword, and Wand. The armor class has child classes Leather, Chain, and Robes. We plan to create the products (weapons/armor) in our concrete factory classes (Archer/Warrior/Mage) in the constructor and change them using setters if necessary. 
