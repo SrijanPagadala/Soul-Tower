@@ -2,6 +2,7 @@
 #define __GAME_HPP__
 
 #include <iostream>
+using namespace std;
 
 class Game {
     private:
