@@ -10,7 +10,9 @@ class ShopState: public State {
     private:
 
     public:
-    void display();
+        ShopState();
+        ShopState(int level);
+        void display();
 
 
 
