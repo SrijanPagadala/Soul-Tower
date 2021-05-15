@@ -10,7 +10,9 @@ class FightState: public State {
     private:
 
     public:
-    void display();
+        FightState();
+        FightState(int level);
+        void display();
 
 
 
