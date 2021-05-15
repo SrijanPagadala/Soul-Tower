@@ -12,3 +12,7 @@ class cApp : public wxApp
 		virtual bool OnInit();
 };
 
+enum {
+	BUTTON_Choice = wxID_HIGHEST + 1
+};
+
