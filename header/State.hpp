@@ -6,8 +6,11 @@ using namespace std;
 
 class State {
     private:
-        
+    protected:
+        int level;
     public:
+        State() : level(1) {}
+        State(int level) : level(level) {}
         virtual void display() = 0;
 
 
