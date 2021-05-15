@@ -6,7 +6,7 @@ using namespace std;
 
 class State {
     private:
-
+        
     public:
         virtual void display() = 0;
 

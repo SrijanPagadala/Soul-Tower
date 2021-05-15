@@ -10,12 +10,12 @@ class ExploreState: public State {
     private:
 
     public:
-    void display();
-
-
-
+        ExploreState();
+        ExploreState(int level);
+        void display();
 
 };
+
 
 
 
