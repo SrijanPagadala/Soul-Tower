@@ -1,9 +1,10 @@
 #include "../header/cApp.h"
+#include <thread>
 
 wxIMPLEMENT_APP(cApp);
 
 cApp::cApp() {
-
+	
 }
 
 cApp::~cApp() {
@@ -19,6 +20,14 @@ bool cApp::OnInit() {
 	return true;
 }
 
-BEGIN_EVENT_TABLE(cMain, wxFrame)
+BEGIN_EVENT_TABLE(cMain, wxFrame)	
+	//EVT_MENU_CLOSE(cMain::OnQuit)
+	//EVT_THREAD(,cMain::OnStartThread)
+	//EVT_THREAD(THREAD_STOP, cMain::OnStopThread)
+	EVT_THREAD(MYTHREAD_UPDATE, cMain::OnThreadUpdate)
+	EVT_THREAD(MYTHREAD_COMPLETED, cMain::OnThreadCompletion)
+	EVT_BUTTON(700, cMain::OnStartThread)
 	EVT_BUTTON(BUTTON_Choice, cMain::SubmitChoice) // Tell the OS to run MainFrame::OnExit when
+	EVT_CLOSE(cMain::OnClose)
 END_EVENT_TABLE() // The button is pressed
+

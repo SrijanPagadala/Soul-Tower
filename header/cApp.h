@@ -13,7 +13,7 @@ class cApp : public wxApp
 };
 
 enum {
-	BUTTON_Choice = wxID_HIGHEST + 1,
-	TEXTBOX_Output = wxID_HIGHEST + 2
+	BUTTON_Choicse = wxID_HIGHEST + 1,
+	TEXTBOX_Outputss = wxID_HIGHEST + 2
 };
 
