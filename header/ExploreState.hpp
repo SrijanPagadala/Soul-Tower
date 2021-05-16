@@ -8,6 +8,8 @@ using namespace std;
 
 class ExploreState: public State {
     private:
+        string choice1;
+        string choice2;
 
     public:
         ExploreState();
