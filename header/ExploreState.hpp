@@ -8,13 +8,14 @@ using namespace std;
 
 class ExploreState: public State {
     private:
+        string input;
         string choice1;
         string choice2;
 
     public:
         ExploreState();
         ExploreState(int level);
-        void display();
+        void display(cMainMock* gui);
 
 };
 
