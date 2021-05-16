@@ -5,14 +5,19 @@ ExploreState::ExploreState(){
     input = "";
     choice1 = "";
     choice2 = "";
+    coinsEarned = 0;
+    healthPotionsEarned = 0;
+    damageTaken = 0;
 }
 
 ExploreState::ExploreState(int levelToSet){
     level = levelToSet;
-    level = 1;
     input = "";
     choice1 = "";
     choice2 = "";
+    coinsEarned = 0;
+    healthPotionsEarned = 0;
+    damageTaken = 0;
 }
 
 void ExploreState::display(cMainMock* gui){
@@ -42,10 +47,12 @@ void ExploreState::display(cMainMock* gui){
             gui->DisplayOut("You discover that your skin is fire-resistant, and you manage to get out alive.\n");
             gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 5 damage!\n");
             gui->DisplayOut("-5 health\n");
+            damageTaken += 5;
         } else {
             gui->DisplayOut("You open the door and see a pile of shining coins!\n");
             gui->DisplayOut("You happily decide to collect all of them in your pockets.\n");
             gui->DisplayOut("+200 coins\n");
+            coinsEarned += 200;
         }
 
 
