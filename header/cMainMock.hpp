@@ -6,7 +6,7 @@ class cMainMock {
     private:
     public:
         void DisplayOut(string text) { }
-        string GetChoice() { return "1";}
+        string GetChoice() { return "1"; }
 };
 
 
