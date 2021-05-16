@@ -3,15 +3,17 @@
 
 #include <iostream>
 #include "State.hpp"
+#include "cMainMock.hpp"
 using namespace std;
 
 class Game {
     private:
+        cMainMock* gui;
         double coins;
         int healthPotions;
         State* currState;
     public:
-        Game() : coins(0), healthPotions(0), currState(nullptr) {}
+        Game() : gui(nullptr), coins(0), healthPotions(0), currState(nullptr) {}
         double getCoins() { return coins; }
         void setCoins(double newAmount) { coins = newAmount; }
         void changeCoins(double amount) { coins += amount; }
