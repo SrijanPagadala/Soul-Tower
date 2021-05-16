@@ -2,6 +2,7 @@
 #define __STATE_HPP__
 
 #include <iostream>
+#include "cMainMock.hpp"
 using namespace std;
 
 class State {
@@ -11,7 +12,7 @@ class State {
     public:
         State() : level(1) {}
         State(int level) : level(level) {}
-        virtual void display() = 0;
+        virtual void display(cMainMock* gui) = 0;
 
 
 
