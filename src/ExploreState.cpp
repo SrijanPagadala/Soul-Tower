@@ -82,7 +82,7 @@ void ExploreState::display(cMainMock* gui){
             gui->DisplayOut("+100 coins\n");
             coinsEarned += 100;
         } else { //Player spares goblin
-            gui->DisplayOut("You decide to let the goblin live and you put down your weapon.\n");
+            gui->DisplayOut("You decide to let the goblin live and you put down aray weapon.\n");
             gui->DisplayOut("As you let your guard down, the goblin reaches into its pockets.\n");
             gui->DisplayOut("It pulls out 50 coins and... eats them.\n");
             gui->DisplayOut("You are confused and concerned, but then you see that the goblin's eyes glow yellow.\n");
