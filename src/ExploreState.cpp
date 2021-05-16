@@ -18,6 +18,9 @@ ExploreState::ExploreState(int levelToSet){
 void ExploreState::display(cMainMock* gui){
     if(level == 1){ //first level exploration
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
+        gui->DisplayOut("You faintly remember being sent on a quest to save something or someone... but you are unsure.\n");
+        gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
+        gui->DisplayOut("You notice you are equipped with weaponry and armor, you must be a warrior or hero.\n");
         gui->DisplayOut("You notice a large spiral staircase, stretching to the top of the tower.\n");
         gui->DisplayOut("At the base of the stairs, you see a sign that states \"SOUL TOWER: ENTER AT YOUR OWN RISK.\"\n");
         gui->DisplayOut("Being the tremendously smart traveler you are, you decide to step up the stairs.\n");
@@ -37,7 +40,12 @@ void ExploreState::display(cMainMock* gui){
         if(input == "1"){
             gui->DisplayOut("You open the door and walk straight into a pool of lava!\n");
             gui->DisplayOut("You discover that your skin is fire-resistant, and you manage to get out alive.\n");
-            gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 10 damage!\n");
+            gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 5 damage!\n");
+            gui->DisplayOut("-5 health\n");
+        } else {
+            gui->DisplayOut("You open the door and see a pile of shining coins!\n");
+            gui->DisplayOut("You happily decide to collect all of them in your pockets.\n");
+            gui->DisplayOut("+200 coins\n");
         }
 
 
