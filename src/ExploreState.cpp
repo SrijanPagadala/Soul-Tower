@@ -92,7 +92,7 @@ void ExploreState::display(cMainMock* gui){
             gui->DisplayOut("In pain, you pull out your weapon and kill the goblin.\n");
             gui->DisplayOut("You find 50 coins in its pockets.\n");
             gui->DisplayOut("+50 coins\n");
-            coinsEarned += 500;
+            coinsEarned += 50;
         }
         gui->DisplayOut("You look around the room, very confused as to what just happened.\n");
         gui->DisplayOut("On one of the walls, you see a note.\n");
