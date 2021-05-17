@@ -1,21 +1,4 @@
 #include "../header/cMain.h"
-#include <iostream>
-
-
-wxThread::ExitCode Game::Entry(){
-	 while (!TestDestroy())
-	 {
-		 // Init Game
-		 gui->DisplayOutput("Who goes there? \n");
-		 gui->GetChoice();
-		 gui->DisplayOutput("What? \n");
-
-	 }
-	 // signal the event handler that this thread is going to be destroyed
-	 wxQueueEvent(gui, new wxThreadEvent(wxEVT_THREAD, MYTHREAD_COMPLETED));
-	 return (wxThread::ExitCode)0;
-};
-
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,600)), m_pThread (NULL){
 	m_input = new wxTextCtrl(this, wxID_ANY, "--Soul Tower-- \n", wxPoint(10, 500), wxSize(500, 30));
@@ -37,7 +20,7 @@ wxString cMain::GetChoice() {
 		sendInput = inputRecieved;
 	}
 	inputRecieved = false;
-
+	
 	return input_choice;
 }
 
