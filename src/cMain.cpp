@@ -25,9 +25,9 @@ wxString cMain::GetChoice() {
 }
 
 void cMain::SubmitChoice(wxCommandEvent& event) {
-	m_input->Clear();
-	input_choice = m_input->GetLineText(1);
+	input_choice = m_input->GetLineText(0);
 	m_output->AppendText(input_choice + "\n");
+	m_input->Clear();
 	inputRecieved = true;
 }
 
