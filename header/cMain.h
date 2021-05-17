@@ -30,6 +30,7 @@ class cMain : public wxFrame
 		wxTextCtrl* m_input;
 		wxTextCtrl* m_output;
 		wxString input_choice;
+		wxStaticBitmap* heartIcon;
 		bool inputRecieved;
 		DECLARE_EVENT_TABLE();
 		

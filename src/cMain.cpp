@@ -4,6 +4,8 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 	m_input = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 500), wxSize(400, 30));
 	m_output = new wxTextCtrl(this, wxID_HIGHEST + 2, "--Soul Tower-- \n", wxPoint(10, 10), wxSize(500, 480), wxTE_READONLY | wxTE_MULTILINE);
 	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Submit", wxPoint(410, 500), wxSize(100, 30));
+	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString("C:/Users/duoma/Desktop/Projects/final-project-ssond007-_nkhal016_spaga006/assets/heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 400), wxSize(64, 64), 0, wxString("HeartImg"));
+
 	inputRecieved = false;
 }
 
