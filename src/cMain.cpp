@@ -1,9 +1,9 @@
 #include "../header/cMain.h"
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,600)), m_pThread (NULL){
-	m_input = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 500), wxSize(500, 30));
-	m_output = new wxTextCtrl(this, wxID_HIGHEST + 2, "--Soul Tower-- \n", wxPoint(10, 10), wxSize(500, 450), wxTE_READONLY | wxTE_MULTILINE);
-	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Submit", wxPoint(500, 500), wxSize(150, 50));
+	m_input = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 500), wxSize(400, 30));
+	m_output = new wxTextCtrl(this, wxID_HIGHEST + 2, "--Soul Tower-- \n", wxPoint(10, 10), wxSize(500, 480), wxTE_READONLY | wxTE_MULTILINE);
+	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Submit", wxPoint(410, 500), wxSize(100, 30));
 	inputRecieved = false;
 }
 
