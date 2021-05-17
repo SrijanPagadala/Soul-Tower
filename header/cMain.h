@@ -44,7 +44,7 @@ class cMain : public wxFrame
 		void SubmitChoice(wxCommandEvent& event);
 		void DisplayOutput(std::string msg);
 		void OnQuit(wxCommandEvent& event);
-		void OnStartThread(wxCommandEvent& event);
+		void OnStartThread();
 		void OnClose(wxCloseEvent&);
 		void StopThread();
 
