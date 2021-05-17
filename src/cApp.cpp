@@ -11,8 +11,6 @@ cApp::~cApp() {
 
 }
 
-
-
 bool cApp::OnInit() {
 	m_frame_1 = new cMain();
 	m_frame_1->Show();
@@ -21,11 +19,6 @@ bool cApp::OnInit() {
 }
 
 BEGIN_EVENT_TABLE(cMain, wxFrame)	
-	//EVT_MENU_CLOSE(cMain::OnQuit)
-	//EVT_THREAD(,cMain::OnStartThread)
-	//EVT_THREAD(THREAD_STOP, cMain::OnStopThread)
-	EVT_THREAD(MYTHREAD_UPDATE, cMain::OnThreadUpdate)
-	EVT_THREAD(MYTHREAD_COMPLETED, cMain::OnThreadCompletion)
 	EVT_BUTTON(700, cMain::OnStartThread)
 	EVT_BUTTON(BUTTON_Choice, cMain::SubmitChoice) // Tell the OS to run MainFrame::OnExit when
 	EVT_CLOSE(cMain::OnClose)
