@@ -19,6 +19,8 @@ class Game : public wxThread
 
 		};
 
+		void start();
+
 };
 
 class cMain : public wxFrame
@@ -38,7 +40,7 @@ class cMain : public wxFrame
 		cMain();
 		~cMain();
 		// Methods
-		wxString GetChoice();
+		std::string GetChoice();
 		void SubmitChoice(wxCommandEvent& event);
 		void DisplayOutput(std::string msg);
 		void OnQuit(wxCommandEvent& event);

@@ -1,9 +1,9 @@
 #include "../header/cMain.h"
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,600)), m_pThread (NULL){
-	m_input = new wxTextCtrl(this, wxID_ANY, "--Soul Tower-- \n", wxPoint(10, 500), wxSize(500, 30));
-	m_output = new wxTextCtrl(this, wxID_HIGHEST + 2, "Input", wxPoint(10, 10), wxSize(500, 450), wxTE_READONLY | wxTE_MULTILINE);
-	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Click Me", wxPoint(500, 500), wxSize(150, 50));
+	m_input = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 500), wxSize(500, 30));
+	m_output = new wxTextCtrl(this, wxID_HIGHEST + 2, "--Soul Tower-- \n", wxPoint(10, 10), wxSize(500, 450), wxTE_READONLY | wxTE_MULTILINE);
+	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Submit", wxPoint(500, 500), wxSize(150, 50));
 	wxButton* START = new wxButton(this, 700, "Click Me", wxPoint(600, 10), wxSize(150, 50));
 	inputRecieved = false;
 }
@@ -14,14 +14,14 @@ cMain::~cMain() {
     delete m_input;
 }
 
-wxString cMain::GetChoice() {
+std::string cMain::GetChoice() {
 	bool sendInput = inputRecieved;
 	while (!sendInput) {
 		sendInput = inputRecieved;
 	}
 	inputRecieved = false;
 	
-	return input_choice;
+	return input_choice.ToStdString();
 }
 
 void cMain::SubmitChoice(wxCommandEvent& event) {

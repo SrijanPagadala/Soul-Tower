@@ -25,7 +25,7 @@ void Game::start() {
 		gui->DisplayOutput("Hey Bob!? \n");
 	}
 	else {
-		gui->DisplayOutput("Hey! Get lawn m8 \n");
+		gui->DisplayOutput("Oi! Get off my fuckin lawn m8 \n");
 	}
 	
 }
