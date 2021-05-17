@@ -27,6 +27,7 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 
 cMain::~cMain() {
     delete m_bt1;
+	delete m_output;
     delete m_input;
 }
 
