@@ -98,8 +98,46 @@ void ExploreState::display(cMainMock* gui){
         gui->DisplayOut("On one of the walls, you see a note.\n");
         gui->DisplayOut("\"PLEASE DO NOT FEED THE COIN GOBLINS!\"\n");
         gui->DisplayOut("You realize that this goblin has an appetite for coins - and is NOT friendly.\n");
-
-
+        gui->DisplayOut("\n");
+        gui->DisplayOut("Shaken up by the encounter with the coin goblin, you decide to continue on your mysterious quest.\n");
+        gui->DisplayOut("You walk around the floor more, looking for any sign of the stairs to the higher floors.\n");
+        gui->DisplayOut("You once again wonder why you are drawn to the top of the tower, and if it is even worth it to continue.\n");
+        gui->DisplayOut("However, you know that you must continue.\n");
+        gui->DisplayOut("As you walk throughout the maze-like halls of the first floor, you find yourself deciding whether to go left or right.\n");
+        gui->DisplayOut("Both of the paths seem the same, yet you know each leads a separate way and you need to choose.\n");
+        gui->DisplayOut("\n");
+        gui->DisplayOut("Do you go left or do you go right?\n"); //CHOICE 3: Left or right?
+        choice1 = "1. Go left";
+        choice2 = "2. Go right";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        if(input == "1"){ //If left
+            gui->DisplayOut("You decide to go left.\n");
+            gui->DisplayOut("As you continue along this path, you hear that dreaded noice once again - the scream of a coin goblin.\n");
+            gui->DisplayOut("However, this time, you can hear the screams of dozens of coin goblins.\n");
+            gui->DisplayOut("In the distance, you see dozens of coin goblins racing towards you, with shining yellow eyes.\n");
+            gui->DisplayOut("In a moment of desparation, you throw 100 coins at them to divery them and run back.\n");
+            gui->DisplayOut("-100 coins\n");
+            coinsEarned += -100;
+            gui->DisplayOut("You backtrack to before you went left, and realize that you made the wrong decision.\n");
+            gui->DisplayOut("This time, you decide to go right.\n");
+        } else {
+            gui->DisplayOut("You decide to go right.\n");
+        }
+        gui->DisplayOut("As you travel along the path, you see a bright light in the distance.\n");
+        gui->DisplayOut("You tread with caution, as you are fearful of yet another coin goblin.\n");
+        gui->DisplayOut("As you walk up, you realize that the light is coming from a room up ahead.\n");
+        gui->DisplayOut("A sign above the room reads: \"FLOOR 2 AHEAD\"\n");
+        gui->DisplayOut("You realize you have finally found the room with the stairs.\n");
+        gui->DisplayOut("Finally, some progress...\n");
+        gui->DisplayOut("As you inch closer towards the stairs, you hear the mysterious screams of a coin goblin once again.\n");
+        gui->DisplayOut("Here we go again.\n");
+        gui->DisplayOut("Except, this time, the screeches of the goblin are much deeper.\n");
+        gui->DisplayOut("The coin goblin jumps down from the stairs in front of you, ready to attack.\n");
+        gui->DisplayOut("This coin goblin looks different than before.\n");
+        gui->DisplayOut("Its eyes are glowing red instead of yellow, and it is TEN TIMES THE SIZE!\n");
+        gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
     }
 
 }
