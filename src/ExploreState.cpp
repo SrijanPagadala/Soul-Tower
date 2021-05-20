@@ -166,6 +166,18 @@ void ExploreState::display(cMainMock* gui){
             gui->DisplayOut("Suddenly, the wall crumbles.\n");
             gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
         }
+        gui->DisplayOut("As you continue your journey to the next set of stairs, you hear screaming.\n");
+        gui->DisplayOut("Alarmed, you hold your weapon close, ready to attack.\n");
+        gui->DisplayOut("You hear the screeches of a coin goblin.\n");
+        gui->DisplayOut("You start running towards the screeches and screaming, prepared to slay yet another coin goblin.\n");
+        gui->DisplayOut("You come accross a hallway with a corner.\n");
+        gui->DisplayOut("The screaming is coming from around the corner.\n");
+        gui->DisplayOut("You turn the corner and kill the coin goblin in one swoop.\n");
+        gui->DisplayOut("As the corpse of the goblin falls over, you see a man in robes behind it.\n");
+        gui->DisplayOut("???: \"Thank you so much!\"\n");
+        gui->DisplayOut("???: \"Those goblins can be real pesky.\"\n");
+        gui->DisplayOut("You look at the man in robes with a confused look.\n");
+        gui->DisplayOut("You did not realize there were other humans in this tower.\n");
 
     }
 
