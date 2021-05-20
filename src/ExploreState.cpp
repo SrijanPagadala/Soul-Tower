@@ -138,6 +138,35 @@ void ExploreState::display(cMainMock* gui){
         gui->DisplayOut("This coin goblin looks different than before.\n");
         gui->DisplayOut("Its eyes are glowing red instead of yellow, and it is TEN TIMES THE SIZE!\n");
         gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
+    } else if (level == 2){
+        gui->DisplayOut("As you walk about floor 2, you start getting faint memoryes.\n");
+        gui->DisplayOut("This place... the walls... something about them...\n");
+        gui->DisplayOut("You feel more drawn to the top floor.\n");
+        gui->DisplayOut("In the distance, you spot two wooden chests.\n");
+        gui->DisplayOut("You walk up to both of those chests.\n");
+        gui->DisplayOut("The left chest seems to be shining yellow, while the right seems to be leaking with a pink elixir.\n");
+        gui->DisplayOut("Which chest do you open first?\n"); //CHOICE 1: Left or right chest
+        choice1 = "1. Left";
+        choice2 = "2. Right";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        if(input == "1"){
+            gui->DisplayOut("You decide to open the left chest.\n");
+            gui->DisplayOut("When opening the chest, you are delighted to see a handful of coins!\n");
+            gui->DisplayOut("+50 coins\n");
+            coinsEarned += 50;
+            gui->DisplayOut("Suddenly, the wall crumbles.\n");
+            gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
+        } else {
+            gui->DisplayOut("You decide to open the right chest.\n");
+            gui->DisplayOut("When opening the chest, you are delighted to see a health potion!\n");
+            gui->DisplayOut("+1 health potion\n");
+            healthPotionsEarned += 1;
+            gui->DisplayOut("Suddenly, the wall crumbles.\n");
+            gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
+        }
+
     }
 
 }
