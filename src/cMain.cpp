@@ -4,7 +4,9 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 	m_input = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 500), wxSize(400, 30));
 	m_output = new wxTextCtrl(this, wxID_HIGHEST + 2, "--Soul Tower-- \n", wxPoint(10, 10), wxSize(500, 480), wxTE_READONLY | wxTE_MULTILINE);
 	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Submit", wxPoint(410, 500), wxSize(100, 30));
-	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString("C:/Users/duoma/Desktop/Projects/final-project-ssond007-_nkhal016_spaga006/assets/heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 400), wxSize(64, 64), 0, wxString("HeartImg"));
+	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 410), wxSize(32, 32), 0, wxString("HeartImg"));
+	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(550, 410), wxSize(32, 32), 0, wxString("CoinImg"));
+	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "warrior_diamond_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
 
 	inputRecieved = false;
 }
@@ -13,6 +15,7 @@ cMain::~cMain() {
     delete m_bt1;
 	delete m_output;
     delete m_input;
+	delete heartIcon;
 }
 
 std::string cMain::GetChoice() {

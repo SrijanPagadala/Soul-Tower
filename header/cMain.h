@@ -26,11 +26,14 @@ class Game : public wxThread
 class cMain : public wxFrame
 {
 	private:
+		std::string assetsPath = "C:/Users/duoma/Desktop/Projects/final-project-ssond007-_nkhal016_spaga006/assets/";
 		wxButton* m_bt1;
 		wxTextCtrl* m_input;
 		wxTextCtrl* m_output;
 		wxString input_choice;
 		wxStaticBitmap* heartIcon;
+		wxStaticBitmap* coinIcon;
+		wxStaticBitmap* armorIcon;
 		bool inputRecieved;
 		DECLARE_EVENT_TABLE();
 		

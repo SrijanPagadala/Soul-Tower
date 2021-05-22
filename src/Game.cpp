@@ -2,12 +2,10 @@
 
 // Game Implementations
 wxThread::ExitCode Game::Entry() {
-	while (!TestDestroy())
-	{
-		// Init Game
-		start();
 
-	}
+	// Init Game
+	start();
+	
 	// signal the event handler that this thread is going to be destroyed
 	wxQueueEvent(gui, new wxThreadEvent(wxEVT_THREAD, MYTHREAD_COMPLETED));
 	return (wxThread::ExitCode)0;
