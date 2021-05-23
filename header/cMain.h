@@ -1,5 +1,6 @@
 #pragma once
 #include "wx/wx.h"
+#include "State.hpp"
 
 class cMain;
 
@@ -7,18 +8,36 @@ class Game : public wxThread
 {
 	protected:
 		cMain* gui;
+		double coins;
+        int healthPotions;
+        State* currState;
 		virtual wxThread::ExitCode Entry();
 
 	public:
 		Game(cMain* gui) : wxThread(wxTHREAD_DETACHED) {
 			this->gui = gui;
+			coins = 0;
+			healthPotions = 0;
+			currState = nullptr;
 		};
 
 		~Game()
 		{
 
 		};
+
 		// Now is switched back so i have access to cMain.h
+
+
+		double getCoins() { return coins; }
+        void setCoins(double newAmount) { coins = newAmount; }
+        void changeCoins(double amount) { coins += amount; }
+
+        int getPotions() { return healthPotions; }
+        void setPotions(double newAmount) { healthPotions = newAmount; }
+        void changePotions(double amount) { healthPotions += amount; }
+
+
 		void start();
 
 };
