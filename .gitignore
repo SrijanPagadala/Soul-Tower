@@ -1,0 +1,9 @@
+# Visual Studio
+.vs/
+SoulTower.sln
+SoulTower.vcxproj
+SoulTower.vcxproj.filters
+SoulTower.vcxproj.user
+# Build Folders
+Debug/
+x64/
