@@ -9,7 +9,7 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 	// Inits current icons to be displayed
 	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 410), wxSize(32, 32), 0, wxString("HeartImg"));
 	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(550, 410), wxSize(32, 32), 0, wxString("CoinImg"));
-	armorIcon = nullptr;
+	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "no_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
 
 	inputRecieved = false;
 }
@@ -22,11 +22,12 @@ cMain::~cMain() {
 	delete armorIcon;
 }
 
-void cMain::setArmorIcon(std::string armorChoice) {
+void cMain::setArmorIcon(std::string armorChoiceFileName) {
 	if (armorIcon != nullptr) {
 		delete armorIcon;
 	}
-	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "warrior_diamond_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
+
+	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + armorChoiceFileName), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
 }
 
 std::string cMain::GetChoice() {

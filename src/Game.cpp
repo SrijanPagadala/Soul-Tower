@@ -24,6 +24,7 @@ void Game::start() {
 	}
 	else {
 		gui->DisplayOutput("Hey! Get lawn m8 \n");
+		gui->setArmorIcon("warrior_diamond_armor.png");
 	}
 	
 }

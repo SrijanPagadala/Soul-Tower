@@ -28,12 +28,13 @@ class cMain : public wxFrame
 	private:
 		// Armor Icons
 		std::string assetsPath = "C:/Users/duoma/Desktop/Projects/final-project-ssond007-_nkhal016_spaga006/assets/";
-		std::string warriorCopperArmorIconFileName = "warrior_diamond_armor.png";
-		std::string warriorDiamondArmorIconFileName = "warrior_copper_armor.png";
-		std::string archerIronArmorIconFileName = "archer_iron_armor.png";
-		std::string archerLeatherArmorIconFileName = "archer_leather_armor.png";
-		std::string mageAmethystArmorIconFileName = "mage_amethyst_armor.png";
-		std::string mageGoldenArmorIconFileName = "mage_golden_armor.png";
+		// *** Armor Types File Names **
+		// warriorCopperArmor = "warrior_diamond_armor.png";
+		// warriorDiamondArmor = "warrior_copper_armor.png";
+		// archerIronArmor = "archer_iron_armor.png";
+		// archerLeatherArmor = "archer_leather_armor.png";
+		// mageAmethystArmor = "mage_amethyst_armor.png";
+		// mageGoldenArmor = "mage_golden_armor.png";
 
 		// Menu Objs
 		wxButton* m_bt1;
@@ -54,7 +55,7 @@ class cMain : public wxFrame
 		~cMain();
 		// Methods
 		std::string GetChoice();
-		void setArmorIcon(std::string armorChoice);
+		void setArmorIcon(std::string armorChoiceFileName);
 		void SubmitChoice(wxCommandEvent& event);
 		void DisplayOutput(std::string msg);
 		void OnQuit(wxCommandEvent& event);
