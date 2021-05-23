@@ -12,7 +12,7 @@ class ShopState: public State {
     public:
         ShopState();
         ShopState(int level);
-        void display(cMainMock* gui);
+        void display(cMain* gui);
 
 
 

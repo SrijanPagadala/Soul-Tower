@@ -18,7 +18,7 @@ class ExploreState: public State {
     public:
         ExploreState();
         ExploreState(int level);
-        void display(cMainMock* gui);
+        void display(cMain* gui);
 
         double getCoinsEarned() { return coinsEarned; }
         double getHealthPotionsEarned() { return healthPotionsEarned; }

@@ -12,7 +12,7 @@ class FightState: public State {
     public:
         FightState();
         FightState(int level);
-        void display(cMainMock* gui);
+        void display(cMain* gui);
 
 
 
