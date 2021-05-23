@@ -13,18 +13,9 @@ wxThread::ExitCode Game::Entry() {
 
 // Main place where logic for the game runs
 void Game::start() {
-	gui->DisplayOutput("Who goes there? \n");
-	gui->GetChoice();
-	gui->DisplayOutput("What? \n");
-
-	std::string input = gui->GetChoice();
-	
-	if (input == "Bob") {
-		gui->DisplayOutput("Hey Bob!? \n");
-	}
-	else {
-		gui->DisplayOutput("Hey! Get lawn m8 \n");
-		gui->setArmorIcon("warrior_diamond_armor.png");
-	}
-	
+	currState = new ExploreState(1);
+	currState->display(&gui);
+  gui->setArmorIcon("warrior_diamond_armor.png");
+	delete currState;
+	currState = nullptr;
 }
