@@ -26,6 +26,9 @@ class Game : public wxThread
 
 		};
 
+		// Now is switched back so i have access to cMain.h
+
+
 		double getCoins() { return coins; }
         void setCoins(double newAmount) { coins = newAmount; }
         void changeCoins(double amount) { coins += amount; }
@@ -34,6 +37,7 @@ class Game : public wxThread
         void setPotions(double newAmount) { healthPotions = newAmount; }
         void changePotions(double amount) { healthPotions += amount; }
 
+
 		void start();
 
 };
@@ -41,8 +45,17 @@ class Game : public wxThread
 class cMain : public wxFrame
 {
 	private:
-
+		// Armor Icons
 		std::string assetsPath = "C:/Users/duoma/Desktop/Projects/final-project-ssond007-_nkhal016_spaga006/assets/";
+		// *** Armor Types File Names **
+		// warriorCopperArmor = "warrior_diamond_armor.png";
+		// warriorDiamondArmor = "warrior_copper_armor.png";
+		// archerIronArmor = "archer_iron_armor.png";
+		// archerLeatherArmor = "archer_leather_armor.png";
+		// mageAmethystArmor = "mage_amethyst_armor.png";
+		// mageGoldenArmor = "mage_golden_armor.png";
+
+		// Menu Objs
 		wxButton* m_bt1;
 		wxTextCtrl* m_input;
 		wxTextCtrl* m_output;
@@ -61,6 +74,7 @@ class cMain : public wxFrame
 		~cMain();
 		// Methods
 		std::string GetChoice();
+		void setArmorIcon(std::string armorChoiceFileName);
 		void SubmitChoice(wxCommandEvent& event);
 		void DisplayOutput(std::string msg);
 		void OnQuit(wxCommandEvent& event);
@@ -84,6 +98,7 @@ enum
 	THREAD_STOP,
 
 	BUTTON_Choice = wxID_HIGHEST + 1,
-	TEXTBOX_Output = wxID_HIGHEST + 2
+	TEXTBOX_Output = wxID_HIGHEST + 2,
+
 };
 
