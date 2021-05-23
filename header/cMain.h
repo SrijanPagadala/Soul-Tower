@@ -18,7 +18,7 @@ class Game : public wxThread
 		{
 
 		};
-
+		// Now is switched back so i have access to cMain.h
 		void start();
 
 };
@@ -54,7 +54,7 @@ class cMain : public wxFrame
 		~cMain();
 		// Methods
 		std::string GetChoice();
-		void setArmorIcon();
+		void setArmorIcon(std::string armorChoice);
 		void SubmitChoice(wxCommandEvent& event);
 		void DisplayOutput(std::string msg);
 		void OnQuit(wxCommandEvent& event);
@@ -78,6 +78,7 @@ enum
 	THREAD_STOP,
 
 	BUTTON_Choice = wxID_HIGHEST + 1,
-	TEXTBOX_Output = wxID_HIGHEST + 2
+	TEXTBOX_Output = wxID_HIGHEST + 2,
+
 };
 

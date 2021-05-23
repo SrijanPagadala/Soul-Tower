@@ -22,7 +22,7 @@ cMain::~cMain() {
 	delete armorIcon;
 }
 
-void cMain::setArmorIcon() {
+void cMain::setArmorIcon(std::string armorChoice) {
 	if (armorIcon != nullptr) {
 		delete armorIcon;
 	}
