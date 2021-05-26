@@ -80,7 +80,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You go through with it and kill the goblin.\n");
             gui->DisplayOut("You find 100 coins in its pockets.\n");
             gui->DisplayOut("+100 coins\n");
-            coinsEarned += 100;
+            game->changeCoins(100);
         } else { //Player spares goblin
             gui->DisplayOut("You decide to let the goblin live and you put your weapon away.\n");
             gui->DisplayOut("As you let your guard down, the goblin reaches into its pockets.\n");
@@ -92,7 +92,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("In pain, you pull out your weapon and kill the goblin.\n");
             gui->DisplayOut("You find 50 coins in its pockets.\n");
             gui->DisplayOut("+50 coins\n");
-            coinsEarned += 50;
+            game->changeCoins(50);
         }
         gui->DisplayOut("You look around the room, very confused as to what just happened.\n");
         gui->DisplayOut("On one of the walls, you see a note.\n");
@@ -119,7 +119,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("In the distance, you see dozens of coin goblins racing towards you, with shining yellow eyes.\n");
             gui->DisplayOut("In a moment of desparation, you throw 100 coins at them to divery them and run back.\n");
             gui->DisplayOut("-100 coins\n");
-            coinsEarned += -100;
+            game->changeCoins(-100);
             gui->DisplayOut("You backtrack to before you went left, and realize that you made the wrong decision.\n");
             gui->DisplayOut("This time, you decide to go right.\n");
         } else {
@@ -155,14 +155,14 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You decide to open the left chest.\n");
             gui->DisplayOut("When opening the chest, you are delighted to see a handful of coins!\n");
             gui->DisplayOut("+50 coins\n");
-            coinsEarned += 50;
+            game->changeCoins(50);
             gui->DisplayOut("Suddenly, the wall crumbles.\n");
             gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
         } else {
             gui->DisplayOut("You decide to open the right chest.\n");
             gui->DisplayOut("When opening the chest, you are delighted to see a health potion!\n");
             gui->DisplayOut("+1 health potion\n");
-            healthPotionsEarned += 1;
+            game->changePotions(1);
             gui->DisplayOut("Suddenly, the wall crumbles.\n");
             gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
         }
