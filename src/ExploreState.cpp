@@ -20,7 +20,7 @@ ExploreState::ExploreState(int levelToSet){
     damageTaken = 0;
 }
 
-void ExploreState::display(cMain* gui){
+void ExploreState::display(Game* game, cMain* gui){
     if(level == 1){ //first level exploration
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");

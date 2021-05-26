@@ -9,6 +9,6 @@ FightState::FightState(int levelToSet){
     level = levelToSet;
 }
 
-void FightState::display(cMain* gui) {
+void FightState::display(Game* game, cMain* gui) {
 
 }
