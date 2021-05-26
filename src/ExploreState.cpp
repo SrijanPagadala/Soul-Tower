@@ -21,6 +21,7 @@ ExploreState::ExploreState(int levelToSet){
 }
 
 void ExploreState::display(Game* game, cMain* gui){
+    bool validInput = true;
     if(level == 1){ //first level exploration
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
@@ -42,17 +43,22 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
-        if(input == "1"){ //They walk into a room of lava and take 5 damage
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") { //They walk into a room of lava and take 5 damage
             gui->DisplayOut("You open the door and walk straight into a pool of lava!\n");
             gui->DisplayOut("You discover that your skin is fire-resistant, and you manage to get out alive.\n");
             gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 5 damage!\n");
             gui->DisplayOut("-5 health\n");
             damageTaken += 5;
-        } else { //They walk into a room of coins and gain 200 coins
+        }
+        else { //They walk into a room of coins and gain 200 coins
             gui->DisplayOut("You open the door and see a pile of shining coins!\n");
             gui->DisplayOut("You happily decide to collect all of them in your pockets.\n");
             gui->DisplayOut("+200 coins\n");
-            coinsEarned += 200;
+            game->changeCoins(200);
         }
         gui->DisplayOut("\n");
         gui->DisplayOut("You continue traveling further throughout the floor.\n");
@@ -76,6 +82,10 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
         if(input == "1"){ //Player kills goblin
             gui->DisplayOut("You go through with it and kill the goblin.\n");
             gui->DisplayOut("You find 100 coins in its pockets.\n");
@@ -112,6 +122,10 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
         if(input == "1"){ //If left
             gui->DisplayOut("You decide to go left.\n");
             gui->DisplayOut("As you continue along this path, you hear that dreaded noice once again - the scream of a coin goblin.\n");
@@ -151,6 +165,11 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+
         if(input == "1"){
             gui->DisplayOut("You decide to open the left chest.\n");
             gui->DisplayOut("When opening the chest, you are delighted to see a handful of coins!\n");
