@@ -63,6 +63,10 @@ class cMain : public wxFrame
 		wxStaticBitmap* heartIcon;
 		wxStaticBitmap* coinIcon;
 		wxStaticBitmap* armorIcon;
+		// Text Objs
+		wxStaticText* coinCountText;
+		wxStaticText* heartCountText;
+
 		bool inputRecieved;
 		DECLARE_EVENT_TABLE();
 		

@@ -9,8 +9,12 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 
 	// Inits current icons to be displayed
 	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 410), wxSize(32, 32), 0, wxString("HeartImg"));
-	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(550, 410), wxSize(32, 32), 0, wxString("CoinImg"));
+	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(574, 410), wxSize(32, 32), 0, wxString("CoinImg"));
 	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "no_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
+	// Inits text to be displayed
+	coinCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(542, 422), wxSize(12, 12));
+	coinCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+
 
 	inputRecieved = false;
 }
