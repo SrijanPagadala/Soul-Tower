@@ -16,7 +16,7 @@ wxThread::ExitCode Game::Entry() {
 void Game::start() {
 	currState = new ExploreState(1);
 	currState->display(gui);
-	gui->setArmorIcon("warrior_diamond_armor.png");
+	//gui->setArmorIcon("warrior_diamond_armor.png");
 	delete currState;
 	currState = nullptr;
 }
