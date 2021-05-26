@@ -14,8 +14,10 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 	// Inits text to be displayed
 	coinCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(542, 422), wxSize(12, 12));
 	coinCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
-
-
+	
+	heartCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(606, 422), wxSize(12, 12));
+	heartCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+	
 	inputRecieved = false;
 }
 
