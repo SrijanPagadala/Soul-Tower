@@ -1,8 +1,8 @@
 #pragma once
 #include "wx/wx.h"
-#include "State.hpp"
 
 class cMain;
+class State;
 
 class Game : public wxThread
 {
@@ -10,7 +10,7 @@ class Game : public wxThread
 		cMain* gui;
 		double coins;
         int healthPotions;
-        State* currState;
+		State* currState;
 		virtual wxThread::ExitCode Entry();
 
 	public:
@@ -76,7 +76,7 @@ class cMain : public wxFrame
 		std::string GetChoice();
 		void setArmorIcon(std::string armorChoiceFileName);
 		void SubmitChoice(wxCommandEvent& event);
-		void DisplayOutput(std::string msg);
+		void DisplayOut(std::string msg);
 		void OnQuit(wxCommandEvent& event);
 		void OnStartThread();
 		void OnClose(wxCloseEvent&);

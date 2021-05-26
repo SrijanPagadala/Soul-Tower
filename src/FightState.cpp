@@ -8,3 +8,7 @@ FightState::FightState(){
 FightState::FightState(int levelToSet){
     level = levelToSet;
 }
+
+void FightState::display(cMain* gui) {
+
+}

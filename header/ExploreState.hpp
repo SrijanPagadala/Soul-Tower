@@ -17,7 +17,7 @@ class ExploreState: public State {
 
     public:
         ExploreState();
-        ExploreState(int level);
+        ExploreState(int levelToSet);
         void display(cMain* gui);
 
         double getCoinsEarned() { return coinsEarned; }

@@ -1,4 +1,5 @@
 #include "../header/cMain.h"
+#include <Windows.h>
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,600)), m_pThread (NULL){
 	// Main Menu Elements
@@ -47,8 +48,9 @@ void cMain::SubmitChoice(wxCommandEvent& event) {
 	inputRecieved = true;
 }
 
-void cMain::DisplayOutput(std::string msg) {
+void cMain::DisplayOut(std::string msg) {
 	m_output->AppendText(wxString(msg));
+	Sleep(2000);
 }
 
 void cMain::OnStartThread()

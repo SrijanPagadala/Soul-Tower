@@ -8,3 +8,7 @@ ShopState::ShopState(){
 ShopState::ShopState(int levelToSet){
     level = levelToSet;
 }
+
+void ShopState::display(cMain* gui) {
+
+}
