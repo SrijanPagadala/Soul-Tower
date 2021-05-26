@@ -47,7 +47,7 @@ void cMain::SubmitChoice(wxCommandEvent& event) {
 	inputRecieved = true;
 }
 
-void cMain::DisplayOutput(std::string msg) {
+void cMain::DisplayOut(std::string msg) {
 	m_output->AppendText(wxString(msg));
 }
 
