@@ -1,6 +1,14 @@
+# Visual Studio
 .vs
-FinalProject.sln
-FinalProject.vcxproj
-FinalProject.vcxproj.filters
-FinalProject.vcxproj.user
-Debug
+FinalProjectCS100.sln
+FinalProjectCS100.vcxproj
+FinalProjectCS100.vcxproj.filters
+FinalProjectCS100.vcxproj.user
+SoulTower.sln
+SoulTower.vcxproj
+SoulTower.vcxproj.filters
+SoulTower.vcxproj.user
+
+# Build Folders
+Debug/
+x64/
