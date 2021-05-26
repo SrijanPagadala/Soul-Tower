@@ -197,6 +197,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("???: \"Those goblins can be real pesky.\"\n");
         gui->DisplayOut("You look at the man in robes with a confused look.\n");
         gui->DisplayOut("You did not realize there were other humans in this tower.\n");
+        gui->DisplayOut("William: My name is William, and I am the resident wizard of the region of Nabbarthjan.\n");
 
     }
 
