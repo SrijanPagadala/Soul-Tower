@@ -11,7 +11,7 @@ class FightState: public State {
     public:
         FightState();
         FightState(int level);
-        void display(cMain* gui);
+        void display(Game* game, cMain* gui);
 
 };
 
