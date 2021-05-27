@@ -84,6 +84,8 @@ class cMain : public wxFrame
 		void OnStopThread(wxCommandEvent& event);
 		void StopThread();
 
+		void updateCoins();
+		void updateHeart();
 };
 
 // IDs for the controls and the menu commands
