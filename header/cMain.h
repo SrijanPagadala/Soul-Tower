@@ -60,10 +60,11 @@ class cMain : public wxFrame
 		wxStaticBitmap* heartIcon;
 		wxStaticBitmap* coinIcon;
 		wxStaticBitmap* armorIcon;
+		wxStaticBitmap* healthPotionIcon;
 		// Text Objs
 		wxStaticText* coinCountText;
 		wxStaticText* heartCountText;
-
+		wxStaticText* healthPotionCountText;
 		bool inputRecieved;
 		DECLARE_EVENT_TABLE();
 		
@@ -84,8 +85,8 @@ class cMain : public wxFrame
 		void OnStopThread(wxCommandEvent& event);
 		void StopThread();
 
-		void updateCoins();
-		void updateHeart();
+		void updateCoins(int coins);
+		void updateHeart(int hearts);
 };
 
 // IDs for the controls and the menu commands

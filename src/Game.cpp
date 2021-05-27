@@ -22,6 +22,7 @@ void Game::changeCoins(double amount) {
 	if (coins < 0) {
 		coins = 0;
 	}
+	gui->updateCoins(coins);
 }
 
 int Game::getPotions() { 
