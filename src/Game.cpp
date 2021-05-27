@@ -9,6 +9,33 @@ Game::~Game()
 	gui->m_pThread = NULL;
 }
 
+double Game::getCoins() { 
+	return coins; 
+}
+
+void Game::setCoins(double newAmount) { 
+	coins = newAmount; 
+}
+
+void Game::changeCoins(double amount) {
+	coins += amount;
+	if (coins < 0) {
+		coins = 0;
+	}
+}
+
+int Game::getPotions() { 
+	return healthPotions; 
+}
+
+void Game::setPotions(double newAmount) { 
+	healthPotions = newAmount; 
+}
+
+void Game::changePotions(double amount) { 
+	healthPotions += amount; 
+}
+
 // Game Implementations
 wxThread::ExitCode Game::Entry() {
 

@@ -26,18 +26,13 @@ class Game : public wxThread
 		// Now is switched back so i have access to cMain.h
 
 
-		double getCoins() { return coins; }
-        void setCoins(double newAmount) { coins = newAmount; }
-        void changeCoins(double amount) { 
-			coins += amount;
-			if (coins < 0) {
-				coins = 0;
-			}
-		}
+		double getCoins();
+		void setCoins(double newAmount);
+		void changeCoins(double amount);
 
-        int getPotions() { return healthPotions; }
-        void setPotions(double newAmount) { healthPotions = newAmount; }
-        void changePotions(double amount) { healthPotions += amount; }
+		int getPotions();
+		void setPotions(double newAmount);
+		void changePotions(double amount);
 
 
 		void start();
