@@ -87,6 +87,7 @@ class cMain : public wxFrame
 
 		void updateCoins(int coins);
 		void updateHeart(int hearts);
+		void updateHealthPotions(int health_potions);
 };
 
 // IDs for the controls and the menu commands

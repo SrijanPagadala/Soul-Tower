@@ -14,7 +14,8 @@ double Game::getCoins() {
 }
 
 void Game::setCoins(double newAmount) { 
-	coins = newAmount; 
+	coins = newAmount;
+	gui->updateCoins(coins);
 }
 
 void Game::changeCoins(double amount) {
@@ -31,21 +32,22 @@ int Game::getPotions() {
 
 void Game::setPotions(double newAmount) { 
 	healthPotions = newAmount; 
+	gui->updateHealthPotions(healthPotions);
 }
 
 void Game::changePotions(double amount) { 
 	healthPotions += amount; 
+	gui->updateHealthPotions(healthPotions);
 }
 
 // Game Implementations
 wxThread::ExitCode Game::Entry() {
 
 	// Init Game
-	while (!TestDestroy()) {
-		start();
-		wxThread::This()->Sleep(10);
-		wxQueueEvent(gui, new wxThreadEvent(wxEVT_THREAD, MYTHREAD_UPDATE));
-	}
+	start();
+	wxThread::This()->Sleep(10);
+	wxQueueEvent(gui, new wxThreadEvent(wxEVT_THREAD, MYTHREAD_UPDATE));
+	
 	
 	// signal the event handler that this thread is going to be destroyed
 	wxQueueEvent(gui, new wxThreadEvent(wxEVT_THREAD, MYTHREAD_COMPLETED));

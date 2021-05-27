@@ -47,7 +47,11 @@ void cMain::updateCoins(int coins) {
 }
 
 void cMain::updateHeart(int hearts) {
+	heartCountText->SetLabel(wxString("x" + std::to_string(hearts)));
+}
 
+void cMain::updateHealthPotions(int health_potions) {
+	healthPotionCountText->SetLabel(wxString("x" + std::to_string(health_potions)));
 }
 
 std::string cMain::GetChoice() {
