@@ -20,7 +20,8 @@ ExploreState::ExploreState(int levelToSet){
     damageTaken = 0;
 }
 
-void ExploreState::display(cMain* gui){
+void ExploreState::display(Game* game, cMain* gui){
+    bool validInput = true;
     if(level == 1){ //first level exploration
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
@@ -42,17 +43,22 @@ void ExploreState::display(cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
-        if(input == "1"){ //They walk into a room of lava and take 5 damage
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") { //They walk into a room of lava and take 5 damage
             gui->DisplayOut("You open the door and walk straight into a pool of lava!\n");
             gui->DisplayOut("You discover that your skin is fire-resistant, and you manage to get out alive.\n");
             gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 5 damage!\n");
             gui->DisplayOut("-5 health\n");
             damageTaken += 5;
-        } else { //They walk into a room of coins and gain 200 coins
+        }
+        else { //They walk into a room of coins and gain 200 coins
             gui->DisplayOut("You open the door and see a pile of shining coins!\n");
             gui->DisplayOut("You happily decide to collect all of them in your pockets.\n");
             gui->DisplayOut("+200 coins\n");
-            coinsEarned += 200;
+            game->changeCoins(200);
         }
         gui->DisplayOut("\n");
         gui->DisplayOut("You continue traveling further throughout the floor.\n");
@@ -76,11 +82,15 @@ void ExploreState::display(cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
         if(input == "1"){ //Player kills goblin
             gui->DisplayOut("You go through with it and kill the goblin.\n");
             gui->DisplayOut("You find 100 coins in its pockets.\n");
             gui->DisplayOut("+100 coins\n");
-            coinsEarned += 100;
+            game->changeCoins(100);
         } else { //Player spares goblin
             gui->DisplayOut("You decide to let the goblin live and you put your weapon away.\n");
             gui->DisplayOut("As you let your guard down, the goblin reaches into its pockets.\n");
@@ -92,7 +102,7 @@ void ExploreState::display(cMain* gui){
             gui->DisplayOut("In pain, you pull out your weapon and kill the goblin.\n");
             gui->DisplayOut("You find 50 coins in its pockets.\n");
             gui->DisplayOut("+50 coins\n");
-            coinsEarned += 50;
+            game->changeCoins(50);
         }
         gui->DisplayOut("You look around the room, very confused as to what just happened.\n");
         gui->DisplayOut("On one of the walls, you see a note.\n");
@@ -112,6 +122,10 @@ void ExploreState::display(cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
         if(input == "1"){ //If left
             gui->DisplayOut("You decide to go left.\n");
             gui->DisplayOut("As you continue along this path, you hear that dreaded noice once again - the scream of a coin goblin.\n");
@@ -119,7 +133,7 @@ void ExploreState::display(cMain* gui){
             gui->DisplayOut("In the distance, you see dozens of coin goblins racing towards you, with shining yellow eyes.\n");
             gui->DisplayOut("In a moment of desparation, you throw 100 coins at them to divery them and run back.\n");
             gui->DisplayOut("-100 coins\n");
-            coinsEarned += -100;
+            game->changeCoins(-100);
             gui->DisplayOut("You backtrack to before you went left, and realize that you made the wrong decision.\n");
             gui->DisplayOut("This time, you decide to go right.\n");
         } else {
@@ -151,18 +165,23 @@ void ExploreState::display(cMain* gui){
         gui->DisplayOut(choice1 + "\n");
         gui->DisplayOut(choice2 + "\n");
         input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+
         if(input == "1"){
             gui->DisplayOut("You decide to open the left chest.\n");
             gui->DisplayOut("When opening the chest, you are delighted to see a handful of coins!\n");
             gui->DisplayOut("+50 coins\n");
-            coinsEarned += 50;
+            game->changeCoins(50);
             gui->DisplayOut("Suddenly, the wall crumbles.\n");
             gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
         } else {
             gui->DisplayOut("You decide to open the right chest.\n");
             gui->DisplayOut("When opening the chest, you are delighted to see a health potion!\n");
             gui->DisplayOut("+1 health potion\n");
-            healthPotionsEarned += 1;
+            game->changePotions(1);
             gui->DisplayOut("Suddenly, the wall crumbles.\n");
             gui->DisplayOut("You run away as the wall crumbles, shattering the other chest and its contents.\n");
         }
@@ -178,6 +197,7 @@ void ExploreState::display(cMain* gui){
         gui->DisplayOut("???: \"Those goblins can be real pesky.\"\n");
         gui->DisplayOut("You look at the man in robes with a confused look.\n");
         gui->DisplayOut("You did not realize there were other humans in this tower.\n");
+        gui->DisplayOut("William: My name is William, and I am the resident wizard of the region of Nabbarthjan.\n");
 
     }
 

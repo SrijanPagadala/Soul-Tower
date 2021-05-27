@@ -10,7 +10,7 @@ class State {
     public:
         State() : level(1) {}
         State(int level) : level(level) {}
-        virtual void display(cMain* gui) = 0;
+        virtual void display(Game* game, cMain* gui) = 0;
 
 };
 

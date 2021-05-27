@@ -9,6 +9,6 @@ ShopState::ShopState(int levelToSet){
     level = levelToSet;
 }
 
-void ShopState::display(cMain* gui) {
+void ShopState::display(Game* game, cMain* gui) {
 
 }
