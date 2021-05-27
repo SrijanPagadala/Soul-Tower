@@ -9,19 +9,19 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 
 	// Inits current icons to be displayed
 	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 500), wxSize(32, 32), 0, wxString("HeartImg"));
-	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(574, 500), wxSize(32, 32), 0, wxString("CoinImg"));
-	healthPotionIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "health_potion.png"), wxBITMAP_TYPE_PNG), wxPoint(638, 500), wxSize(32, 32), 0, wxString("HPImg"));;
+	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(594, 500), wxSize(32, 32), 0, wxString("CoinImg"));
+	healthPotionIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "health_potion.png"), wxBITMAP_TYPE_PNG), wxPoint(678, 500), wxSize(32, 32), 0, wxString("HPImg"));;
 
 	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "no_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
 
 	// Inits text to be displayed
-	coinCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(606, 510), wxSize(12, 12));
+	coinCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(626, 510), wxSize(12, 12));
 	coinCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
 	
 	heartCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(542, 510), wxSize(12, 12));
 	heartCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
 
-	healthPotionCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(670, 510), wxSize(12, 12));
+	healthPotionCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(710, 510), wxSize(12, 12));
 	healthPotionCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
 	
 	inputRecieved = false;
