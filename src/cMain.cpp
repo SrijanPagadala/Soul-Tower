@@ -70,12 +70,15 @@ void cMain::OnStartThread()
 		delete m_pThread;
 		m_pThread = NULL;
 	}
+
 }
 
-void cMain::OnClose(wxCloseEvent&)
+void cMain::OnClose(wxCloseEvent& event)
 {
-	StopThread();
+	
 
+	StopThread();
+	
 	// now wait till thread is actually destroyed
 	while (1)
 	{
@@ -85,14 +88,19 @@ void cMain::OnClose(wxCloseEvent&)
 		}
 
 		// wait for thread completion
+
 		wxThread::This()->Sleep(1);
+
 	}
 
 	Destroy();
 }
+// have client point to abstract factory
+// have something different in each Armor and Weapons
 
 void cMain::StopThread()
 {
+
 	wxCriticalSectionLocker enter(m_pThreadCS);
 	if (m_pThread) // does the thread still exist?
 	{
@@ -103,8 +111,14 @@ void cMain::StopThread()
 	}
 }
 
+void cMain::OnStopThread(wxCommandEvent& event) {
+
+	StopThread();
+}
+
 void cMain::OnQuit(wxCommandEvent& WXUNUSED(event))
 {
+
 	// true is to force the frame to close
 	Close(true);
 }

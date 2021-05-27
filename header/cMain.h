@@ -21,10 +21,7 @@ class Game : public wxThread
 			currState = nullptr;
 		};
 
-		~Game()
-		{
-
-		};
+		~Game();
 
 		// Now is switched back so i have access to cMain.h
 
@@ -84,6 +81,7 @@ class cMain : public wxFrame
 		void OnQuit(wxCommandEvent& event);
 		void OnStartThread();
 		void OnClose(wxCloseEvent&);
+		void OnStopThread(wxCommandEvent& event);
 		void StopThread();
 
 };
