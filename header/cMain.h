@@ -28,7 +28,12 @@ class Game : public wxThread
 
 		double getCoins() { return coins; }
         void setCoins(double newAmount) { coins = newAmount; }
-        void changeCoins(double amount) { coins += amount; }
+        void changeCoins(double amount) { 
+			coins += amount;
+			if (coins < 0) {
+				coins = 0;
+			}
+		}
 
         int getPotions() { return healthPotions; }
         void setPotions(double newAmount) { healthPotions = newAmount; }

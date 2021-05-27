@@ -7,7 +7,7 @@ class ShopState: public State {
     public:
         ShopState();
         ShopState(int levelToSet);
-        void display(cMain* gui);
+        void display(Game* game, cMain* gui);
 };
 
 
