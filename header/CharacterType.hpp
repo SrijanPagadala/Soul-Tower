@@ -9,13 +9,12 @@ class CharacterType {
 protected:
     double health;
     const double maxHealth = 100;
-    double baseDamage;
     Weapon* weapon;
     Armor* armor;
 
 
 public:
-    CharacterType() : weapon(nullptr), armor(nullptr) {}
+    CharacterType() : weapon(nullptr), armor(nullptr), health(maxHealth) {}
     virtual void attack(Enemy* enemy);
 
     void setArmor(Armor* armor) { this->armor = armor; }
