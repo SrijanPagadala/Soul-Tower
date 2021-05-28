@@ -4,7 +4,10 @@
 using namespace std;
 
 class Warrior : public CharacterType{
+private: 
+    int rage;
+
 public:
-    Warrior();
+    Warrior() : rage(100) {}
 
 };

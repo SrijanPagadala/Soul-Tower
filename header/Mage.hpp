@@ -4,7 +4,10 @@
 using namespace std;
 
 class Mage : public CharacterType{
+private:
+    int mana;
+
 public:
-    Mage();
+    Mage() : mana(100) {}
 
 };
