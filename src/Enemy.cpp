@@ -7,3 +7,7 @@ void Enemy::takeDamage(double damage) {
 		health = 0;
 	}
 }
+
+bool Enemy::isAlive() {
+	return health != 0;
+}
