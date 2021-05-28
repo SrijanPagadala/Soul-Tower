@@ -10,5 +10,8 @@ class Weapon {
 protected:
     double attackDamage;
     int tier;
-    virtual void attack() = 0;
+
+public:
+    Weapon() : attackDamage(20), tier(0) {}
+
 };
