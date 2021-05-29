@@ -11,6 +11,7 @@ public:
 		double damageTotal = baseDamage * 1.2;
 		player->takeDamage(baseDamage);
 	}
+
 	void attack(Warrior* player) {
 		double damageTotal = baseDamage * 1.5;
 		player->takeDamage(baseDamage);
