@@ -5,6 +5,6 @@ using namespace std;
 
 class Robes : Armor {
 public:
-    Robes();
+    Robes() {}
 
 };
