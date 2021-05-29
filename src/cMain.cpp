@@ -8,10 +8,22 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 	m_bt1 = new wxButton(this, wxID_HIGHEST + 1, "Submit", wxPoint(410, 500), wxSize(100, 30));
 
 	// Inits current icons to be displayed
-	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 410), wxSize(32, 32), 0, wxString("HeartImg"));
-	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(550, 410), wxSize(32, 32), 0, wxString("CoinImg"));
+	heartIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "heart.png"), wxBITMAP_TYPE_PNG), wxPoint(510, 500), wxSize(32, 32), 0, wxString("HeartImg"));
+	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(594, 500), wxSize(32, 32), 0, wxString("CoinImg"));
+	healthPotionIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "health_potion.png"), wxBITMAP_TYPE_PNG), wxPoint(678, 500), wxSize(32, 32), 0, wxString("HPImg"));;
+
 	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "no_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
 
+	// Inits text to be displayed
+	coinCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(626, 510), wxSize(12, 12));
+	coinCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+	
+	heartCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(542, 510), wxSize(12, 12));
+	heartCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+
+	healthPotionCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(710, 510), wxSize(12, 12));
+	healthPotionCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+	
 	inputRecieved = false;
 }
 
@@ -29,6 +41,17 @@ void cMain::setArmorIcon(std::string armorChoiceFileName) {
 	}
 
 	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + armorChoiceFileName), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
+}
+void cMain::updateCoins(int coins) {
+	coinCountText->SetLabel(wxString("x"+std::to_string(coins)));
+}
+
+void cMain::updateHeart(int hearts) {
+	heartCountText->SetLabel(wxString("x" + std::to_string(hearts)));
+}
+
+void cMain::updateHealthPotions(int health_potions) {
+	healthPotionCountText->SetLabel(wxString("x" + std::to_string(health_potions)));
 }
 
 std::string cMain::GetChoice() {
@@ -64,12 +87,15 @@ void cMain::OnStartThread()
 		delete m_pThread;
 		m_pThread = NULL;
 	}
+
 }
 
-void cMain::OnClose(wxCloseEvent&)
+void cMain::OnClose(wxCloseEvent& event)
 {
-	StopThread();
+	
 
+	StopThread();
+	
 	// now wait till thread is actually destroyed
 	while (1)
 	{
@@ -79,14 +105,19 @@ void cMain::OnClose(wxCloseEvent&)
 		}
 
 		// wait for thread completion
+
 		wxThread::This()->Sleep(1);
+
 	}
 
 	Destroy();
 }
+// have client point to abstract factory
+// have something different in each Armor and Weapons
 
 void cMain::StopThread()
 {
+
 	wxCriticalSectionLocker enter(m_pThreadCS);
 	if (m_pThread) // does the thread still exist?
 	{
@@ -97,8 +128,14 @@ void cMain::StopThread()
 	}
 }
 
+void cMain::OnStopThread(wxCommandEvent& event) {
+
+	StopThread();
+}
+
 void cMain::OnQuit(wxCommandEvent& WXUNUSED(event))
 {
+
 	// true is to force the frame to close
 	Close(true);
 }

@@ -21,26 +21,18 @@ class Game : public wxThread
 			currState = nullptr;
 		};
 
-		~Game()
-		{
-
-		};
+		~Game();
 
 		// Now is switched back so i have access to cMain.h
 
 
-		double getCoins() { return coins; }
-        void setCoins(double newAmount) { coins = newAmount; }
-        void changeCoins(double amount) { 
-			coins += amount;
-			if (coins < 0) {
-				coins = 0;
-			}
-		}
+		double getCoins();
+		void setCoins(double newAmount);
+		void changeCoins(double amount);
 
-        int getPotions() { return healthPotions; }
-        void setPotions(double newAmount) { healthPotions = newAmount; }
-        void changePotions(double amount) { healthPotions += amount; }
+		int getPotions();
+		void setPotions(double newAmount);
+		void changePotions(double amount);
 
 
 		void start();
@@ -68,6 +60,11 @@ class cMain : public wxFrame
 		wxStaticBitmap* heartIcon;
 		wxStaticBitmap* coinIcon;
 		wxStaticBitmap* armorIcon;
+		wxStaticBitmap* healthPotionIcon;
+		// Text Objs
+		wxStaticText* coinCountText;
+		wxStaticText* heartCountText;
+		wxStaticText* healthPotionCountText;
 		bool inputRecieved;
 		DECLARE_EVENT_TABLE();
 		
@@ -85,8 +82,12 @@ class cMain : public wxFrame
 		void OnQuit(wxCommandEvent& event);
 		void OnStartThread();
 		void OnClose(wxCloseEvent&);
+		void OnStopThread(wxCommandEvent& event);
 		void StopThread();
 
+		void updateCoins(int coins);
+		void updateHeart(int hearts);
+		void updateHealthPotions(int health_potions);
 };
 
 // IDs for the controls and the menu commands
