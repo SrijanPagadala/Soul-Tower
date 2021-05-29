@@ -10,19 +10,19 @@
 
 using namespace std;
 
-class MageFactory : public ChracterTypeFactory {
-public:
-	virtual Weapon* createWeapon() {
-		Weapon* weapon = new Wand();
-		return weapon;
-	}
-	virtual Armor* createArmor() {
-		Armor* armor = new Robes();
-		return armor;
+class MageFactory : public CharacterTypeFactory {
+	public:
+		virtual Weapon* createWeapon() {
+			Weapon* weapon = new Wand();
+			return weapon;
+		}
+		virtual Armor* createArmor() {
+			Armor* armor = new Robes();
+			return armor;
 
-	}
-	virtual CharacterType* createCharacter() {
-		CharacterType* character = new Mage();
-		return character;
-	}
+		}
+		virtual CharacterType* createCharacter() {
+			CharacterType* character = new Mage();
+			return character;
+		}
 };

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class ChracterTypeFactory {
+class CharacterTypeFactory {
 public:
 	virtual Weapon* createWeapon() = 0;
 	virtual Armor* createArmor() = 0;
