@@ -7,9 +7,9 @@
 using namespace std;
 
 class Wand : public Weapon {
-public:
-    Wand() {}
-    void attack(WarriorGoblin* enemy);
-    void attack(MageGoblin* enemy);
-    void attack(ArcherGoblin* enemy);
+    public:
+        Wand() {}
+        void attack(WarriorGoblin* enemy);
+        void attack(MageGoblin* enemy);
+        void attack(ArcherGoblin* enemy);
 };

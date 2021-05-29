@@ -2,26 +2,37 @@
 
 #include "Weapon.hpp"
 #include "Armor.hpp"
-#include "Enemy.hpp"
-using namespace std;
 
 class CharacterType {
-protected:
-    double health;
-    const double maxHealth = 100;
-    Weapon* weapon;
-    Armor* armor;
+    protected:
+        double health;
+        double maxHealth;
+        Weapon* weapon;
+        Armor* armor;
 
+    public:
+        CharacterType() {
+            maxHealth = 100;
+            health = maxHealth;
+            weapon = nullptr;
+            armor = nullptr;
+        }
 
-public:
-    CharacterType() : weapon(nullptr), armor(nullptr), health(maxHealth) {}
-    virtual void attack(Enemy* enemy);
+        ~CharacterType() {
+            delete weapon;
+            delete armor;
+        }
     
-    void takeDamage(double damage) {
-        health -= damage;
-    }
+        void takeDamage(double damage) {
+            health -= damage;
+        }
 
-    void setArmor(Armor* armor) { this->armor = armor; }
-    void setWeapon(Weapon* weapon) { this->weapon = weapon; }
+        void setArmor(Armor* armor) { 
+            this->armor = armor; 
+        }
+
+        void setWeapon(Weapon* weapon) { 
+            this->weapon = weapon; 
+        }
 
 };

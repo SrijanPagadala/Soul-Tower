@@ -68,7 +68,7 @@ void Game::classSelection() {
 
 	// Get input for class
 	bool validInput = false;
-	CharacterTypeFactory* characterCreator;
+	CharacterTypeFactory* characterCreator = nullptr;
 
 	while (!validInput) {
 		if (classChoice == "1") {
@@ -92,15 +92,21 @@ void Game::classSelection() {
 		}
 	}
 
-	player = characterCreator->createCharacter();
-	player->setArmor(characterCreator->createArmor());
-	player->setWeapon(characterCreator->createWeapon());
+	if (characterCreator != nullptr) {
+		player = characterCreator->createCharacter();
+		player->setArmor(characterCreator->createArmor());
+		player->setWeapon(characterCreator->createWeapon());
+	}
+
 
 	delete characterCreator;
 }
 
 // Main place where logic for the game runs
 void Game::start() {
+	// Allows user to select their class before game starts
+	classSelection();
+	// Gameplay begins here
 	currState = new ExploreState(1);
 	currState->display(this, gui);
 	//gui->setArmorIcon("warrior_diamond_armor.png");
