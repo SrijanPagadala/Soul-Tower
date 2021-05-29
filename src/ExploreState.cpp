@@ -131,9 +131,9 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("As you continue along this path, you hear that dreaded noice once again - the scream of a coin goblin.\n");
             gui->DisplayOut("However, this time, you can hear the screams of dozens of coin goblins.\n");
             gui->DisplayOut("In the distance, you see dozens of coin goblins racing towards you, with shining yellow eyes.\n");
-            gui->DisplayOut("In a moment of desparation, you throw 100 coins at them to divery them and run back.\n");
-            gui->DisplayOut("-100 coins\n");
-            game->changeCoins(-100);
+            gui->DisplayOut("In a moment of desparation, you throw 25 coins at them to divery them and run back.\n");
+            gui->DisplayOut("-25 coins\n");
+            game->changeCoins(-25);
             gui->DisplayOut("You backtrack to before you went left, and realize that you made the wrong decision.\n");
             gui->DisplayOut("This time, you decide to go right.\n");
         } else {
