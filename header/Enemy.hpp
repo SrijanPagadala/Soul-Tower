@@ -2,7 +2,6 @@
 
 class Enemy
 {
-
 	protected:
 		double health;
 		const double maxHealth = 100;

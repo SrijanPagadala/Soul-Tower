@@ -1,8 +1,8 @@
 #pragma once
 #include "Enemy.hpp"
-class Archer;
-class Warrior;
-class Mage;
+#include "Archer.hpp"
+#include "Warrior.hpp"
+#include "Mage.hpp"
 
 class MageGoblin : public Enemy
 {

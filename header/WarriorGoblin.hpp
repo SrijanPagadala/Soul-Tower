@@ -4,20 +4,21 @@
 #include "Warrior.hpp"
 #include "Mage.hpp"
 
-class ArcherGoblin : public Enemy
+class WarriorGoblin: public Enemy
 {
 	public:
 		void attack(Archer* player) {
-			double damageTotal = baseDamage * 1;
+			double damageTotal = baseDamage * 1.2;
 			player->takeDamage(baseDamage);
 		}
 		void attack(Warrior* player) {
-			double damageTotal = baseDamage * 0.8;
+			double damageTotal = baseDamage * 1;
 			player->takeDamage(baseDamage);
 		}
 		void attack(Mage* player) {
-			double damageTotal = baseDamage * 2;
+			double damageTotal = baseDamage * 1.5;
 			player->takeDamage(baseDamage);
 		}
 
 };
+
