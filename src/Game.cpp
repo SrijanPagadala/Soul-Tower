@@ -65,32 +65,28 @@ void Game::classSelection() {
 	gui->DisplayOut("2. Archer \n");
 	gui->DisplayOut("3. Mage \n");
 	std::string classChoice = gui->GetChoice();
+	while (classChoice != "1" && classChoice != "2" && classChoice != "3") {
+		gui->DisplayOut("INVALID INPUT\n");
+		classChoice = gui->GetChoice();
+	}
 
 	// Get input for class
-	bool validInput = false;
 	CharacterTypeFactory* characterCreator = nullptr;
 
-	while (!validInput) {
 		if (classChoice == "1") {
 			characterCreator = new WarriorFactory();
 			gui->DisplayOut("You've choosen to be a Warrior \n");
-			validInput = true;
 			
 		}
 		else if (classChoice == "2") { 
 			characterCreator = new ArcherFactory();
 			gui->DisplayOut("You've choosen to be a Archer \n");
-			validInput = true;
 		}
 		else if (classChoice == "3") {
 			characterCreator = new MageFactory();
 			gui->DisplayOut("You've choosen to be a Mage \n");
-			validInput = true;
 		}
-		else {
-			gui->DisplayOut("INVALID INPUT");
-		}
-	}
+
 
 	if (characterCreator != nullptr) {
 		player = characterCreator->createCharacter();
