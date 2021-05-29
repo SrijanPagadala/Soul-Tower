@@ -197,7 +197,38 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("???: \"Those goblins can be real pesky.\"\n");
         gui->DisplayOut("You look at the man in robes with a confused look.\n");
         gui->DisplayOut("You did not realize there were other humans in this tower.\n");
-        gui->DisplayOut("William: My name is William, and I am the resident wizard of the region of Nabbarthjan.\n");
+        gui->DisplayOut("William: \"My name is William, and I am the resident wizard of the region of Nabbarthjan.\"\n");
+        gui->DisplayOut("William: \"Here, take this potion.\"\n");
+        gui->DisplayOut("+1 Health Potion\n");
+        game->changePotions(1);
+        gui->DisplayOut("William: \"It's the least I can do.\"\n");
+        gui->DisplayOut("William: \"How would you like to travel together?\"\n"); //CHOICE 2: Travel with William?
+        choice1 = "1. Yes";
+        choice2 = "2. No";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("William: \"Delightful!\"\n");
+            gui->DisplayOut("William: \"Let's be on our way then.\"\n");
+        }
+        else {
+            gui->DisplayOut("William: \"I won't take no for an answer!\"\n");
+            gui->DisplayOut("William: \"We should really stick together.\"\n");
+            gui->DisplayOut("William: \"I promise I can be of assistance.\"\n");
+            gui->DisplayOut("William: \"Here, take this.\"\n");
+            gui->DisplayOut("William hands you 50 coins.\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(100);
+            gui->DisplayOut("You wonder why William bribes you to travel with him.\n");
+            gui->DisplayOut("Perhaps he is desparate for your help in escaping the tower.\n");
+        }
+        gui->DisplayOut("\n");
+        gui->DisplayOut("You and \n");
 
     }
 
