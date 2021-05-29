@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class WarriorFactory : public ChracterTypeFactory {
+class WarriorFactory : public CharacterTypeFactory {
 public:
 	virtual Weapon* createWeapon() {
 		Weapon* weapon = new Sword();

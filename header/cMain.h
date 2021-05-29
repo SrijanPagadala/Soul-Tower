@@ -1,5 +1,8 @@
 #pragma once
 #include "wx/wx.h"
+#include "MageFactory.hpp"
+#include "WarriorFactory.hpp"
+#include "ArcherFactory.hpp"
 
 class cMain;
 class State;
@@ -11,6 +14,7 @@ class Game : public wxThread
 		double coins;
         int healthPotions;
 		State* currState;
+		CharacterType* player;
 		virtual wxThread::ExitCode Entry();
 
 	public:
