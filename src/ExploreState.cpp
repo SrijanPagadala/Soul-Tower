@@ -228,7 +228,24 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("Perhaps he is desparate for your help in escaping the tower.\n");
         }
         gui->DisplayOut("\n");
-        gui->DisplayOut("You and \n");
+        gui->DisplayOut("You and William continue forward.\n");
+        gui->DisplayOut("You wonder how William even got here.\n");
+        gui->DisplayOut("You are glad to have a companion in your adventures.\n");
+        gui->DisplayOut("You starting thinking about how YOU got here, and why you are so drawn to the top of the tower.\n");
+        gui->DisplayOut("As you think, pebbles start falling on you.\n");
+        gui->DisplayOut("You are lost in thought.\n");
+        gui->DisplayOut("The roof above you starts crumbling.\n");
+        gui->DisplayOut("You are too lost in thought to notice.\n");
+        gui->DisplayOut("You realize too late.\n");
+        gui->DisplayOut("You look up and see rocks mere inches above you.\n");
+        gui->DisplayOut("William: \"Etativel meht!\"\n");
+        gui->DisplayOut("Suddenly, the rocks start levitating.\n");
+        gui->DisplayOut("William: \"That was close!\"\n");
+        gui->DisplayOut("You are glad you and William are traveling together.\n");
+        gui->DisplayOut("You wonder how only a part of the roof crumbled.\n");
+        gui->DisplayOut("You look at William and thank him.\n");
+        gui->DisplayOut("You shake off what just happened and continued on.\n");
+        gui->DisplayOut("\n");
 
     }
 
