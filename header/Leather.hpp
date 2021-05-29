@@ -3,8 +3,8 @@
 #include "Armor.hpp"
 using namespace std;
 
-class Leather : Armor {
+class Leather : public Armor {
 public:
-    Leather();
+    Leather() {}
 
 };
