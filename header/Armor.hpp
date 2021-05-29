@@ -7,5 +7,6 @@ class Armor {
 protected:
     double defenseValue;
     string name;
+    int tier;
 
 };

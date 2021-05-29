@@ -4,7 +4,10 @@
 using namespace std;
 
 class Archer : public CharacterType{
+private:
+    int arrows;
+
 public:
-    Archer();
+    Archer() : arrows(100) {}
 
 };
