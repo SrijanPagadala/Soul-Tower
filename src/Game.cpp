@@ -54,6 +54,34 @@ wxThread::ExitCode Game::Entry() {
 	return (wxThread::ExitCode)0;
 };
 
+// Prior to gameplay player gets to select a class of their choosing
+void Game::classSelection() {
+	gui->DisplayOut("Choose character class to play \n");
+	gui->DisplayOut("1. Warrior \n");
+	gui->DisplayOut("2. Archer \n");
+	gui->DisplayOut("3. Mage \n");
+	std::string classChoice = gui->GetChoice();
+	bool validInput = false;
+	while (!validInput) {
+		if (classChoice == "1") {
+			gui->DisplayOut("You've choosen to be a Warrior \n");
+			validInput = true;
+		}
+		else if (classChoice == "2") { 
+			gui->DisplayOut("You've choosen to be a Archer \n");
+			validInput = true;
+		}
+		else if (classChoice == "3") {
+			gui->DisplayOut("You've choosen to be a Mage \n");
+			validInput = true;
+		}
+		else {
+			gui->DisplayOut("INVALID INPUT");
+		}
+	}
+
+}
+
 // Main place where logic for the game runs
 void Game::start() {
 	currState = new ExploreState(1);
