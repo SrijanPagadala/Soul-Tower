@@ -8,7 +8,7 @@
 using namespace std;
 
 class Bow : public Weapon {
-private:
+public:
     Bow() {}
     void attack(WarriorGoblin* enemy);
     void attack(MageGoblin* enemy);

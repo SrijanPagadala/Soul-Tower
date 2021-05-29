@@ -3,7 +3,7 @@
 #include "Armor.hpp"
 using namespace std;
 
-class Robes : Armor {
+class Robes : public Armor {
 public:
     Robes() {}
 

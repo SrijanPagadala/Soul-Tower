@@ -3,7 +3,7 @@
 #include "Armor.hpp"
 using namespace std;
 
-class Chain : Armor {
+class Chain : public Armor {
 public:
     Chain() {}
 
