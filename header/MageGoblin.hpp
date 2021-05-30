@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __MAGE_GOLBIN__H
+#define	__MAGE_GOLBIN__H
 #include "Enemy.hpp"
 
 
@@ -37,3 +38,4 @@ class MageGoblin : public Enemy
 		}
 
 };
+#endif

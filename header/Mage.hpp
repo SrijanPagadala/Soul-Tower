@@ -1,7 +1,8 @@
-#pragma once
+#ifndef MAGE_H
+#define MAGE_H
 
 #include "CharacterType.hpp"
-using namespace std;
+
 
 class Mage : public CharacterType{
 private:
@@ -15,3 +16,5 @@ public:
     }
 
 };
+
+#endif

@@ -112,7 +112,11 @@ void Game::start() {
 		currState->display(this, gui);
 		delete currState;
 		// Fight state
-		currState = new FightState(currLevel);
+		if (enemy != nullptr) {
+			currState = new FightState(currLevel);
+			currState->display(this, gui);
+		}
+
 		delete currState;
 		// Shop state
 		

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ENEMY_H
+#define ENEMY_H
 #include "cMain.h"
 #include "Archer.hpp"
 #include "Warrior.hpp"
@@ -15,7 +16,7 @@ class Enemy
 		std::string name;
 
 	public:
-		Enemy(string name): name(name), health(maxHealth), baseDamage(15){
+		Enemy(std::string name): name(name), health(maxHealth), baseDamage(15){
 
 		}
 
@@ -25,7 +26,7 @@ class Enemy
 		std::string getName() {
 			return name;
 		}
-
+		 
 		virtual double attack(Archer* player) = 0;
 		virtual double attack(Warrior* player) = 0;
 		virtual double attack(Mage* player) = 0;
@@ -33,3 +34,5 @@ class Enemy
 		virtual void attackOutput(cMain* gui) = 0;
 
 };
+
+#endif
