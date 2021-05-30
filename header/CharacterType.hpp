@@ -2,6 +2,9 @@
 #include "cMain.h"
 class Weapon;
 class Armor;
+class WarriorGoblin;
+class MageGoblin;
+class ArcherGoblin;
 
 class CharacterType {
     protected:
@@ -25,7 +28,7 @@ class CharacterType {
             delete armor;
         }
     
-        void takeDamage(double damage) {
+        virtual void takeDamage(double damage) {
             health -= damage;
             if (health < 0) {
                 health = 0;
@@ -63,5 +66,7 @@ class CharacterType {
         }
 
         virtual void attackOutput(cMain* gui) = 0;
-
+        virtual double takeDamage(WarriorGoblin*, double) = 0;
+        virtual double takeDamage(MageGoblin*, double) = 0;
+        virtual double takeDamage(ArcherGoblin*, double) = 0;
 };

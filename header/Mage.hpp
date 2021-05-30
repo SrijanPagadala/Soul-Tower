@@ -11,6 +11,24 @@ private:
 public:
     Mage(cMain* gui) : CharacterType(gui), mana(100) {}
 
+    double takeDamage(WarriorGoblin*, double damage) {
+        double damageTotal = damage * 2;
+        CharacterType::takeDamage(damageTotal);
+        return damageTotal;
+    }
+
+    double takeDamage(ArcherGoblin*, double damage) {
+        double damageTotal = damage * 1.25;
+        CharacterType::takeDamage(damageTotal);
+        return damageTotal;
+    }
+
+    double takeDamage(MageGoblin*, double damage) {
+        double damageTotal = damage * 1;
+        CharacterType::takeDamage(damageTotal);
+        return damageTotal;
+    }
+
     virtual void attackOutput(cMain* gui) {
         gui->DisplayOut("You shot a spell! *FWOOSH* \n");
     }

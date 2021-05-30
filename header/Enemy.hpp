@@ -16,7 +16,7 @@ class Enemy
 		std::string name;
 
 	public:
-		Enemy(std::string name): name(name), health(maxHealth), baseDamage(56){
+		Enemy(std::string name): name(name), health(maxHealth), baseDamage(15){
 
 		}
 
@@ -29,9 +29,9 @@ class Enemy
 		}
 		
 
-		virtual double attack(Archer* player) = 0;
-		virtual double attack(Warrior* player) = 0;
-		virtual double attack(Mage* player) = 0;
+		//virtual double attack(Archer* player) = 0;
+		//virtual double attack(Warrior* player) = 0;
+		//virtual double attack(Mage* player) = 0;
 		virtual double attack(CharacterType* player) = 0;
 		virtual void attackOutput(cMain* gui) = 0;
 

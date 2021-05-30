@@ -10,26 +10,8 @@ class MageGoblin : public Enemy
 		
 		}
 
-		virtual double attack(Archer* player) {
-			double damageTotal = baseDamage * 1.2;
-			player->takeDamage(baseDamage);
-			return damageTotal;
-		}
-
-		virtual double attack(Warrior* player) {
-			double damageTotal = baseDamage * 1.5;
-			player->takeDamage(baseDamage);
-			return damageTotal;
-		}
-		virtual double attack(Mage* player) {
-			double damageTotal = baseDamage * 1;
-			player->takeDamage(baseDamage);
-			return damageTotal;
-		}
-
 		virtual double attack(CharacterType* player) {
-			double damageTotal = baseDamage * 1;
-			player->takeDamage(baseDamage);
+			double damageTotal = player->takeDamage(this, baseDamage);
 			return damageTotal;
 		}
 

@@ -11,6 +11,24 @@ private:
 public:
     Warrior(cMain* gui) : CharacterType(gui), rage(100) {}
 
+    double takeDamage(WarriorGoblin*, double damage) {
+        double damageTotal = damage * 1;
+        CharacterType::takeDamage(damageTotal);
+        return damageTotal;
+    }
+
+    double takeDamage(ArcherGoblin*, double damage) {
+        double damageTotal = damage * 1.5;
+        CharacterType::takeDamage(damageTotal);
+        return damageTotal;
+    }
+
+    double takeDamage(MageGoblin*, double damage) {
+        double damageTotal = damage * 2;
+        CharacterType::takeDamage(damageTotal);
+        return damageTotal;
+    }
+
     virtual void attackOutput(cMain* gui) {
         gui->DisplayOut("You swung your sword! *HWOO* \n");
     }
