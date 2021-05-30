@@ -1,8 +1,8 @@
 #ifndef CT_H
 #define CT_H
 #include "cMain.h"
-#include "Weapon.hpp"
-#include "Armor.hpp"
+class Weapon;
+class Armor;
 
 class CharacterType {
     protected:
@@ -41,7 +41,7 @@ class CharacterType {
         }
 
         bool isAlive() {
-            return health != 0;
+            return (health != 0);
         }
 
         void attackChoiceOutput(cMain* gui) {

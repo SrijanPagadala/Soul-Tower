@@ -46,6 +46,7 @@ class Game : public wxThread
 		Enemy* getEnemy() {
 			return enemy;
 		}
+
 		void setEnemy(Enemy* enemy) {
 			this->enemy = enemy;
 		}

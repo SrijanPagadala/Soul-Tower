@@ -4,11 +4,9 @@
 #include "State.hpp"
 
 class FightState: public State {
-    private:
-        int level;
     public:
-        FightState(){};
-        FightState(int level) : level(level) {};
+        FightState() : State() {};
+        FightState(int level) : State(level) {};
 
         void battle(Game* game, cMain* gui);
         void endBattle(cMain* gui);
