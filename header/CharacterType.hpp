@@ -27,7 +27,9 @@ class CharacterType {
     
         void takeDamage(double damage) {
             health -= damage;
-
+            if (health < 0) {
+                health = 0;
+            }
             gui->updateHeart(health);
         }
 

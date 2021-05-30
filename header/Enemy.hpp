@@ -16,7 +16,7 @@ class Enemy
 		std::string name;
 
 	public:
-		Enemy(std::string name): name(name), health(maxHealth), baseDamage(15){
+		Enemy(std::string name): name(name), health(maxHealth), baseDamage(56){
 
 		}
 
