@@ -45,10 +45,15 @@ class Game : public wxThread
 		Enemy* getEnemy(Enemy* enemy) {
 			return enemy;
 		}
-
 		void setEnemy(Enemy* enemy) {
 			this->enemy = enemy;
 		}
+
+		CharacterType* getPlayer() {
+			return player;
+		}
+
+
 
 		// Gameplay methods
 		void classSelection();
