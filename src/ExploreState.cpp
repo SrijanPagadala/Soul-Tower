@@ -28,7 +28,7 @@ void ExploreState::display(Game* game, cMain* gui){
 
     //first level exploration
     if(level == 1){ 
-        /*
+        
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
         gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
@@ -156,7 +156,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("Except, this time, the screeches of the goblin are much deeper.\n");
         gui->DisplayOut("The coin goblin jumps down from the stairs in front of you, ready to attack.\n");
         gui->DisplayOut("This coin goblin looks different than before.\n");
-        */
+        
         gui->DisplayOut("Its eyes are glowing red instead of yellow, and it is TEN TIMES THE SIZE!\n");
         gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
         // Sets enemy for fight

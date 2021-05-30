@@ -4,6 +4,7 @@
 #include "../header/ArcherFactory.hpp"
 #include "../header/ExploreState.hpp"
 #include "../header/FightState.hpp"
+#include "../header/ShopState.hpp"
 
 Game::~Game()
 {
@@ -122,7 +123,11 @@ void Game::start() {
 		}
 
 		delete currState;
+
 		// Shop state
+		currState = new ShopState(currLevel);
+		currState->display(this, gui);
+		delete currState;
 		
 	}
 	gui->DisplayOut("Game Over! \n");
