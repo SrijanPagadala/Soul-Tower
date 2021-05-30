@@ -164,7 +164,7 @@ void ExploreState::display(Game* game, cMain* gui){
     }
     // Level 2
     else if (level == 2){
-        gui->DisplayOut("As you walk about floor 2, you start getting faint memoryes.\n");
+        gui->DisplayOut("As you walk about floor 2, you start getting faint memories.\n");
         gui->DisplayOut("This place... the walls... something about them...\n");
         gui->DisplayOut("You feel more drawn to the top floor.\n");
         gui->DisplayOut("In the distance, you spot two wooden chests.\n");
@@ -321,7 +321,51 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You have no time to think as William raises his wand to fight.\n");
         gui->DisplayOut("William: \"He knew you would easily trust me.\"\n");
         gui->DisplayOut("You ask him what he is talking about, and who The Soulkeeper is.\n");
-        gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\n");
+        gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\"\n");
+    } else if (level == 3) {
+        gui->DisplayOut("You enter the third floor.\n");
+        gui->DisplayOut("On your right is a window.\n");
+        gui->DisplayOut("Something about the view seems so uncanny--familiar, yet also unfamiliar.\n");
+        gui->DisplayOut("You debate whether it is worth it to even reach the top.\n");
+        gui->DisplayOut("After all, you don't even know why you are so drawn to the top.\n");
+        gui->DisplayOut("You look back at the stairs behind you, William's wand snapped in half nearby.\n");
+        gui->DisplayOut("Do you decide to head back and abandon your journey?\n"); //CHOICE 1: Go back or continue
+        choice1 = "1. Go back";
+        choice2 = "2. Continue";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You start walking back, in defeat.\n");
+            gui->DisplayOut("You cannot handle the surprises of this tower anymore.\n");
+            gui->DisplayOut("Surely this is the logical decision.\n");
+            gui->DisplayOut("*BOOM*\n");
+            gui->DisplayOut("The stairs seem to have magically crumbled.\n");
+            gui->DisplayOut("There is no way out.\n");
+            gui->DisplayOut("You look back at the window to see if you can escape.\n");
+            gui->DisplayOut("There is no way out.\n");
+            gui->DisplayOut("You try to smash open the window.\n");
+            gui->DisplayOut("Suddenly, you see the window disappear in front of your own eyes.\n");
+            gui->DisplayOut("You are left staring at a blank wall.\n");
+            gui->DisplayOut("THERE IS NO WAY OUT.\n");
+            gui->DisplayOut("You now know that you must continue to the top.\n");
+            gui->DisplayOut("It is fate.\n");
+        }
+        else {
+            gui->DisplayOut("You think about heading back, but you decide to soldier on.\n");
+            gui->DisplayOut("*BOOM*\n");
+            gui->DisplayOut("The stairs behind you seem to have magically crumbled.\n");
+            gui->DisplayOut("There is no way out.\n");
+            gui->DisplayOut("You look back at the window and see it magically disappear.\n");
+            gui->DisplayOut("THERE IS NO WAY OUT.\n");
+            gui->DisplayOut("You know that you must continue to the top.\n");
+            gui->DisplayOut("It is fate.\n");
+
+        }
     }
 
 }

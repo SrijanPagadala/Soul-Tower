@@ -12,7 +12,7 @@ public:
     Bow() {}
 
     virtual double attack(Enemy* enemy) {
-        double damageDealt = enemy->takeDamage(this, this->attackDamage);
+        double damageDealt = enemy->takeDamage(this, damageDealt);
         return damageDealt;
     };
 
