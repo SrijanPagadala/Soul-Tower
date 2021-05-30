@@ -5,7 +5,7 @@
 #include "CharacterType.hpp"
 #include "CharacterTypeFactory.hpp"
 #include "Bow.hpp"
-#include "Leather.hpp"
+#include "AkilsArmor.hpp"
 #include "Archer.hpp"
 
 using namespace std;
@@ -20,7 +20,7 @@ public:
 		return weapon;
 	}
 	virtual Armor* createArmor() {
-		Armor* armor = new Leather();
+		Armor* armor = new AkilsArmor(gui);
 		return armor;
 	
 	}
