@@ -25,27 +25,33 @@ void FightState::battle(Game* game, cMain* gui) {
     CharacterType* player = game->getPlayer();
 
     if (enemy != nullptr && player != nullptr) {
+        gui->DisplayOut("You v.s. " + enemy->getName() + "\n");
         while (enemy->isAlive() && player->isAlive()) {
             // Player Attacks
             player->attackChoiceOutput(gui); // prompts for Players moves
 
             // Gets player moves
             std::string attackChoice = gui->GetChoice();             
-            while (attackChoice != "1" || attackChoice != "2") {
+            while (attackChoice != "1" && attackChoice != "2") {
                 gui->DisplayOut("INVALID INPUT \n");
+                attackChoice = gui->GetChoice();
             }
 
             // Handles players moves
             if (attackChoice == "1") {
                 double damageDone = player->getWeapon()->attack(enemy);
                 player->attackOutput(gui);
-                gui->DisplayOut("You've dealth: " + std::to_string(damageDone) + " damage! \n");
+                gui->DisplayOut("You've dealt: " + std::to_string(damageDone) + " damage! \n");
+                gui->DisplayOut(enemy->getName() + " current HP: " + std::to_string(enemy->getHealth()) + "\n");
             }
             else {
                 if (game->getPotions() > 0) {
                     player->takeHealthPotion();
                     game->changePotions(-1);
-                    gui->DisplayOut("*GLUG GLUG* How refreshing, you've gained some health T \n");
+                    gui->DisplayOut("*GLUG GLUG* How refreshing, you've gained some health \n");
+                }
+                else {
+                    gui->DisplayOut("*POP* Oh wait.. you dont have any health potions \n");
                 }
             }
                 
@@ -54,7 +60,7 @@ void FightState::battle(Game* game, cMain* gui) {
             if (enemy->isAlive()) {
                 double damageDone = enemy->attack(player);
                 enemy->attackOutput(gui);
-                gui->DisplayOut(enemy->getName() + " dealth: " + std::to_string(damageDone) + " damage! \n");
+                gui->DisplayOut(enemy->getName() + " dealt: " + std::to_string(damageDone) + " damage! \n");
             }
         }
 

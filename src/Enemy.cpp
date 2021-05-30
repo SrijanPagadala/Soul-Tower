@@ -8,6 +8,10 @@ void Enemy::takeDamage(double damage) {
 	}
 }
 
+double Enemy::getHealth() {
+	return health;
+}
+
 bool Enemy::isAlive() {
-	return health != 0;
+	return health > 0;
 }

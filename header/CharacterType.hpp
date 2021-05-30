@@ -40,7 +40,7 @@ class CharacterType {
         }
 
         bool isAlive() {
-            return (health != 0);
+            return health > 0;
         }
 
         void attackChoiceOutput(cMain* gui) {
