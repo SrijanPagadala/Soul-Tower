@@ -14,6 +14,7 @@ public:
         defenseValue = 0.9;
         tier = 1;
     }
+
     Armor(cMain* gui) {
         this->gui = gui;
         defenseValue = 0.9;
