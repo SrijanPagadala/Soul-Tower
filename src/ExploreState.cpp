@@ -423,9 +423,38 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("\"REMEMBER... PLEASE... REMEMBER...\"\n");
         gui->DisplayOut("You wonder who else William has betrayed.\n");
         gui->DisplayOut("You wonder whose journal this is--perhaps someone else is in need of assistance?\n");
-        gui->DisplayOut("You put the journal and pen in your pocket and continue forwrd.\n");
+        gui->DisplayOut("You put the journal and pen in your pocket and continue forward.\n");
         gui->DisplayOut("You come across two chests.\n");
-        gui->DisplayOut("\n");
+        gui->DisplayOut("The one on the right seems to be shining, while the one on the left seems to be dull.\n");
+        gui->DisplayOut("Which chest do you open first?\n");
+        choice1 = "1. Right chest";
+        choice2 = "2. Left chest";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You decide to open the right chest.\n");
+            gui->DisplayOut("To your delight, you find 50 coins!\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(50);
+            gui->DisplayOut("You look towards the other chest, almost expecting it to disappear.\n");
+            gui->DisplayOut("To your delight, the chest is intact, with no signs of trickery.\n");
+            gui->DisplayOut("You open the other chest.\n");
+            gui->DisplayOut("You find a book labeled \"THE SOUL MASTER\"\n");
+            gui->DisplayOut("You are alarmed, as you remember William saying that name.\n");
+            gui->DisplayOut("You read through the book.\n");
+            gui->DisplayOut("You learn that The Soul Master is a higher being, who traps peoples souls.\n");
+            gui->DisplayOut("Reading further, you realize that the very tower you are in is the tower that stores these souls.\n");
+            gui->DisplayOut("Suddenly, it all clicks.\n");
+            gui->DisplayOut("You are drawn to the top of the tower because your soul is there.\n");
+            gui->DisplayOut("You now realize your purpose is to retrieve your soul from the top of the tower.\n");
+            gui->DisplayOut("Suddenly, the book disappears from your hands.\n");
+            gui->DisplayOut("The wall in front of you splits open to reveal a set of stairs.\n");
+        }
     }
 
 }
