@@ -10,8 +10,9 @@ using namespace std;
 class Bow : public Weapon {
 public:
     Bow() {}
-    void attack(WarriorGoblin* enemy);
-    void attack(MageGoblin* enemy);
-    void attack(ArcherGoblin* enemy);
+    virtual double attack(WarriorGoblin* enemy);
+    virtual double attack(MageGoblin* enemy);
+    virtual double attack(ArcherGoblin* enemy);
+    virtual double attack(Enemy* enemy);
 
 };

@@ -15,6 +15,9 @@ class Weapon {
             tier = 20;
         }
 
-        //virtual attack();
+        virtual double attack(WarriorGoblin* enemy) = 0;
+        virtual double attack(MageGoblin* enemy) = 0;
+        virtual double attack(ArcherGoblin* enemy) = 0;
+        virtual double attack(Enemy* enemy) = 0;
 
 };

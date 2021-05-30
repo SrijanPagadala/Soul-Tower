@@ -34,7 +34,7 @@ void FightState::battle(Game* game, cMain* gui) {
 
             // Handles players moves
             if (attackChoice == "1") {
-                player->attack(enemy);
+                player->getWeapon()->attack(enemy);
             }
             else {
                 if (game->getPotions() > 0) {

@@ -35,6 +35,10 @@ class CharacterType {
             this->weapon = weapon; 
         }
 
+        Weapon* getWeapon() {
+            return weapon;
+        }
+
         bool isAlive() {
             return health != 0;
         }
