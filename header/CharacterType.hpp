@@ -51,6 +51,9 @@ class CharacterType {
 
         void takeHealthPotion() {
             health += 20;
+            if (health > maxHealth) {
+                health = maxHealth;
+            }
         }
 
         virtual void attackOutput(cMain* gui) = 0;
