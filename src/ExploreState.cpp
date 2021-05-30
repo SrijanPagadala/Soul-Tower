@@ -365,7 +365,50 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You know that you must continue to the top.\n");
             gui->DisplayOut("It is fate.\n");
         }
-        gui->DisplayOut("\n");
+        gui->DisplayOut("You continue walking throughout the halls of the third floor.\n");
+        gui->DisplayOut("It feels like a maze.\n");
+        gui->DisplayOut("There are dozens of rooms, but most of them empty.\n");
+        gui->DisplayOut("You walk into a room with a chest.\n");
+        gui->DisplayOut("Happily, you approach the chest ready to open it.\n");
+        gui->DisplayOut("However, you hear a slight noise coming from inside the chest.\n");
+        gui->DisplayOut("A noise you are familiar with - sssssssssss.\n");
+        gui->DisplayOut("ssssssssSSSSSS\n");
+        gui->DisplayOut("Do you open the chest?\n"); //CHOICE 2: Open chest or not
+        choice1 = "1. Open the chest";
+        choice2 = "2. Leave the room";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You decide to open the chest.\n");
+            gui->DisplayOut("You tread with caution while opening it.\n");
+            gui->DisplayOut("You raise your weapon in one hand, while opening the chest with the other.\n");
+            gui->DisplayOut("Suddenly, a snake jumps at you.\n");
+            gui->DisplayOut("You kill it midair as it tries to jump at you.\n");
+            gui->DisplayOut("You smirk to yourself as you examine and loot the contents of the chest.\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(50);
+            gui->DisplayOut("+1 health potion\n");
+            game->changePotions(1);
+        }
+        else {
+            gui->DisplayOut("You decide to not risk it and walk away.\n");
+            gui->DisplayOut("As you turn your back and walk away, you hear a creek sound.\n");
+            gui->DisplayOut("Startled, you turn around to notice the chest is open.\n");
+            gui->DisplayOut("You walk up to the chest and loot it.\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(50);
+            gui->DisplayOut("+1 health potion\n");
+            game->changePotions(1);
+            gui->DisplayOut("Suddenly, a snake bites your leg.\n");
+            gui->DisplayOut("-5 health\n");
+            damageTaken += 5;
+            gui->DisplayOut("You quickly pull out your weapon and end its life.\n");
+        }
     }
 
 }
