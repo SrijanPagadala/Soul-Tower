@@ -21,4 +21,8 @@ class ArcherGoblin : public Enemy
 			player->takeDamage(baseDamage);
 		}
 
+		virtual void attackOutput(cMain* gui) {
+			gui->DisplayOut(name + " shot at you!");
+		}
+
 };

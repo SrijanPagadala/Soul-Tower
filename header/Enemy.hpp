@@ -1,4 +1,5 @@
 #pragma once
+#include "cMain.h"
 #include "Archer.hpp"
 #include "Warrior.hpp"
 #include "Mage.hpp"
@@ -27,5 +28,6 @@ class Enemy
 		virtual void attack(Archer* player) = 0;
 		virtual void attack(Warrior* player) = 0;
 		virtual void attack(Mage* player) = 0;
+		virtual void attackOutput(cMain* gui) = 0;
 
 };

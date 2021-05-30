@@ -23,4 +23,8 @@ class MageGoblin : public Enemy
 			player->takeDamage(baseDamage);
 		}
 
+		virtual void attackOutput(cMain* gui) {
+			gui->DisplayOut(name + " attacked you with a spell!");
+		}
+
 };

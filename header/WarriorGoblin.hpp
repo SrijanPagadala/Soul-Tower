@@ -22,5 +22,9 @@ class WarriorGoblin: public Enemy
 			player->takeDamage(baseDamage);
 		}
 
+		virtual void attackOutput(cMain* gui) {
+			gui->DisplayOut(name + " slashed you!");
+		}
+
 };
 
