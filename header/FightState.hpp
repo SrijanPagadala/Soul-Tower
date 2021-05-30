@@ -14,8 +14,8 @@ class FightState: public State {
         FightState() : enemy(nullptr) {};
         FightState(int level) : level(level) {};
 
-        void fight();
-        void endFight();
+        void battle(Game* game, cMain* gui);
+        void endBattle(cMain* gui);
 
         void display(Game* game, cMain* gui);
 

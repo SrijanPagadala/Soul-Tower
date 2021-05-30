@@ -10,8 +10,24 @@ FightState::FightState(int levelToSet){
 }
 
 void FightState::display(Game* game, cMain* gui) {
-    Enemy* enemy = game->enemy;
-    if (enemy != nullptr) {
-        while(enemy->isAlive() && player->isAlive())
+    // Starts battle
+    battle(game, gui);
+    // End battle message
+
+}
+
+
+void FightState::battle(Game* game, cMain* gui) {
+    Enemy* enemy = game->getEnemy();
+    CharacterType* player = game->getPlayer();
+
+    if (enemy != nullptr && player != nullptr) {
+        while (enemy->isAlive() && player->isAlive()) {
+
+        }
     }
+}
+
+void FightState::endBattle(cMain* gui) {
+
 }

@@ -42,7 +42,7 @@ class Game : public wxThread
 		void setPotions(double newAmount);
 		void changePotions(double amount);
 
-		Enemy* getEnemy(Enemy* enemy) {
+		Enemy* getEnemy() {
 			return enemy;
 		}
 		void setEnemy(Enemy* enemy) {
