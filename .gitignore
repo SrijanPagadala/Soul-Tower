@@ -1,9 +1,13 @@
 # Visual Studio
 .vs
 FinalProjectCS100.sln
+CS100FinalProject.sln
 FinalProjectCS100.vcxproj
+CS100FinalProject.vcxproj
 FinalProjectCS100.vcxproj.filters
+CS100FinalProject.vcxproj.filters
 FinalProjectCS100.vcxproj.user
+CS100FinalProject.vcxproj.user
 SoulTower.sln
 SoulTower.vcxproj
 SoulTower.vcxproj.filters
