@@ -63,6 +63,7 @@ class CharacterType {
             if (health > maxHealth) {
                 health = maxHealth;
             }
+            gui->updateHeart(health);
         }
 
         virtual void attackOutput(cMain* gui) = 0;
