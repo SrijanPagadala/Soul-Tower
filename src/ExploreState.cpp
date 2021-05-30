@@ -131,9 +131,9 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("As you continue along this path, you hear that dreaded noice once again - the scream of a coin goblin.\n");
             gui->DisplayOut("However, this time, you can hear the screams of dozens of coin goblins.\n");
             gui->DisplayOut("In the distance, you see dozens of coin goblins racing towards you, with shining yellow eyes.\n");
-            gui->DisplayOut("In a moment of desparation, you throw 100 coins at them to divery them and run back.\n");
-            gui->DisplayOut("-100 coins\n");
-            game->changeCoins(-100);
+            gui->DisplayOut("In a moment of desparation, you throw 25 coins at them to divery them and run back.\n");
+            gui->DisplayOut("-25 coins\n");
+            game->changeCoins(-25);
             gui->DisplayOut("You backtrack to before you went left, and realize that you made the wrong decision.\n");
             gui->DisplayOut("This time, you decide to go right.\n");
         } else {
@@ -197,8 +197,120 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("???: \"Those goblins can be real pesky.\"\n");
         gui->DisplayOut("You look at the man in robes with a confused look.\n");
         gui->DisplayOut("You did not realize there were other humans in this tower.\n");
-        gui->DisplayOut("William: My name is William, and I am the resident wizard of the region of Nabbarthjan.\n");
-
+        gui->DisplayOut("William: \"My name is William, and I am the resident wizard of the region of Nabbarthjan.\"\n");
+        gui->DisplayOut("William: \"Here, take this potion.\"\n");
+        gui->DisplayOut("+1 Health Potion\n");
+        game->changePotions(1);
+        gui->DisplayOut("William: \"It's the least I can do.\"\n");
+        gui->DisplayOut("William: \"How would you like to travel together?\"\n"); //CHOICE 2: Travel with William?
+        choice1 = "1. Yes";
+        choice2 = "2. No";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("William: \"Delightful!\"\n");
+            gui->DisplayOut("William: \"Let's be on our way then.\"\n");
+        }
+        else {
+            gui->DisplayOut("William: \"I won't take no for an answer!\"\n");
+            gui->DisplayOut("William: \"We should really stick together.\"\n");
+            gui->DisplayOut("William: \"I promise I can be of assistance.\"\n");
+            gui->DisplayOut("William: \"Here, take this.\"\n");
+            gui->DisplayOut("William hands you 50 coins.\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(100);
+            gui->DisplayOut("You wonder why William bribes you to travel with him.\n");
+            gui->DisplayOut("Perhaps he is desparate for your help in escaping the tower.\n");
+        }
+        gui->DisplayOut("\n");
+        gui->DisplayOut("You and William continue forward.\n");
+        gui->DisplayOut("You wonder how William even got here.\n");
+        gui->DisplayOut("You are glad to have a companion in your adventures.\n");
+        gui->DisplayOut("You starting thinking about how YOU got here, and why you are so drawn to the top of the tower.\n");
+        gui->DisplayOut("As you think, pebbles start falling on you.\n");
+        gui->DisplayOut("You are lost in thought.\n");
+        gui->DisplayOut("The roof above you starts crumbling.\n");
+        gui->DisplayOut("You are too lost in thought to notice.\n");
+        gui->DisplayOut("You realize too late.\n");
+        gui->DisplayOut("You look up and see rocks mere inches above you.\n");
+        gui->DisplayOut("William: \"Etativel meht!\"\n");
+        gui->DisplayOut("Suddenly, the rocks start levitating.\n");
+        gui->DisplayOut("William: \"That was close!\"\n");
+        gui->DisplayOut("You are glad you and William are traveling together.\n");
+        gui->DisplayOut("You wonder how only a part of the roof crumbled.\n");
+        gui->DisplayOut("You look at William and thank him.\n");
+        gui->DisplayOut("You shake off what just happened and continue on.\n");
+        gui->DisplayOut("You and William come accross a path that splits into two directions.\n");
+        gui->DisplayOut("There is a right path and a left path.\n");
+        gui->DisplayOut("You decide to split up.\n");
+        gui->DisplayOut("Do you go right or left?\n"); //CHOICE 3: Right or left path
+        choice1 = "1. Right";
+        choice2 = "2. Left";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You decide to go right.\n");
+            gui->DisplayOut("William goes left.\n");
+        }
+        else {
+            gui->DisplayOut("You decide to go left.\n");
+            gui->DisplayOut("William goes right.\n");
+        }
+        gui->DisplayOut("\n");
+        gui->DisplayOut("On your path, you find some coins scattered along the way.\n");
+        gui->DisplayOut("+5 coins\n");
+        game->changeCoins(5);
+        gui->DisplayOut("+5 coins\n");
+        game->changeCoins(5);
+        gui->DisplayOut("+10 coins\n");
+        game->changeCoins(10);
+        gui->DisplayOut("+5 coins\n");
+        game->changeCoins(5);
+        gui->DisplayOut("The path is dark.\n");
+        gui->DisplayOut("You hear a distant sound.\n");
+        gui->DisplayOut("ssssssss\n");
+        gui->DisplayOut("ssssssssssssss\n");
+        gui->DisplayOut("SSSSSSSSSSSSSSSSSSSSSSSSSSSS!\n");
+        gui->DisplayOut("A snake jumps at you!\n");
+        gui->DisplayOut("It bites you.\n");
+        gui->DisplayOut("You take 5 damage.\n");
+        gui->DisplayOut("-5 health\n");
+        damageTaken += 5;
+        gui->DisplayOut("You strike back and end its life.\n");
+        gui->DisplayOut("You wonder whether this was the right path to take.\n");
+        gui->DisplayOut("You wonder how William is doing.\n");
+        gui->DisplayOut("You continue along the path.\n");
+        gui->DisplayOut("As you head further, you see a light.\n");
+        gui->DisplayOut("You head towards it.\n");
+        gui->DisplayOut("As you get closer, you see the stairs!\n");
+        gui->DisplayOut("Finally, the next floor.\n");
+        gui->DisplayOut("You wonder whether you should go back for William or not.\n");
+        gui->DisplayOut("As you turn around to head back, you see another path leading to these stairs.\n");
+        gui->DisplayOut("You realize that William's path should have already led him here.\n");
+        gui->DisplayOut("You are worried about him.\n");
+        gui->DisplayOut("William: \"Etativel mih!\"\n");
+        gui->DisplayOut("You feel yourself rise in the air.\n");
+        gui->DisplayOut("CRASH! You are flung into the wall.\n");
+        gui->DisplayOut("-5 health\n");
+        damageTaken += 5;
+        gui->DisplayOut("Dazed and confused, you look up.\n");
+        gui->DisplayOut("William: \"You are a fool if you think you can make it to The Soulkeeper.\"\n");
+        gui->DisplayOut("You are confused and hurt by William's betrayal.\n");
+        gui->DisplayOut("That name... why does The Soulkeeper sound so familiar?\n");
+        gui->DisplayOut("You have no time to think as William raises his wand to fight.\n");
+        gui->DisplayOut("William: \"He knew you would easily trust me.\"\n");
+        gui->DisplayOut("You ask him what he is talking about, and who The Soulkeeper is.\n");
+        gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\n");
     }
 
 }
