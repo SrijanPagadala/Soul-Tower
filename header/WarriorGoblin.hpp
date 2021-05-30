@@ -23,7 +23,7 @@ class WarriorGoblin: public Enemy
 		}
 
 		virtual void attackOutput(cMain* gui) {
-			gui->DisplayOut(name + " slashed you!");
+			gui->DisplayOut(name + " slashed you! \n");
 		}
 
 };

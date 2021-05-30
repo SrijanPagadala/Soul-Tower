@@ -24,7 +24,7 @@ class MageGoblin : public Enemy
 		}
 
 		virtual void attackOutput(cMain* gui) {
-			gui->DisplayOut(name + " attacked you with a spell!");
+			gui->DisplayOut(name + " attacked you with a spell! \n");
 		}
 
 };

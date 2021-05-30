@@ -1,5 +1,5 @@
 #pragma once
-
+#include "cMain.h"
 #include "Weapon.hpp"
 #include "Armor.hpp"
 
@@ -38,5 +38,13 @@ class CharacterType {
         bool isAlive() {
             return health != 0;
         }
+
+        void attackChoiceOutput(cMain* gui) {
+            gui->DisplayOut(" Battle Options: \n");
+            gui->DisplayOut("1. Attack \n");
+            gui->DisplayOut("2. Heal \n");
+        }
+
+        virtual void attackOutput(cMain* gui) = 0;
 
 };

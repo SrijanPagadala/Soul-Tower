@@ -22,7 +22,7 @@ class ArcherGoblin : public Enemy
 		}
 
 		virtual void attackOutput(cMain* gui) {
-			gui->DisplayOut(name + " shot at you!");
+			gui->DisplayOut(name + " shot at you! \n");
 		}
 
 };

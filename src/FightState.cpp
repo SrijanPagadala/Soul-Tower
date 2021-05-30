@@ -24,7 +24,19 @@ void FightState::battle(Game* game, cMain* gui) {
 
     if (enemy != nullptr && player != nullptr) {
         while (enemy->isAlive() && player->isAlive()) {
+            // Player attacks
 
+            // Enemy attacks
+            if (enemy->isAlive()) {
+
+            }
+        }
+
+        if (enemy->isAlive()) {
+            gui->DisplayOut(enemy->getName() + " has bested you! \n");
+        }
+        else {
+            gui->DisplayOut("You have won the fight! \n");
         }
     }
 }
