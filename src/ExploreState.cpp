@@ -58,7 +58,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You discover that your skin is fire-resistant, and you manage to get out alive.\n");
             gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 5 damage!\n");
             gui->DisplayOut("-5 health\n");
-            damageTaken += 5;
+            game->getPlayer()->takeDamage(5);
         }
         else { //They walk into a room of coins and gain 200 coins
             gui->DisplayOut("You open the door and see a pile of shining coins!\n");
@@ -104,7 +104,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You are confused and concerned, but then you see that the goblin's eyes glow yellow.\n");
             gui->DisplayOut("The goblin starts screaming louder in its mystic language and bites you.\n");
             gui->DisplayOut("-5 health.\n");
-            damageTaken += 5;
+            game->getPlayer()->takeDamage(5);
             gui->DisplayOut("In pain, you pull out your weapon and kill the goblin.\n");
             gui->DisplayOut("You find 50 coins in its pockets.\n");
             gui->DisplayOut("+50 coins\n");
@@ -296,7 +296,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("It bites you.\n");
         gui->DisplayOut("You take 5 damage.\n");
         gui->DisplayOut("-5 health\n");
-        damageTaken += 5;
+        game->getPlayer()->takeDamage(5);
         gui->DisplayOut("You strike back and end its life.\n");
         gui->DisplayOut("You wonder whether this was the right path to take.\n");
         gui->DisplayOut("You wonder how William is doing.\n");
@@ -313,7 +313,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You feel yourself rise in the air.\n");
         gui->DisplayOut("CRASH! You are flung into the wall.\n");
         gui->DisplayOut("-5 health\n");
-        damageTaken += 5;
+        game->getPlayer()->takeDamage(5);
         gui->DisplayOut("Dazed and confused, you look up.\n");
         gui->DisplayOut("William: \"You are a fool if you think you can make it to The Soulkeeper.\"\n");
         gui->DisplayOut("You are confused and hurt by William's betrayal.\n");
@@ -406,7 +406,7 @@ void ExploreState::display(Game* game, cMain* gui){
             game->changePotions(1);
             gui->DisplayOut("Suddenly, a snake bites your leg.\n");
             gui->DisplayOut("-5 health\n");
-            damageTaken += 5;
+            game->getPlayer()->takeDamage(5);
             gui->DisplayOut("You quickly pull out your weapon and end its life.\n");
         }
     }
