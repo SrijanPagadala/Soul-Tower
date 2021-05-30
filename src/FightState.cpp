@@ -13,6 +13,7 @@ void FightState::display(Game* game, cMain* gui) {
     // Starts battle
     battle(game, gui);
     // End battle message
+    endBattle(gui);
 
 }
 
