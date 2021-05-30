@@ -35,4 +35,8 @@ class CharacterType {
             this->weapon = weapon; 
         }
 
+        bool isAlive() {
+            return health != 0;
+        }
+
 };
