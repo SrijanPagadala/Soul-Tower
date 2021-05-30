@@ -10,7 +10,7 @@ class AkilsArmor : public Armor
 
 		virtual void update(cMain* gui) {
 			if (tier > 1) {
-				gui->setArmorIcon("archer_leather_armor.png");
+				gui->setArmorIcon("archer_iron_armor.png");
 			}
 		}
 };
