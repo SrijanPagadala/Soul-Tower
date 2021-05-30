@@ -244,8 +244,45 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You are glad you and William are traveling together.\n");
         gui->DisplayOut("You wonder how only a part of the roof crumbled.\n");
         gui->DisplayOut("You look at William and thank him.\n");
-        gui->DisplayOut("You shake off what just happened and continued on.\n");
+        gui->DisplayOut("You shake off what just happened and continue on.\n");
+        gui->DisplayOut("You and William come accross a path that splits into two directions.\n");
+        gui->DisplayOut("There is a right path and a left path.\n");
+        gui->DisplayOut("You decide to split up.\n");
+        gui->DisplayOut("Do you go right or left?\n"); //CHOICE 3: Right or left path
+        choice1 = "1. Right";
+        choice2 = "2. Left";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You decide to go right.\n");
+            gui->DisplayOut("William goes left.\n");
+        }
+        else {
+            gui->DisplayOut("You decide to go left.\n");
+            gui->DisplayOut("William goes right.\n");
+        }
         gui->DisplayOut("\n");
+        gui->DisplayOut("On your path, you find some coins scattered along the way.\n");
+        gui->DisplayOut("+5 coins\n");
+        game->changeCoins(5);
+        gui->DisplayOut("+5 coins\n");
+        game->changeCoins(5);
+        gui->DisplayOut("+10 coins\n");
+        game->changeCoins(10);
+        gui->DisplayOut("+5 coins\n");
+        game->changeCoins(5);
+        gui->DisplayOut("The path is dark.\n");
+        gui->DisplayOut("You hear a distant sound.\n");
+        gui->DisplayOut("ssssssss\n");
+        gui->DisplayOut("ssssssssssssss\n");
+        gui->DisplayOut("SSSSSSSSSSSSSSSSSSSSSSSSSSSS!\n");
+        gui->DisplayOut("A snake jumps at you!\n");
+
 
     }
 
