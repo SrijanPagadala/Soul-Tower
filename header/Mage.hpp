@@ -17,7 +17,7 @@ public:
     }
 
     virtual void attackOutput(cMain* gui) {
-
+        gui->DisplayOut("You shot a spell! *FWOOSH* \n");
     }
 
 };

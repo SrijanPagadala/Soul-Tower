@@ -10,4 +10,7 @@ private:
 public:
     Archer() : arrows(100) {}
 
+    virtual void attackOutput(cMain* gui) {
+        gui->DisplayOut("You shot your bow! *TWIP* \n");
+    }
 };

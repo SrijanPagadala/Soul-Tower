@@ -10,4 +10,7 @@ private:
 public:
     Warrior() : rage(100) {}
 
+    virtual void attackOutput(cMain* gui) {
+        gui->DisplayOut("You swung your sword! *HWOO* \n");
+    }
 };
