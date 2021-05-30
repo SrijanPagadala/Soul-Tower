@@ -103,11 +103,13 @@ void Game::start() {
 	// Allows user to select their class before game starts
 	classSelection();
 	// Gameplay begins here
-	currState = new ExploreState(1);
-	currState->display(this, gui);
-	//gui->setArmorIcon("warrior_diamond_armor.png");
-	delete currState;
-	currState = nullptr;
+	for (int i = 1; i <= MaxLevel; i++) {
+		currState = new ExploreState(i);
+		currState->display(this, gui);
+		//gui->setArmorIcon("warrior_diamond_armor.png");
+		delete currState;
+		currState = nullptr;
+	}
 }
 
 

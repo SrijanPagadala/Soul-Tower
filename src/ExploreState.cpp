@@ -282,6 +282,13 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("ssssssssssssss\n");
         gui->DisplayOut("SSSSSSSSSSSSSSSSSSSSSSSSSSSS!\n");
         gui->DisplayOut("A snake jumps at you!\n");
+        gui->DisplayOut("It bites you.\n");
+        gui->DisplayOut("You take 5 damage.\n");
+        gui->DisplayOut("-5 health\n");
+        damageTaken += 5;
+        gui->DisplayOut("You strike back and end its life.\n");
+        gui->DisplayOut("You wonder whether this was the right path to take.\n");
+
 
 
     }
