@@ -18,7 +18,8 @@ class Game : public wxThread
 		State* currState;
 		Enemy* enemy;
 		CharacterType* player;
-		
+		int MaxLevel;
+
 		virtual wxThread::ExitCode Entry();
 
 	public:
@@ -27,6 +28,8 @@ class Game : public wxThread
 			coins = 0;
 			healthPotions = 0;
 			currState = nullptr;
+			player = nullptr;
+			MaxLevel = 2;
 		};
 
 		~Game();
