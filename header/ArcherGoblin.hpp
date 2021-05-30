@@ -4,7 +4,7 @@
 class ArcherGoblin : public Enemy
 {
 	public:
-		ArcherGoblin() {
+		ArcherGoblin(std::string name) : Enemy(name){
 		
 		}
 

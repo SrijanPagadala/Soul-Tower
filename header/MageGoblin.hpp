@@ -5,7 +5,7 @@
 class MageGoblin : public Enemy
 {
 	public:
-		MageGoblin(): Enemy() {
+		MageGoblin(std::string name) : Enemy(name) {
 		
 		}
 
