@@ -409,6 +409,23 @@ void ExploreState::display(Game* game, cMain* gui){
             game->getPlayer()->takeDamage(5);
             gui->DisplayOut("You quickly pull out your weapon and end its life.\n");
         }
+        gui->DisplayOut("\n");
+        gui->DisplayOut("As you continue forward, you know you are getting close to the top.\n");
+        gui->DisplayOut("You can feel yourself being drawn to the top.\n");
+        gui->DisplayOut("As you are traveling, you see a potted plant.\n");
+        gui->DisplayOut("You find it odd that there is such a beautiful plant in such a dreadful place.\n");
+        gui->DisplayOut("On the ground next to it, you notice a journal along with a pen.\n");
+        gui->DisplayOut("The journal seems to be unlabeled.\n");
+        gui->DisplayOut("You open the journal, and notice that there are dozens of pages with writing.\n");
+        gui->DisplayOut("For some reason, each page seems to say the same thing.\n");
+        gui->DisplayOut("\"DO NOT TRUST WILLIAM\"\n");
+        gui->DisplayOut("\"DO NOT FORGET\"\n");
+        gui->DisplayOut("\"REMEMBER... PLEASE... REMEMBER...\"\n");
+        gui->DisplayOut("You wonder who else William has betrayed.\n");
+        gui->DisplayOut("You wonder whose journal this is--perhaps someone else is in need of assistance?\n");
+        gui->DisplayOut("You put the journal and pen in your pocket and continue forwrd.\n");
+        gui->DisplayOut("You come across two chests.\n");
+        gui->DisplayOut("\n");
     }
 
 }
