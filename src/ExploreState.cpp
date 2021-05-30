@@ -426,7 +426,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You put the journal and pen in your pocket and continue forward.\n");
         gui->DisplayOut("You come across two chests.\n");
         gui->DisplayOut("The one on the right seems to be shining, while the one on the left seems to be dull.\n");
-        gui->DisplayOut("Which chest do you open first?\n");
+        gui->DisplayOut("Which chest do you open first?\n"); //CHOICE 3: Which chest first?
         choice1 = "1. Right chest";
         choice2 = "2. Left chest";
         gui->DisplayOut(choice1 + "\n");

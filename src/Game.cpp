@@ -125,6 +125,9 @@ void Game::start() {
 		// Shop state
 		
 	}
+	if (!gameOver) {
+		gui->DisplayOut("\n");
+	}
 	gui->DisplayOut("Game Over! \n");
 	//gui->setArmorIcon("warrior_diamond_armor.png");
 	delete currState;
