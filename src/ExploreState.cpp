@@ -1,4 +1,7 @@
 #include "../header/ExploreState.hpp"
+#include "../header/ArcherGoblin.hpp"
+#include "../header/WarriorGoblin.hpp"
+#include "../header/MageGoblin.hpp"
 
 ExploreState::ExploreState(){
     level = 1;

@@ -5,8 +5,8 @@
 
 class FightState: public State {
     public:
-        FightState() : State() {};
-        FightState(int level) : State(level) {};
+        FightState();
+        FightState(int level);
 
         void battle(Game* game, cMain* gui);
         void endBattle(cMain* gui);

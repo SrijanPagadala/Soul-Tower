@@ -1,5 +1,4 @@
-#ifndef CT_H
-#define CT_H
+#pragma once
 #include "cMain.h"
 class Weapon;
 class Armor;
@@ -57,4 +56,3 @@ class CharacterType {
         virtual void attackOutput(cMain* gui) = 0;
 
 };
-#endif

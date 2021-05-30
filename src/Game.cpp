@@ -1,4 +1,9 @@
 #include "../header/cMain.h"
+#include "../header/MageFactory.hpp"
+#include "../header/WarriorFactory.hpp"
+#include "../header/ArcherFactory.hpp"
+#include "../header/ExploreState.hpp"
+#include "../header/FightState.hpp"
 
 Game::~Game()
 {

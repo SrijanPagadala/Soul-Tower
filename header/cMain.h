@@ -1,11 +1,9 @@
-#ifndef CMAIN_H
-#define CMAIN_H
+#pragma once
 #include "wx/wx.h"
-#include "MageFactory.hpp"
-#include "WarriorFactory.hpp"
-#include "ArcherFactory.hpp"
-#include "ExploreState.hpp"
-#include "FightState.hpp"
+#include <iostream>
+#include <string>
+using namespace std;
+
 class CharacterType;
 class Enemy;
 class cMain;
@@ -131,5 +129,5 @@ enum
 	TEXTBOX_Output = wxID_HIGHEST + 2,
 
 };
-#endif
+
 

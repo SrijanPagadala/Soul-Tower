@@ -1,12 +1,14 @@
 #include "../header/FightState.hpp"
-
+#include "../header/Enemy.hpp"
+#include "../header/CharacterType.hpp"
+#include "../header/Weapon.hpp"
 
 FightState::FightState(){
     level = 1; 
 }
 
-FightState::FightState(int levelToSet){
-    level = levelToSet;
+FightState::FightState(int levelToSet) : State(levelToSet){
+   
 }
 
 void FightState::display(Game* game, cMain* gui) {
