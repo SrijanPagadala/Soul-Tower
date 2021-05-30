@@ -9,6 +9,7 @@ using namespace std;
 class Sword : public Weapon {
 public:
     Sword() {}
+    /*
     virtual double attack(WarriorGoblin* enemy) {
         double damageDealt = this->attackDamage * 1;
         enemy->takeDamage(damageDealt);
@@ -24,9 +25,10 @@ public:
         enemy->takeDamage(damageDealt);
         return damageDealt;
     };
+    */
     virtual double attack(Enemy* enemy) {
-        double damageDealt = this->attackDamage * 1;
-        enemy->takeDamage(damageDealt);
+        //double damageDealt = this->attackDamage * 1;
+        double damageDealt = enemy->takeDamage(this, attackDamage);
         return damageDealt;
     };
 

@@ -35,6 +35,10 @@ class Enemy
 		virtual double attack(CharacterType* player) = 0;
 		virtual void attackOutput(cMain* gui) = 0;
 
+		virtual double takeDamage(Sword*, double baseDamage) = 0;
+		virtual double takeDamage(Wand*, double baseDamage) = 0;
+		virtual double takeDamage(Bow*, double baseDamage) = 0;
+
 };
 
 #endif
