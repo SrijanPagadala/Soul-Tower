@@ -2,7 +2,6 @@
 #define __FIGHTSTATE_HPP__
 
 #include "State.hpp"
-#include "CharacterType.hpp"
 
 class FightState: public State {
     private:

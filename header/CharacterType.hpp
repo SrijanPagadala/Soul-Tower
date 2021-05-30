@@ -1,8 +1,8 @@
 #ifndef CT_H
 #define CT_H
 #include "cMain.h"
-class Weapon;
-class Armor;
+#include "Weapon.hpp"
+#include "Armor.hpp"
 
 class CharacterType {
     protected:
@@ -17,42 +17,42 @@ class CharacterType {
             health = maxHealth;
             weapon = nullptr;
             armor = nullptr;
-        };
+        }
 
         ~CharacterType() {
             delete weapon;
             delete armor;
-        };
+        }
     
         void takeDamage(double damage) {
             health -= damage;
-        };
+        }
 
         void setArmor(Armor* armor) {
             this->armor = armor;
-        };
+        }
 
         void setWeapon(Weapon* weapon) {
             this->weapon = weapon;
-        };
+        }
 
         Weapon* getWeapon() {
             return weapon;
-        };
+        }
 
         bool isAlive() {
             return health != 0;
-        };
+        }
 
         void attackChoiceOutput(cMain* gui) {
             gui->DisplayOut(" Battle Options: \n");
             gui->DisplayOut("1. Attack \n");
             gui->DisplayOut("2. Heal \n");
-        };
+        }
 
         void takeHealthPotion() {
             health += 20;
-        };
+        }
 
         virtual void attackOutput(cMain* gui) = 0;
 

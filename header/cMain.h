@@ -6,6 +6,7 @@
 #include "ArcherFactory.hpp"
 #include "ExploreState.hpp"
 #include "FightState.hpp"
+class CharacterType;
 class Enemy;
 class cMain;
 class State;
