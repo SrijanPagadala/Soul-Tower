@@ -12,6 +12,9 @@ using namespace std;
 
 class WarriorFactory : public CharacterTypeFactory {
 public:
+	WarriorFactory(cMain* gui) : CharacterTypeFactory(gui) {
+
+	}
 	virtual Weapon* createWeapon() {
 		Weapon* weapon = new Sword();
 		return weapon;
@@ -22,7 +25,7 @@ public:
 
 	}
 	virtual CharacterType* createCharacter() {
-		CharacterType* character = new Warrior();
+		CharacterType* character = new Warrior(gui);
 		return character;
 	}
 };

@@ -1,8 +1,9 @@
 #pragma once
 
-//#include <string>
-//#include "Enemy.hpp"
-
+#include "Enemy.hpp"
+#include "WarriorGoblin.hpp"
+#include "MageGoblin.hpp"
+#include "ArcherGoblin.hpp"
 
 class Weapon {
     protected:
@@ -15,6 +16,6 @@ class Weapon {
             tier = 20;
         }
 
-        //virtual attack();
+        virtual double attack(Enemy* enemy) = 0;
 
 };

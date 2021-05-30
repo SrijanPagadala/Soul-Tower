@@ -25,9 +25,4 @@ class ExploreState: public State {
         double getDamageTaken() { return damageTaken; }
 
 };
-
-
-
-
-
 #endif

@@ -1,4 +1,7 @@
 #include "../header/ExploreState.hpp"
+#include "../header/ArcherGoblin.hpp"
+#include "../header/WarriorGoblin.hpp"
+#include "../header/MageGoblin.hpp"
 
 ExploreState::ExploreState(){
     level = 1;
@@ -22,7 +25,10 @@ ExploreState::ExploreState(int levelToSet){
 
 void ExploreState::display(Game* game, cMain* gui){
     bool validInput = true;
-    if(level == 1){ //first level exploration
+
+    //first level exploration
+    if(level == 1){ 
+        /*
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
         gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
@@ -150,9 +156,14 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("Except, this time, the screeches of the goblin are much deeper.\n");
         gui->DisplayOut("The coin goblin jumps down from the stairs in front of you, ready to attack.\n");
         gui->DisplayOut("This coin goblin looks different than before.\n");
+        */
         gui->DisplayOut("Its eyes are glowing red instead of yellow, and it is TEN TIMES THE SIZE!\n");
         gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
-    } else if (level == 2){
+        // Sets enemy for fight
+        game->setEnemy(new WarriorGoblin("Javascript"));
+    }
+    // Level 2
+    else if (level == 2){
         gui->DisplayOut("As you walk about floor 2, you start getting faint memoryes.\n");
         gui->DisplayOut("This place... the walls... something about them...\n");
         gui->DisplayOut("You feel more drawn to the top floor.\n");

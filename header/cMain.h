@@ -1,9 +1,11 @@
 #pragma once
 #include "wx/wx.h"
-#include "MageFactory.hpp"
-#include "WarriorFactory.hpp"
-#include "ArcherFactory.hpp"
+#include <iostream>
+#include <string>
+using namespace std;
 
+class CharacterType;
+class Enemy;
 class cMain;
 class State;
 
@@ -14,8 +16,10 @@ class Game : public wxThread
 		double coins;
         int healthPotions;
 		State* currState;
+		Enemy* enemy;
 		CharacterType* player;
 		int MaxLevel;
+
 		virtual wxThread::ExitCode Entry();
 
 	public:
@@ -31,7 +35,7 @@ class Game : public wxThread
 		~Game();
 
 		// Now is switched back so i have access to cMain.h
-
+		bool gameOver = false;
 
 		double getCoins();
 		void setCoins(double newAmount);
@@ -40,6 +44,20 @@ class Game : public wxThread
 		int getPotions();
 		void setPotions(double newAmount);
 		void changePotions(double amount);
+
+		Enemy* getEnemy() {
+			return enemy;
+		}
+
+		void setEnemy(Enemy* enemy) {
+			this->enemy = enemy;
+		}
+
+		CharacterType* getPlayer() {
+			return player;
+		}
+
+
 
 		// Gameplay methods
 		void classSelection();
@@ -115,4 +133,5 @@ enum
 	TEXTBOX_Output = wxID_HIGHEST + 2,
 
 };
+
 

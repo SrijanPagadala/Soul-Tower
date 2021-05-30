@@ -10,8 +10,11 @@ using namespace std;
 class Bow : public Weapon {
 public:
     Bow() {}
-    void attack(WarriorGoblin* enemy);
-    void attack(MageGoblin* enemy);
-    void attack(ArcherGoblin* enemy);
+
+    virtual double attack(Enemy* enemy) {
+        double damageDealt = this->attackDamage * 1;
+        enemy->takeDamage(this, damageDealt);
+        return damageDealt;
+    };
 
 };

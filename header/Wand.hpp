@@ -9,7 +9,9 @@ using namespace std;
 class Wand : public Weapon {
     public:
         Wand() {}
-        void attack(WarriorGoblin* enemy);
-        void attack(MageGoblin* enemy);
-        void attack(ArcherGoblin* enemy);
+
+        virtual double attack(Enemy* enemy) {
+            double damageDealt = enemy->takeDamage(this, this->attackDamage);
+            return damageDealt;
+        };
 };

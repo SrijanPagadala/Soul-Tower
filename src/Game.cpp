@@ -1,9 +1,9 @@
 #include "../header/cMain.h"
-#include "../header/ExploreState.hpp"
 #include "../header/MageFactory.hpp"
-#include "../header/ArcherFactory.hpp"
 #include "../header/WarriorFactory.hpp"
-
+#include "../header/ArcherFactory.hpp"
+#include "../header/ExploreState.hpp"
+#include "../header/FightState.hpp"
 
 Game::~Game()
 {
@@ -40,6 +40,9 @@ void Game::setPotions(double newAmount) {
 
 void Game::changePotions(double amount) { 
 	healthPotions += amount; 
+	if (healthPotions < 0) {
+		healthPotions = 0;
+	}
 	gui->updateHealthPotions(healthPotions);
 }
 
@@ -74,16 +77,16 @@ void Game::classSelection() {
 	CharacterTypeFactory* characterCreator = nullptr;
 
 		if (classChoice == "1") {
-			characterCreator = new WarriorFactory();
+			characterCreator = new WarriorFactory(gui);
 			gui->DisplayOut("You've choosen to be a Warrior \n");
 			
 		}
 		else if (classChoice == "2") { 
-			characterCreator = new ArcherFactory();
+			characterCreator = new ArcherFactory(gui);
 			gui->DisplayOut("You've choosen to be a Archer \n");
 		}
 		else if (classChoice == "3") {
-			characterCreator = new MageFactory();
+			characterCreator = new MageFactory(gui);
 			gui->DisplayOut("You've choosen to be a Mage \n");
 		}
 
@@ -94,7 +97,7 @@ void Game::classSelection() {
 		player->setWeapon(characterCreator->createWeapon());
 	}
 
-
+	gui->updateHeart(100);
 	delete characterCreator;
 }
 
@@ -103,13 +106,30 @@ void Game::start() {
 	// Allows user to select their class before game starts
 	classSelection();
 	// Gameplay begins here
-	for (int i = 1; i <= MaxLevel; i++) {
-		currState = new ExploreState(i);
+	for (int currLevel = 1; currLevel <= MaxLevel; currLevel++) {
+		// Exploration state
+		currState = new ExploreState(currLevel);
 		currState->display(this, gui);
-		//gui->setArmorIcon("warrior_diamond_armor.png");
 		delete currState;
-		currState = nullptr;
+		// Fight state
+		if (enemy != nullptr) {
+			currState = new FightState(currLevel);
+			currState->display(this, gui);
+			// if the battle is lost end the game
+			if (gameOver) {
+				break;
+			}
+		}
+
+		delete currState;
+		// Shop state
+		
 	}
+	gui->DisplayOut("Game Over! \n");
+	//gui->setArmorIcon("warrior_diamond_armor.png");
+	delete currState;
+	currState = nullptr;
+
 }
 
 
