@@ -42,6 +42,10 @@ class Game : public wxThread
 		void setPotions(double newAmount);
 		void changePotions(double amount);
 
+		Enemy* getEnemy(Enemy* enemy) {
+			return enemy;
+		}
+
 		void setEnemy(Enemy* enemy) {
 			this->enemy = enemy;
 		}

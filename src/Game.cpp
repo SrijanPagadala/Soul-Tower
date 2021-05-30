@@ -109,7 +109,7 @@ void Game::start() {
 		currState->display(this, gui);
 		delete currState;
 		// Fight state
-		currState = new FightState(this->enemy , currLevel);
+		currState = new FightState(currLevel);
 		delete currState;
 		// Shop state
 		

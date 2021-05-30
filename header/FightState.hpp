@@ -3,18 +3,20 @@
 
 #include "State.hpp"
 #include "Enemy.hpp"
-using namespace std;
+#include "CharacterType.hpp"
 
 
 class FightState: public State {
     private:
+        int level;
         Enemy* enemy;
     public:
         FightState() : enemy(nullptr) {};
-        FightState(Enemy* enemy, int level) : enemy(enemy) {};
+        FightState(int level) : level(level) {};
 
         void fight();
         void endFight();
+
         void display(Game* game, cMain* gui);
 
 };
