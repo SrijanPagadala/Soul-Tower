@@ -288,9 +288,29 @@ void ExploreState::display(Game* game, cMain* gui){
         damageTaken += 5;
         gui->DisplayOut("You strike back and end its life.\n");
         gui->DisplayOut("You wonder whether this was the right path to take.\n");
-
-
-
+        gui->DisplayOut("You wonder how William is doing.\n");
+        gui->DisplayOut("You continue along the path.\n");
+        gui->DisplayOut("As you head further, you see a light.\n");
+        gui->DisplayOut("You head towards it.\n");
+        gui->DisplayOut("As you get closer, you see the stairs!\n");
+        gui->DisplayOut("Finally, the next floor.\n");
+        gui->DisplayOut("You wonder whether you should go back for William or not.\n");
+        gui->DisplayOut("As you turn around to head back, you see another path leading to these stairs.\n");
+        gui->DisplayOut("You realize that William's path should have already led him here.\n");
+        gui->DisplayOut("You are worried about him.\n");
+        gui->DisplayOut("William: \"Etativel mih!\"\n");
+        gui->DisplayOut("You feel yourself rise in the air.\n");
+        gui->DisplayOut("CRASH! You are flung into the wall.\n");
+        gui->DisplayOut("-5 health\n");
+        damageTaken += 5;
+        gui->DisplayOut("Dazed and confused, you look up.\n");
+        gui->DisplayOut("William: \"You are a fool if you think you can make it to The Soulkeeper.\"\n");
+        gui->DisplayOut("You are confused and hurt by William's betrayal.\n");
+        gui->DisplayOut("That name... why does The Soulkeeper sound so familiar?\n");
+        gui->DisplayOut("You have no time to think as William raises his wand to fight.\n");
+        gui->DisplayOut("William: \"He knew you would easily trust me.\"\n");
+        gui->DisplayOut("You ask him what he is talking about, and who The Soulkeeper is.\n");
+        gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\n");
     }
 
 }
