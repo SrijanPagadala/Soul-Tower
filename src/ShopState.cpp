@@ -60,7 +60,7 @@ void ShopState::display(Game* game, cMain* gui) {
         gui->DisplayOut("You decide that you are ready to leave. You blink and suddenly the man disapears.\n");
         gui->DisplayOut("The man gives you creepy vibes and scares you a little bit because of his sudden appearances.\n");
         gui->DisplayOut("Nonetheless, you are grateful that there it at least someone in the tower who is not trying to murder you on sight.\n");
-        gui->DisplayOut("This fills you with determination. You proceed up the stairs onto the next floor.\n")
+        gui->DisplayOut("This fills you with determination. You proceed up the stairs onto the next floor.\n");
 
     }
 
