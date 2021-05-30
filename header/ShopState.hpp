@@ -4,10 +4,13 @@
 #include "State.hpp"
 
 class ShopState: public State {
-    public:
-        ShopState();
-        ShopState(int levelToSet);
-        void display(Game* game, cMain* gui);
+private:
+    int potionCost;
+    int armorUpgradeCost;
+public:
+    ShopState();
+    ShopState(int levelToSet);
+    void display(Game* game, cMain* gui);
 };
 
 
