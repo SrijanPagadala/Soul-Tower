@@ -45,6 +45,10 @@ class CharacterType {
             gui->DisplayOut("2. Heal \n");
         }
 
+        void takeHealthPotion() {
+            health += 20;
+        }
+
         virtual void attackOutput(cMain* gui) = 0;
 
 };

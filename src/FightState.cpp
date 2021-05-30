@@ -24,7 +24,24 @@ void FightState::battle(Game* game, cMain* gui) {
 
     if (enemy != nullptr && player != nullptr) {
         while (enemy->isAlive() && player->isAlive()) {
-            // Player attacks
+            // prompts for Players moves
+            player->attackChoiceOutput(gui);
+            // Gets player moves
+            std::string attackChoice = gui->GetChoice();
+            while (attackChoice != "1" || attackChoice != "2") {
+                gui->DisplayOut("INVALID INPUT \n");
+            }
+
+            // Handles players moves
+            if (attackChoice == "1") {
+                player->attack(enemy);
+            }
+            else {
+                if (game->getPotions() > 0) {
+                    player->takeHealthPotion();
+                    game->changePotions(-1);
+                }
+                
 
             // Enemy attacks
             if (enemy->isAlive()) {
@@ -36,7 +53,7 @@ void FightState::battle(Game* game, cMain* gui) {
             gui->DisplayOut(enemy->getName() + " has bested you! \n");
         }
         else {
-            gui->DisplayOut("You have won the fight! \n");
+            gui->DisplayOut("You have defeated " + enemy->getName() + "! \n");
         }
     }
 }

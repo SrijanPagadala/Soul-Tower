@@ -35,6 +35,9 @@ void Game::setPotions(double newAmount) {
 
 void Game::changePotions(double amount) { 
 	healthPotions += amount; 
+	if (healthPotions < 0) {
+		healthPotions = 0;
+	}
 	gui->updateHealthPotions(healthPotions);
 }
 
