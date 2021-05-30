@@ -24,10 +24,11 @@ void FightState::battle(Game* game, cMain* gui) {
 
     if (enemy != nullptr && player != nullptr) {
         while (enemy->isAlive() && player->isAlive()) {
-            // prompts for Players moves
-            player->attackChoiceOutput(gui);
+            // Player Attacks
+            player->attackChoiceOutput(gui); // prompts for Players moves
+
             // Gets player moves
-            std::string attackChoice = gui->GetChoice();
+            std::string attackChoice = gui->GetChoice();             
             while (attackChoice != "1" || attackChoice != "2") {
                 gui->DisplayOut("INVALID INPUT \n");
             }
@@ -44,11 +45,14 @@ void FightState::battle(Game* game, cMain* gui) {
                     game->changePotions(-1);
                     gui->DisplayOut("*GLUG GLUG* How refreshing, you've gained some health T \n");
                 }
+            }
                 
 
             // Enemy attacks
             if (enemy->isAlive()) {
-
+                double damageDone = enemy->attack(player);
+                enemy->attackOutput(gui);
+                gui->DisplayOut(enemy->getName() + " dealth: " + std::to_string(damageDone) + " damage! \n");
             }
         }
 

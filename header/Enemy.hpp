@@ -3,6 +3,7 @@
 #include "Archer.hpp"
 #include "Warrior.hpp"
 #include "Mage.hpp"
+#include "CharacterType.hpp"
 #include <string>
 
 class Enemy
@@ -25,9 +26,10 @@ class Enemy
 			return name;
 		}
 
-		virtual void attack(Archer* player) = 0;
-		virtual void attack(Warrior* player) = 0;
-		virtual void attack(Mage* player) = 0;
+		virtual double attack(Archer* player) = 0;
+		virtual double attack(Warrior* player) = 0;
+		virtual double attack(Mage* player) = 0;
+		virtual double attack(CharacterType* player) = 0;
 		virtual void attackOutput(cMain* gui) = 0;
 
 };

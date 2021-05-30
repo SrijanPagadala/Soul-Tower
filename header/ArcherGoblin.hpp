@@ -8,17 +8,26 @@ class ArcherGoblin : public Enemy
 		
 		}
 
-		virtual void attack(Archer* player) {
+		virtual double attack(Archer* player) {
 			double damageTotal = baseDamage * 1;
 			player->takeDamage(baseDamage);
+			return damageTotal;
 		}
-		virtual void attack(Warrior* player) {
+		virtual double attack(Warrior* player) {
 			double damageTotal = baseDamage * 0.8;
 			player->takeDamage(baseDamage);
+			return damageTotal;
 		}
-		virtual void attack(Mage* player) {
+		virtual double attack(Mage* player) {
 			double damageTotal = baseDamage * 2;
 			player->takeDamage(baseDamage);
+			return damageTotal;
+		}
+
+		virtual double attack(CharacterType* player) {
+			double damageTotal = baseDamage * 1;
+			player->takeDamage(baseDamage);
+			return damageTotal;
 		}
 
 		virtual void attackOutput(cMain* gui) {
