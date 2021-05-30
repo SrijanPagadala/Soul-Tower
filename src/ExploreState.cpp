@@ -28,7 +28,6 @@ void ExploreState::display(Game* game, cMain* gui){
 
     //first level exploration
     if(level == 1){ 
-        
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
         gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
