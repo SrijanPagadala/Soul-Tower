@@ -3,7 +3,10 @@
 #include "MageFactory.hpp"
 #include "WarriorFactory.hpp"
 #include "ArcherFactory.hpp"
+#include "ExploreState.hpp"
+#include "FightState.hpp"
 
+class Enemy;
 class cMain;
 class State;
 
@@ -14,6 +17,7 @@ class Game : public wxThread
 		double coins;
         int healthPotions;
 		State* currState;
+		Enemy* enemy;
 		CharacterType* player;
 		virtual wxThread::ExitCode Entry();
 

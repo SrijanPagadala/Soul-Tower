@@ -10,5 +10,7 @@ FightState::FightState(int levelToSet){
 }
 
 void FightState::display(Game* game, cMain* gui) {
-
+    if (enemy != nullptr) {
+        while(enemy->isAlive() && player->isAlive())
+    }
 }

@@ -1,9 +1,4 @@
 #include "../header/cMain.h"
-#include "../header/ExploreState.hpp"
-#include "../header/MageFactory.hpp"
-#include "../header/ArcherFactory.hpp"
-#include "../header/WarriorFactory.hpp"
-
 
 Game::~Game()
 {
@@ -107,8 +102,19 @@ void Game::start() {
 	// Allows user to select their class before game starts
 	classSelection();
 	// Gameplay begins here
-	currState = new ExploreState(1);
-	currState->display(this, gui);
+	int levels = 10;
+	for (int currLevel = 1; currLevel <= 10; currLevel++) {
+		// Exploration state
+		currState = new ExploreState(currLevel);
+		currState->display(this, gui);
+		delete currState;
+		// Fight state
+		currState = new FightState(this->enemy , currLevel);
+		delete currState;
+		// Shop state
+		
+	}
+
 	//gui->setArmorIcon("warrior_diamond_armor.png");
 	delete currState;
 	currState = nullptr;
