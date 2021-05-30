@@ -66,9 +66,11 @@ void FightState::battle(Game* game, cMain* gui) {
 
         if (enemy->isAlive()) {
             gui->DisplayOut(enemy->getName() + " has bested you! \n");
+            game->gameOver = false;
         }
         else {
             gui->DisplayOut("You have defeated " + enemy->getName() + "! \n");
+            game->gameOver = true;
         }
     }
 }

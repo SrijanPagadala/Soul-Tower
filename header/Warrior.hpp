@@ -9,7 +9,7 @@ private:
     int rage;
 
 public:
-    Warrior() : rage(100) {}
+    Warrior(cMain* gui) : CharacterType(gui), rage(100) {}
 
     virtual void attackOutput(cMain* gui) {
         gui->DisplayOut("You swung your sword! *HWOO* \n");

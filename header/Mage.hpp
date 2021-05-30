@@ -9,7 +9,7 @@ private:
     int mana;
 
 public:
-    Mage() : mana(100) {}
+    Mage(cMain* gui) : CharacterType(gui), mana(100) {}
 
     virtual void attackOutput(cMain* gui) {
         gui->DisplayOut("You shot a spell! *FWOOSH* \n");

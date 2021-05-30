@@ -9,9 +9,11 @@ class CharacterType {
         double maxHealth;
         Weapon* weapon;
         Armor* armor;
+        cMain* gui;
 
     public:
-        CharacterType() {
+        CharacterType(cMain* gui) {
+            this->gui = gui;
             maxHealth = 100;
             health = maxHealth;
             weapon = nullptr;
@@ -25,6 +27,8 @@ class CharacterType {
     
         void takeDamage(double damage) {
             health -= damage;
+
+            gui->updateHeart(health);
         }
 
         void setArmor(Armor* armor) {

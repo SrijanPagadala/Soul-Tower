@@ -12,6 +12,9 @@ using namespace std;
 
 class MageFactory : public CharacterTypeFactory {
 	public:
+		MageFactory(cMain* gui) : CharacterTypeFactory(gui) {
+
+		}
 		virtual Weapon* createWeapon() {
 			Weapon* weapon = new Wand();
 			return weapon;
@@ -22,7 +25,7 @@ class MageFactory : public CharacterTypeFactory {
 
 		}
 		virtual CharacterType* createCharacter() {
-			CharacterType* character = new Mage();
+			CharacterType* character = new Mage(gui);
 			return character;
 		}
 };

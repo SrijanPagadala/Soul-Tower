@@ -18,6 +18,7 @@ class Game : public wxThread
 		State* currState;
 		Enemy* enemy;
 		CharacterType* player;
+		
 		virtual wxThread::ExitCode Entry();
 
 	public:
@@ -31,7 +32,7 @@ class Game : public wxThread
 		~Game();
 
 		// Now is switched back so i have access to cMain.h
-
+		bool gameOver = false;
 
 		double getCoins();
 		void setCoins(double newAmount);

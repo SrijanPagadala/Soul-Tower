@@ -9,7 +9,7 @@ private:
     int arrows;
 
 public:
-    Archer() : arrows(100) {}
+    Archer(cMain* gui) : CharacterType(gui), arrows(100){}
 
     virtual void attackOutput(cMain* gui) {
         gui->DisplayOut("You shot your bow! *TWIP* \n");

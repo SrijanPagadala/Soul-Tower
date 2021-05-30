@@ -75,18 +75,18 @@ void Game::classSelection() {
 
 	while (!validInput) {
 		if (classChoice == "1") {
-			characterCreator = new WarriorFactory();
+			characterCreator = new WarriorFactory(gui);
 			gui->DisplayOut("You've choosen to be a Warrior \n");
 			validInput = true;
 			
 		}
 		else if (classChoice == "2") { 
-			characterCreator = new ArcherFactory();
+			characterCreator = new ArcherFactory(gui);
 			gui->DisplayOut("You've choosen to be a Archer \n");
 			validInput = true;
 		}
 		else if (classChoice == "3") {
-			characterCreator = new MageFactory();
+			characterCreator = new MageFactory(gui);
 			gui->DisplayOut("You've choosen to be a Mage \n");
 			validInput = true;
 		}
@@ -101,7 +101,7 @@ void Game::classSelection() {
 		player->setWeapon(characterCreator->createWeapon());
 	}
 
-
+	gui->updateHeart(100);
 	delete characterCreator;
 }
 
@@ -120,13 +120,17 @@ void Game::start() {
 		if (enemy != nullptr) {
 			currState = new FightState(currLevel);
 			currState->display(this, gui);
+			// if the battle is lost end the game
+			if (gameOver) {
+				break;
+			}
 		}
 
 		delete currState;
 		// Shop state
 		
 	}
-
+	gui->DisplayOut("Game Over! \n");
 	//gui->setArmorIcon("warrior_diamond_armor.png");
 	delete currState;
 	currState = nullptr;
