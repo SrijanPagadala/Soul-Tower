@@ -8,7 +8,7 @@ class MoogArmor : public Armor
 
 	virtual void update(cMain* gui) {
 		if (tier > 1) {
-			gui->setArmorIcon("warrior_diamond_armor.png");
+			gui->setArmorIcon("mage_golden_armor.png");
 		}
 	}
 };
