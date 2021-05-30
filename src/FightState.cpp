@@ -34,12 +34,15 @@ void FightState::battle(Game* game, cMain* gui) {
 
             // Handles players moves
             if (attackChoice == "1") {
-                player->getWeapon()->attack(enemy);
+                double damageDone = player->getWeapon()->attack(enemy);
+                player->attackOutput(gui);
+                gui->DisplayOut("You've dealth: " + std::to_string(damageDone) + " damage! \n");
             }
             else {
                 if (game->getPotions() > 0) {
                     player->takeHealthPotion();
                     game->changePotions(-1);
+                    gui->DisplayOut("*GLUG GLUG* How refreshing, you've gained some health T \n");
                 }
                 
 
