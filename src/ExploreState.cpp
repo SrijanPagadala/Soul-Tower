@@ -441,20 +441,33 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("To your delight, you find 50 coins!\n");
             gui->DisplayOut("+50 coins\n");
             game->changeCoins(50);
+            gui->DisplayOut("You also find 1 health potion.\n");
+            gui->DisplayOut("+1 health potion\n");
+            game->changePotions(1);
             gui->DisplayOut("You look towards the other chest, almost expecting it to disappear.\n");
             gui->DisplayOut("To your delight, the chest is intact, with no signs of trickery.\n");
             gui->DisplayOut("You open the other chest.\n");
-            gui->DisplayOut("You find a book labeled \"THE SOUL MASTER\"\n");
-            gui->DisplayOut("You are alarmed, as you remember William saying that name.\n");
-            gui->DisplayOut("You read through the book.\n");
-            gui->DisplayOut("You learn that The Soul Master is a higher being, who traps peoples souls.\n");
-            gui->DisplayOut("Reading further, you realize that the very tower you are in is the tower that stores these souls.\n");
-            gui->DisplayOut("Suddenly, it all clicks.\n");
-            gui->DisplayOut("You are drawn to the top of the tower because your soul is there.\n");
-            gui->DisplayOut("You now realize your purpose is to retrieve your soul from the top of the tower.\n");
-            gui->DisplayOut("Suddenly, the book disappears from your hands.\n");
-            gui->DisplayOut("The wall in front of you splits open to reveal a set of stairs.\n");
         }
+        else {
+            gui->DisplayOut("You open the left chest.\n");
+        }
+        gui->DisplayOut("You find a book labeled \"THE SOULKEEPER\"\n");
+        gui->DisplayOut("You are alarmed, as you remember William saying that name.\n");
+        gui->DisplayOut("You read through the book.\n");
+        gui->DisplayOut("You learn that The Soulkeeper is a higher being, who traps peoples souls.\n");
+        gui->DisplayOut("Reading further, you realize that the very tower you are in is the tower that stores these souls.\n");
+        gui->DisplayOut("Suddenly, it all clicks.\n");
+        gui->DisplayOut("You are drawn to the top of the tower because your soul is there.\n");
+        gui->DisplayOut("You now realize your purpose is to retrieve your soul from the top of the tower.\n");
+        gui->DisplayOut("Suddenly, the book disappears from your hands.\n");
+        gui->DisplayOut("The wall in front of you splits open to reveal a set of stairs.\n");
+        gui->DisplayOut("You peek up the stairs to see a giant human-like being in full black armor, staring at you.\n");
+        gui->DisplayOut("Behind him, you see a floating blue orb.\n");
+        gui->DisplayOut("The orb calls your name.\n");
+        gui->DisplayOut("The orb is your soul.\n");
+        gui->DisplayOut("Soulkeeper: \"You think you can defeat me? You could barely defeat my underling, William!\"\n");
+        gui->DisplayOut("Soulkeeper: \"I am IMMORTAL!\"\n");
+        gui->DisplayOut("Soulkeeper: \"This will be fun\"\n");
     }
 
 }
