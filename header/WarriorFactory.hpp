@@ -5,7 +5,7 @@
 #include "CharacterType.hpp"
 #include "CharacterTypeFactory.hpp"
 #include "Sword.hpp"
-#include "Chain.hpp"
+#include "WarmogsArmor.hpp"
 #include "Warrior.hpp"
 
 using namespace std;
@@ -20,7 +20,7 @@ public:
 		return weapon;
 	}
 	virtual Armor* createArmor() {
-		Armor* armor = new Chain();
+		Armor* armor = new WarmogsArmor(gui);
 		return armor;
 
 	}
