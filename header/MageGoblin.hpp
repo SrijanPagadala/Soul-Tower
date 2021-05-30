@@ -19,5 +19,23 @@ class MageGoblin : public Enemy
 			gui->DisplayOut(name + " attacked you with a spell! \n");
 		}
 
+		virtual double takeDamage(Sword*, double baseDamage) {
+			double damageDealt = baseDamage * 2;
+			Enemy::takeDamage(damageDealt);
+			return damageDealt;
+		};
+
+		virtual double takeDamage(Wand*, double baseDamage) {
+			double damageDealt = baseDamage * 1;
+			Enemy::takeDamage(damageDealt);
+			return damageDealt;
+		};
+
+		virtual double takeDamage(Bow*, double baseDamage) {
+			double damageDealt = baseDamage * 1.25;
+			Enemy::takeDamage(damageDealt);
+			return damageDealt;
+		};
+
 };
 #endif
