@@ -3,7 +3,7 @@
 class WarmogsArmor : public Armor 
 {
 	public:
-		WarmogsArmor(cMain* gui) : Armor(gui)) {
+		WarmogsArmor(cMain* gui) : Armor(gui) {
 		
 		}
 

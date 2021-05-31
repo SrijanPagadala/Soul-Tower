@@ -11,7 +11,7 @@ protected:
 public:
     Armor() {
         gui = nullptr;
-        defenseValue = 0.9;
+        defenseValue = 1;
         tier = 1;
     }
 
@@ -22,12 +22,15 @@ public:
     }
     
     double takeDamage(double damage) {
-        double reducedDamage = damage * (defenseValue - (tier * -0.1));
+        double reducedDamage = damage * (defenseValue);
         return reducedDamage;
     }
 
     void upgrade() {
         tier += 1;
+        if (tier == 2) {
+            defenseValue = 0.8;
+        }
     }
 
     virtual void update(cMain* gui) = 0;
