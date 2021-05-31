@@ -130,6 +130,36 @@ void Game::start() {
 		delete currState;
 		
 	}
+	if (!gameOver) {
+		gui->DisplayOut("You are victorious.\n");
+		gui->DisplayOut("As you go to claim your soul back, you hear rumbling.\n");
+		gui->DisplayOut("You look behind you and The Soulkeeper is standing up, as if he was perfectly unharmed from the previous battle.\n");
+		gui->DisplayOut("You are baffled.\n");
+		gui->DisplayOut("Your soul whizzes past your face into the hands of The Soulkeeper.\n");
+		gui->DisplayOut("Soulkeeper: \"What did I say, you mere mortal? I am immortal.\"\n");
+		gui->DisplayOut("Soulkepper: \"We have been through this dozens of times.\"\n");
+		gui->DisplayOut("Soulkeeper: \"Once again, the battle was quite enjoyable.\"\n");
+		gui->DisplayOut("He laughs.\n");
+		gui->DisplayOut("Soulkeeper: \"Thank you for keeping me entertained.\"\n");
+		gui->DisplayOut("You are confused and in utter shock as he picks you up.\n");
+		gui->DisplayOut("He chucks you down the stairs into floor three.\n");
+		gui->DisplayOut("You crawl next to the potted plant, with little energy left.\n");
+		gui->DisplayOut("He kicks you and the journal and pen fall out of your pocket.\n");
+		gui->DisplayOut("You realize.\n");
+		gui->DisplayOut("You know the truth now.\n");
+		gui->DisplayOut("This journal is YOUR journal.\n");
+		gui->DisplayOut("You have fought The Soulkeeper before.\n");
+		gui->DisplayOut("Quickly, you flip to a new page in the journal, and you write as fast as you can.\n");
+		gui->DisplayOut("\"DO NOT TRUST WILLIAM\"\n");
+		gui->DisplayOut("\"DO NOT FORGET\"\n");
+		gui->DisplayOut("\"REMEMBER... PLEASE... REMEMBER...\"\n");
+		gui->DisplayOut("The Soulkeeper grabs you and stares into your eyes.\n");
+		gui->DisplayOut("You see his eyes flash a blinding white light.\n");
+		gui->DisplayOut("Soulkeeper: \"See you soon.\"\n");
+		gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
+		gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
+		gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
+	}
 	gui->DisplayOut("Game Over! \n");
 	//gui->setArmorIcon("warrior_diamond_armor.png");
 	delete currState;

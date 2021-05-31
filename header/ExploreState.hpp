@@ -11,18 +11,12 @@ class ExploreState: public State {
         string input;
         string choice1;
         string choice2;
-        double coinsEarned;
-        int healthPotionsEarned;
-        double damageTaken;
 
     public:
         ExploreState();
         ExploreState(int levelToSet);
         void display(Game* game, cMain* gui);
 
-        double getCoinsEarned() { return coinsEarned; }
-        double getHealthPotionsEarned() { return healthPotionsEarned; }
-        double getDamageTaken() { return damageTaken; }
 
 };
 #endif
