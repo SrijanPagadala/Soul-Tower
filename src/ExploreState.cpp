@@ -154,8 +154,10 @@ void ExploreState::display(Game* game, cMain* gui){
         
         gui->DisplayOut("Its eyes are glowing red instead of yellow, and it is TEN TIMES THE SIZE!\n");
         gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
+        */
         // Sets enemy for fight
         game->setEnemy(new WarriorGoblin("Coin Goblin"));
+
     }
     
     // Level 2

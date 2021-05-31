@@ -5,7 +5,7 @@
 #include "CharacterType.hpp"
 #include "CharacterTypeFactory.hpp"
 #include "Wand.hpp"
-#include "Robes.hpp"
+#include "MoogArmor.hpp"
 #include "Mage.hpp"
 
 using namespace std;
@@ -20,7 +20,7 @@ class MageFactory : public CharacterTypeFactory {
 			return weapon;
 		}
 		virtual Armor* createArmor() {
-			Armor* armor = new Robes();
+			Armor* armor = new MoogArmor(gui);
 			return armor;
 
 		}

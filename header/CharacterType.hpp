@@ -1,7 +1,7 @@
 #pragma once
 #include "cMain.h"
+#include "Armor.hpp"
 class Weapon;
-class Armor;
 class WarriorGoblin;
 class MageGoblin;
 class ArcherGoblin;
@@ -63,6 +63,7 @@ class CharacterType {
             if (health > maxHealth) {
                 health = maxHealth;
             }
+            gui->updateHeart(health);
         }
 
         virtual void attackOutput(cMain* gui) = 0;

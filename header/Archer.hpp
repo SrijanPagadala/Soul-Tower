@@ -12,19 +12,19 @@ public:
     Archer(cMain* gui) : CharacterType(gui), arrows(100){}
 
     double takeDamage(WarriorGoblin*, double damage) {
-        double damageTotal = damage * 1.5;
+        double damageTotal = armor->takeDamage(damage * 1.5);
         CharacterType::takeDamage(damageTotal);
         return damageTotal;
     }
 
     double takeDamage(ArcherGoblin*, double damage) {
-        double damageTotal = damage * 1;
+        double damageTotal = armor->takeDamage(damage * 1);
         CharacterType::takeDamage(damageTotal);
         return damageTotal;
     }
 
     double takeDamage(MageGoblin*, double damage) {
-        double damageTotal = damage * 1.25;
+        double damageTotal = armor->takeDamage(damage * 1.25);
         CharacterType::takeDamage(damageTotal);
         return damageTotal;
     }
