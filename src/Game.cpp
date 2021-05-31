@@ -129,9 +129,10 @@ void Game::start() {
 			if (gameOver) {
 				break;
 			}
+			delete currState;
 		}
 
-		delete currState;
+		
 
 		// Shop state
 		currState = new ShopState(currLevel);
