@@ -29,7 +29,7 @@ class Game : public wxThread
 			healthPotions = 0;
 			currState = nullptr;
 			player = nullptr;
-			MaxLevel = 2;
+			MaxLevel = 3;
 		};
 
 		~Game();

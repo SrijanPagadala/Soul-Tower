@@ -8,9 +8,6 @@ ExploreState::ExploreState(){
     input = "";
     choice1 = "";
     choice2 = "";
-    coinsEarned = 0;
-    healthPotionsEarned = 0;
-    damageTaken = 0;
 }
 
 ExploreState::ExploreState(int levelToSet){
@@ -18,17 +15,15 @@ ExploreState::ExploreState(int levelToSet){
     input = "";
     choice1 = "";
     choice2 = "";
-    coinsEarned = 0;
-    healthPotionsEarned = 0;
-    damageTaken = 0;
 }
 
 void ExploreState::display(Game* game, cMain* gui){
     bool validInput = true;
 
+    
+
     //first level exploration
     if(level == 1){ 
-        /*
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
         gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
@@ -58,7 +53,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You discover that your skin is fire-resistant, and you manage to get out alive.\n");
             gui->DisplayOut("However, you realize you are not fire-proof, merely fire-resistant - you take 5 damage!\n");
             gui->DisplayOut("-5 health\n");
-            damageTaken += 5;
+            game->getPlayer()->takeDamage(5);
         }
         else { //They walk into a room of coins and gain 200 coins
             gui->DisplayOut("You open the door and see a pile of shining coins!\n");
@@ -104,7 +99,7 @@ void ExploreState::display(Game* game, cMain* gui){
             gui->DisplayOut("You are confused and concerned, but then you see that the goblin's eyes glow yellow.\n");
             gui->DisplayOut("The goblin starts screaming louder in its mystic language and bites you.\n");
             gui->DisplayOut("-5 health.\n");
-            damageTaken += 5;
+            game->getPlayer()->takeDamage(5);
             gui->DisplayOut("In pain, you pull out your weapon and kill the goblin.\n");
             gui->DisplayOut("You find 50 coins in its pockets.\n");
             gui->DisplayOut("+50 coins\n");
@@ -161,12 +156,13 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
         */
         // Sets enemy for fight
-        game->changePotions(2);
-        game->setEnemy(new WarriorGoblin("Javascript"));
+        game->setEnemy(new WarriorGoblin("Coin Goblin"));
+
     }
+    
     // Level 2
     else if (level == 2){
-        gui->DisplayOut("As you walk about floor 2, you start getting faint memoryes.\n");
+        gui->DisplayOut("As you walk about floor 2, you start getting faint memories.\n");
         gui->DisplayOut("This place... the walls... something about them...\n");
         gui->DisplayOut("You feel more drawn to the top floor.\n");
         gui->DisplayOut("In the distance, you spot two wooden chests.\n");
@@ -298,7 +294,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("It bites you.\n");
         gui->DisplayOut("You take 5 damage.\n");
         gui->DisplayOut("-5 health\n");
-        damageTaken += 5;
+        game->getPlayer()->takeDamage(5);
         gui->DisplayOut("You strike back and end its life.\n");
         gui->DisplayOut("You wonder whether this was the right path to take.\n");
         gui->DisplayOut("You wonder how William is doing.\n");
@@ -315,7 +311,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You feel yourself rise in the air.\n");
         gui->DisplayOut("CRASH! You are flung into the wall.\n");
         gui->DisplayOut("-5 health\n");
-        damageTaken += 5;
+        game->getPlayer()->takeDamage(5);
         gui->DisplayOut("Dazed and confused, you look up.\n");
         gui->DisplayOut("William: \"You are a fool if you think you can make it to The Soulkeeper.\"\n");
         gui->DisplayOut("You are confused and hurt by William's betrayal.\n");
@@ -323,7 +319,153 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You have no time to think as William raises his wand to fight.\n");
         gui->DisplayOut("William: \"He knew you would easily trust me.\"\n");
         gui->DisplayOut("You ask him what he is talking about, and who The Soulkeeper is.\n");
-        gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\n");
+        gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\"\n");
+    } else if (level == 3) {
+        gui->DisplayOut("You enter the third floor.\n");
+        gui->DisplayOut("On your right is a window.\n");
+        gui->DisplayOut("Something about the view seems so uncanny--familiar, yet also unfamiliar.\n");
+        gui->DisplayOut("You debate whether it is worth it to even reach the top.\n");
+        gui->DisplayOut("After all, you don't even know why you are so drawn to the top.\n");
+        gui->DisplayOut("You look back at the stairs behind you, William's wand snapped in half nearby.\n");
+        gui->DisplayOut("Do you decide to head back and abandon your journey?\n"); //CHOICE 1: Go back or continue
+        choice1 = "1. Go back";
+        choice2 = "2. Continue";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You start walking back, in defeat.\n");
+            gui->DisplayOut("You cannot handle the surprises of this tower anymore.\n");
+            gui->DisplayOut("Surely this is the logical decision.\n");
+            gui->DisplayOut("*BOOM*\n");
+            gui->DisplayOut("The stairs seem to have magically crumbled.\n");
+            gui->DisplayOut("There is no way out.\n");
+            gui->DisplayOut("You look back at the window to see if you can escape.\n");
+            gui->DisplayOut("There is no way out.\n");
+            gui->DisplayOut("You try to smash open the window.\n");
+            gui->DisplayOut("Suddenly, you see the window disappear in front of your own eyes.\n");
+            gui->DisplayOut("You are left staring at a blank wall.\n");
+            gui->DisplayOut("THERE IS NO WAY OUT.\n");
+            gui->DisplayOut("You now know that you must continue to the top.\n");
+            gui->DisplayOut("It is fate.\n");
+        }
+        else {
+            gui->DisplayOut("You think about heading back, but you decide to soldier on.\n");
+            gui->DisplayOut("*BOOM*\n");
+            gui->DisplayOut("The stairs behind you seem to have magically crumbled.\n");
+            gui->DisplayOut("There is no way out.\n");
+            gui->DisplayOut("You look back at the window and see it magically disappear.\n");
+            gui->DisplayOut("THERE IS NO WAY OUT.\n");
+            gui->DisplayOut("You know that you must continue to the top.\n");
+            gui->DisplayOut("It is fate.\n");
+        }
+        gui->DisplayOut("You continue walking throughout the halls of the third floor.\n");
+        gui->DisplayOut("It feels like a maze.\n");
+        gui->DisplayOut("There are dozens of rooms, but most of them empty.\n");
+        gui->DisplayOut("You walk into a room with a chest.\n");
+        gui->DisplayOut("Happily, you approach the chest ready to open it.\n");
+        gui->DisplayOut("However, you hear a slight noise coming from inside the chest.\n");
+        gui->DisplayOut("A noise you are familiar with - sssssssssss.\n");
+        gui->DisplayOut("ssssssssSSSSSS\n");
+        gui->DisplayOut("Do you open the chest?\n"); //CHOICE 2: Open chest or not
+        choice1 = "1. Open the chest";
+        choice2 = "2. Leave the room";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You decide to open the chest.\n");
+            gui->DisplayOut("You tread with caution while opening it.\n");
+            gui->DisplayOut("You raise your weapon in one hand, while opening the chest with the other.\n");
+            gui->DisplayOut("Suddenly, a snake jumps at you.\n");
+            gui->DisplayOut("You kill it midair as it tries to jump at you.\n");
+            gui->DisplayOut("You smirk to yourself as you examine and loot the contents of the chest.\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(50);
+            gui->DisplayOut("+1 health potion\n");
+            game->changePotions(1);
+        }
+        else {
+            gui->DisplayOut("You decide to not risk it and walk away.\n");
+            gui->DisplayOut("As you turn your back and walk away, you hear a creek sound.\n");
+            gui->DisplayOut("Startled, you turn around to notice the chest is open.\n");
+            gui->DisplayOut("You walk up to the chest and loot it.\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(50);
+            gui->DisplayOut("+1 health potion\n");
+            game->changePotions(1);
+            gui->DisplayOut("Suddenly, a snake bites your leg.\n");
+            gui->DisplayOut("-5 health\n");
+            game->getPlayer()->takeDamage(5);
+            gui->DisplayOut("You quickly pull out your weapon and end its life.\n");
+        }
+        gui->DisplayOut("\n");
+        gui->DisplayOut("As you continue forward, you know you are getting close to the top.\n");
+        gui->DisplayOut("You can feel yourself being drawn to the top.\n");
+        gui->DisplayOut("As you are traveling, you see a potted plant.\n");
+        gui->DisplayOut("You find it odd that there is such a beautiful plant in such a dreadful place.\n");
+        gui->DisplayOut("On the ground next to it, you notice a journal along with a pen.\n");
+        gui->DisplayOut("The journal seems to be unlabeled.\n");
+        gui->DisplayOut("You open the journal, and notice that there are dozens of pages with writing.\n");
+        gui->DisplayOut("For some reason, each page seems to say the same thing.\n");
+        gui->DisplayOut("\"DO NOT TRUST WILLIAM\"\n");
+        gui->DisplayOut("\"DO NOT FORGET\"\n");
+        gui->DisplayOut("\"REMEMBER... PLEASE... REMEMBER...\"\n");
+        gui->DisplayOut("You wonder who else William has betrayed.\n");
+        gui->DisplayOut("You wonder whose journal this is--perhaps someone else is in need of assistance?\n");
+        gui->DisplayOut("You put the journal and pen in your pocket and continue forward.\n");
+        gui->DisplayOut("You come across two chests.\n");
+        gui->DisplayOut("The one on the right seems to be shining, while the one on the left seems to be dull.\n");
+        gui->DisplayOut("Which chest do you open first?\n"); //CHOICE 3: Which chest first?
+        choice1 = "1. Right chest";
+        choice2 = "2. Left chest";
+        gui->DisplayOut(choice1 + "\n");
+        gui->DisplayOut(choice2 + "\n");
+        input = gui->GetChoice();
+        while (input != "1" && input != "2") {
+            gui->DisplayOut("Invalid input, please enter \"1\" or \"2\"\n");
+            input = gui->GetChoice();
+        }
+        if (input == "1") {
+            gui->DisplayOut("You decide to open the right chest.\n");
+            gui->DisplayOut("To your delight, you find 50 coins!\n");
+            gui->DisplayOut("+50 coins\n");
+            game->changeCoins(50);
+            gui->DisplayOut("You also find 1 health potion.\n");
+            gui->DisplayOut("+1 health potion\n");
+            game->changePotions(1);
+            gui->DisplayOut("You look towards the other chest, almost expecting it to disappear.\n");
+            gui->DisplayOut("To your delight, the chest is intact, with no signs of trickery.\n");
+            gui->DisplayOut("You open the other chest.\n");
+        }
+        else {
+            gui->DisplayOut("You open the left chest.\n");
+        }
+        gui->DisplayOut("You find a book labeled \"THE SOULKEEPER\"\n");
+        gui->DisplayOut("You are alarmed, as you remember William saying that name.\n");
+        gui->DisplayOut("You read through the book.\n");
+        gui->DisplayOut("You learn that The Soulkeeper is a higher being, who traps peoples souls.\n");
+        gui->DisplayOut("Reading further, you realize that the very tower you are in is the tower that stores these souls.\n");
+        gui->DisplayOut("Suddenly, it all clicks.\n");
+        gui->DisplayOut("You are drawn to the top of the tower because your soul is there.\n");
+        gui->DisplayOut("You now realize your purpose is to retrieve your soul from the top of the tower.\n");
+        gui->DisplayOut("Suddenly, the book disappears from your hands.\n");
+        gui->DisplayOut("The wall in front of you splits open to reveal a set of stairs.\n");
+        gui->DisplayOut("You peek up the stairs to see a giant human-like being in full black armor, staring at you.\n");
+        gui->DisplayOut("Behind him, you see a floating blue orb.\n");
+        gui->DisplayOut("The orb calls your name.\n");
+        gui->DisplayOut("The orb is your soul.\n");
+        gui->DisplayOut("Soulkeeper: \"You think you can defeat me? You could barely defeat my underling, William!\"\n");
+        gui->DisplayOut("Soulkeeper: \"I am IMMORTAL!\"\n");
+        gui->DisplayOut("Soulkeeper: \"This will be fun\"\n");
     }
 
 }
