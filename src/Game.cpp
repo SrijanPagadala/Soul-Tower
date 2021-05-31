@@ -138,8 +138,10 @@ void Game::start() {
 		currState = new ShopState(currLevel);
 		currState->display(this, gui);
 		delete currState;
+		currState = nullptr;
 		
 	}
+
 	if (!gameOver) {
 		gui->DisplayOut("You are victorious.\n");
 		gui->DisplayOut("As you go to claim your soul back, you hear rumbling.\n");
@@ -170,9 +172,10 @@ void Game::start() {
 		gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
 		gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
 	}
+
 	gui->DisplayOut("Game Over! \n");
-	delete currState;
-	currState = nullptr;
+	
+	
 
 }
 
