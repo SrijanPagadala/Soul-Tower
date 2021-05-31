@@ -8,9 +8,6 @@ ExploreState::ExploreState(){
     input = "";
     choice1 = "";
     choice2 = "";
-    coinsEarned = 0;
-    healthPotionsEarned = 0;
-    damageTaken = 0;
 }
 
 ExploreState::ExploreState(int levelToSet){
@@ -18,9 +15,6 @@ ExploreState::ExploreState(int levelToSet){
     input = "";
     choice1 = "";
     choice2 = "";
-    coinsEarned = 0;
-    healthPotionsEarned = 0;
-    damageTaken = 0;
 }
 
 void ExploreState::display(Game* game, cMain* gui){
