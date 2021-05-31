@@ -322,6 +322,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("William: \"He knew you would easily trust me.\"\n");
         gui->DisplayOut("You ask him what he is talking about, and who The Soulkeeper is.\n");
         gui->DisplayOut("William: \"It doesn't matter now. You won't be alive to meet him.\"\n");
+        game->setEnemy(new MageGoblin("William"));
     } else if (level == 3) {
         gui->DisplayOut("You enter the third floor.\n");
         gui->DisplayOut("On your right is a window.\n");
@@ -468,6 +469,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("Soulkeeper: \"You think you can defeat me? You could barely defeat my underling, William!\"\n");
         gui->DisplayOut("Soulkeeper: \"I am IMMORTAL!\"\n");
         gui->DisplayOut("Soulkeeper: \"This will be fun\"\n");
+        game->setEnemy(new WarriorGoblin("The Soulkeeper"));
     }
 
 }
