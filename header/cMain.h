@@ -86,6 +86,7 @@ class cMain : public wxFrame
 		wxStaticBitmap* heartIcon;
 		wxStaticBitmap* coinIcon;
 		wxStaticBitmap* armorIcon;
+		wxStaticBitmap* weaponIcon;
 		wxStaticBitmap* healthPotionIcon;
 		// Text Objs
 		wxStaticText* coinCountText;
@@ -103,6 +104,7 @@ class cMain : public wxFrame
 		// Methods
 		std::string GetChoice();
 		void setArmorIcon(std::string armorChoiceFileName);
+		void setWeaponIcon(std::string armorChoiceFileName);
 		void SubmitChoice(wxCommandEvent& event);
 		void DisplayOut(std::string msg);
 		void OnQuit(wxCommandEvent& event);
