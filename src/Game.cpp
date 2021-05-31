@@ -170,7 +170,6 @@ void Game::start() {
 		gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
 	}
 	gui->DisplayOut("Game Over! \n");
-	//gui->setArmorIcon("warrior_diamond_armor.png");
 	delete currState;
 	currState = nullptr;
 

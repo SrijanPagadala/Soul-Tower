@@ -70,8 +70,12 @@ void FightState::battle(Game* game, cMain* gui) {
         }
         else {
             gui->DisplayOut("You have defeated " + enemy->getName() + "! \n");
+
             game->gameOver = false;
         }
+
+        delete game->getEnemy();
+        game->setEnemy(nullptr);
     }
 }
 
