@@ -69,7 +69,10 @@ class CharacterType {
             }
             gui->updateHeart(health);
         }
-
+        void revive() {
+            health = maxHealth;
+            gui->updateHeart(health);
+        }
         virtual void attackOutput(cMain* gui) = 0;
         virtual double takeDamage(WarriorGoblin*, double) = 0;
         virtual double takeDamage(MageGoblin*, double) = 0;
