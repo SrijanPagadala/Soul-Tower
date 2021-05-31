@@ -80,6 +80,7 @@ void Game::classSelection() {
 		if (classChoice == "1") {
 			characterCreator = new WarriorFactory(gui);
 			gui->setArmorIcon("warrior_copper_armor.png");
+			gui->setWeaponIcon("sword.png");
 			gui->DisplayOut("You've choosen to be a Warrior \n");
 			
 			
@@ -87,12 +88,14 @@ void Game::classSelection() {
 		else if (classChoice == "2") { 
 			characterCreator = new ArcherFactory(gui);
 			gui->setArmorIcon("archer_leather_armor.png");
+			gui->setWeaponIcon("bow.png");
 			gui->DisplayOut("You've choosen to be a Archer \n");
 			
 		}
 		else if (classChoice == "3") {
 			characterCreator = new MageFactory(gui);
 			gui->setArmorIcon("mage_amethyst_armor.png");
+			gui->setWeaponIcon("wand.png");
 			gui->DisplayOut("You've choosen to be a Mage \n");
 
 		}

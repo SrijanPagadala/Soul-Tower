@@ -12,8 +12,10 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Soul Tower", wxPoint(), wxSize(800,
 	coinIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "coin.png"), wxBITMAP_TYPE_PNG), wxPoint(594, 500), wxSize(32, 32), 0, wxString("CoinImg"));
 	healthPotionIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "health_potion.png"), wxBITMAP_TYPE_PNG), wxPoint(678, 500), wxSize(32, 32), 0, wxString("HPImg"));;
 
+	// Armor and Weapon
 	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "no_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
-
+	weaponIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + "no_armor.png"), wxBITMAP_TYPE_PNG), wxPoint(650, 10), wxSize(64, 64), 0, wxString("WeaponImg"));
+	
 	// Inits text to be displayed
 	coinCountText = new wxStaticText(this, wxID_ANY, wxString("x0"), wxPoint(626, 510), wxSize(12, 12));
 	coinCountText->SetFont(wxFont(12, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
@@ -42,6 +44,15 @@ void cMain::setArmorIcon(std::string armorChoiceFileName) {
 
 	armorIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + armorChoiceFileName), wxBITMAP_TYPE_PNG), wxPoint(520, 10), wxSize(121, 388), 0, wxString("ArmorImg"));
 }
+
+void cMain::setWeaponIcon(std::string weaponChoiceFileName) {
+	if (weaponIcon != nullptr) {
+		delete weaponIcon;
+	}
+
+	weaponIcon = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxString(assetsPath + weaponChoiceFileName), wxBITMAP_TYPE_PNG), wxPoint(650, 10), wxSize(64, 64), 0, wxString("WeaponImg"));
+}
+
 void cMain::updateCoins(int coins) {
 	coinCountText->SetLabel(wxString("x"+std::to_string(coins)));
 }
