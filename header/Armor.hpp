@@ -34,5 +34,7 @@ public:
     }
 
     virtual void update(cMain* gui) = 0;
+
+    int getTier() { return tier; }
     
 };

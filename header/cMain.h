@@ -69,7 +69,7 @@ class cMain : public wxFrame
 {
 	private:
 		// Armor Icons
-		std::string assetsPath = "C:/Users/duoma/Desktop/Projects/final-project-ssond007-_nkhal016_spaga006/assets/";
+		std::string assetsPath = "C:/Users/PC/source/repos/FinalProjectCS100/assets/";
 		// *** Armor Types File Names **
 		// warriorCopperArmor = "warrior_diamond_armor.png";
 		// warriorDiamondArmor = "warrior_copper_armor.png";

@@ -48,6 +48,10 @@ class CharacterType {
             return weapon;
         }
 
+        Armor* getArmor() {
+            return armor;
+        }
+
         bool isAlive() {
             return health > 0;
         }
