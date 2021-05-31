@@ -60,6 +60,7 @@ void ShopState::display(Game* game, cMain* gui) {
                     gui->DisplayOut("You look down and suddenly your armor changes colour.\n");
                     gui->DisplayOut("You can feel the magical power coming off the armor. You can tell it's now stronger.\n");
                     game->getPlayer()->getArmor()->upgrade();
+                    game->getPlayer()->getArmor()->update(gui);
 
                     gui->DisplayOut(std::to_string(armorUpgradeCost) + " coins from your pocket have dissapeared.\n");
                     gui->DisplayOut("-" + std::to_string(armorUpgradeCost) + " coins.\n");

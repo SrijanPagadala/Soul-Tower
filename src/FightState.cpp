@@ -70,8 +70,16 @@ void FightState::battle(Game* game, cMain* gui) {
         }
         else {
             gui->DisplayOut("You have defeated " + enemy->getName() + "! \n");
+            gui->DisplayOut("Lucky you, they had some coins. \n");
+            gui->DisplayOut("+200 coins \n");
+            game->changeCoins(200);
+            player->revive();
             game->gameOver = false;
+           
         }
+
+        delete game->getEnemy();
+        game->setEnemy(nullptr);
     }
 }
 

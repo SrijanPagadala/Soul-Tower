@@ -129,16 +129,17 @@ void Game::start() {
 			if (gameOver) {
 				break;
 			}
+			delete currState;
 		}
-
-		delete currState;
 
 		// Shop state
 		currState = new ShopState(currLevel);
 		currState->display(this, gui);
 		delete currState;
+		currState = nullptr;
 		
 	}
+
 	if (!gameOver) {
 		gui->DisplayOut("You are victorious.\n");
 		gui->DisplayOut("As you go to claim your soul back, you hear rumbling.\n");
@@ -169,10 +170,11 @@ void Game::start() {
 		gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
 		gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
 	}
+
 	gui->DisplayOut("Game Over! \n");
-	//gui->setArmorIcon("warrior_diamond_armor.png");
-	delete currState;
-	currState = nullptr;
+	
+	delete this->player;
+	this->player = nullptr;
 
 }
 
