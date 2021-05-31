@@ -200,7 +200,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("Alarmed, you hold your weapon close, ready to attack.\n");
         gui->DisplayOut("You hear the screeches of a coin goblin.\n");
         gui->DisplayOut("You start running towards the screeches and screaming, prepared to slay yet another coin goblin.\n");
-        gui->DisplayOut("You come accross a hallway with a corner.\n");
+        gui->DisplayOut("You come across a hallway with a corner.\n");
         gui->DisplayOut("The screaming is coming from around the corner.\n");
         gui->DisplayOut("You turn the corner and kill the coin goblin in one swoop.\n");
         gui->DisplayOut("As the corpse of the goblin falls over, you see a man in robes behind it.\n");
@@ -468,7 +468,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("The orb is your soul.\n");
         gui->DisplayOut("Soulkeeper: \"You think you can defeat me? You could barely defeat my underling, William!\"\n");
         gui->DisplayOut("Soulkeeper: \"I am IMMORTAL!\"\n");
-        gui->DisplayOut("Soulkeeper: \"This will be fun\"\n");
+        gui->DisplayOut("Soulkeeper: \"This will be fun.\"\n");
         game->setEnemy(new WarriorGoblin("The Soulkeeper"));
     }
 
