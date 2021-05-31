@@ -20,9 +20,10 @@ ExploreState::ExploreState(int levelToSet){
 void ExploreState::display(Game* game, cMain* gui){
     bool validInput = true;
 
+    
+
     //first level exploration
     if(level == 1){ 
- 
         gui->DisplayOut("You wake up at the bottom of a large tower, very confused on how you got there.\n");
         gui->DisplayOut("You faintly remember being on a quest to save something or someone... but you are unsure.\n");
         gui->DisplayOut("It seems like you have amnesia, with faint memories of why you are in this tower in the first place.\n");
@@ -156,6 +157,7 @@ void ExploreState::display(Game* game, cMain* gui){
         // Sets enemy for fight
         game->setEnemy(new WarriorGoblin("Coin Goblin"));
     }
+    
     // Level 2
     else if (level == 2){
         gui->DisplayOut("As you walk about floor 2, you start getting faint memories.\n");
