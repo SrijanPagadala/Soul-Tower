@@ -35,6 +35,12 @@ cMain::~cMain() {
     delete m_input;
 	delete heartIcon;
 	delete armorIcon;
+	delete weaponIcon;
+	delete healthPotionIcon;
+	delete coinCountText;
+	delete heartCountText;
+	delete healthPotionCountText;
+	delete m_pThread;
 }
 
 void cMain::setArmorIcon(std::string armorChoiceFileName) {
