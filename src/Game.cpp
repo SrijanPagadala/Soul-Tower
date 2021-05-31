@@ -132,8 +132,6 @@ void Game::start() {
 			delete currState;
 		}
 
-		
-
 		// Shop state
 		currState = new ShopState(currLevel);
 		currState->display(this, gui);
@@ -175,7 +173,8 @@ void Game::start() {
 
 	gui->DisplayOut("Game Over! \n");
 	
-	
+	delete this->player;
+	this->player = nullptr;
 
 }
 
