@@ -121,6 +121,19 @@ void CreateWarriorWeapon() {
 	}
 }
 
+void CreateWarriorCharacter() {
+	cMain* gui = new cMain();
+	WarriorFactory factory(gui);
+	CharacterType* ptr = nullptr;
+	ptr = factory.createCharacter();
+	if (ptr != nullptr) {
+		cout << "CreateWarriorCharacter [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateWarriorCharacter [FAILED]" << endl;
+	}
+}
+
 void runTests() {
 	AllocConsole();
 	freopen("CONOUT$", "w", stdout);
