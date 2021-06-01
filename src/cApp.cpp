@@ -1,7 +1,10 @@
 #include "../header/cApp.h"
 #include <thread>
+#include "../header/tests.hpp"
 
 wxIMPLEMENT_APP(cApp);
+
+bool tests = true;
 
 cApp::cApp() {
 	
@@ -12,11 +15,15 @@ cApp::~cApp() {
 }
 
 bool cApp::OnInit() {
+	if (tests)
+		runTests();
+
 	wxInitAllImageHandlers();
 	m_frame_1 = new cMain();
 	m_frame_1->Show();
 	SetTopWindow(m_frame_1);
 	m_frame_1->OnStartThread();
+	
 	return true;
 }
 
