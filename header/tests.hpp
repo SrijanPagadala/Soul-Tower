@@ -56,6 +56,20 @@ void SetCoins() {
 	gui = nullptr;
 }
 
+void CreateArcherArmor() {
+	cMain* gui = new cMain();
+	ArcherFactory factory(gui);
+	Armor* ptr = nullptr;
+	ptr = factory.createArmor();
+	if (ptr != nullptr) {
+		cout << "CreateArcherArmor [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateArcherArmor [FAILED]" << endl;
+	}
+}
+
+
 void runTests() {
 	AllocConsole();
 	freopen("CONOUT$", "w", stdout);
