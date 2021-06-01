@@ -134,6 +134,19 @@ void CreateWarriorCharacter() {
 	}
 }
 
+void CreateMageArmor() {
+	cMain* gui = new cMain();
+	MageFactory factory(gui);
+	Armor* ptr = nullptr;
+	ptr = factory.createArmor();
+	if (ptr != nullptr) {
+		cout << "CreateMageArmor [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateMageArmor [FAILED]" << endl;
+	}
+}
+
 void runTests() {
 	AllocConsole();
 	freopen("CONOUT$", "w", stdout);
