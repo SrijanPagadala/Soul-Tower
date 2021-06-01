@@ -13,11 +13,48 @@
 #include "../header/Weapon.hpp"
 #include "../header/Armor.hpp"
 
+
 using namespace std;
+void InitializedCoins() {
+	cMain* gui = new cMain();
+	Game game(gui);
+	if (game.getCoins() == 0) { //GAME TEST 1: Check initialized coins
+		cout << "InitializedCoins [PASSED]" << endl;
+	}
+	else {
+		cout << "InitializedCoins [FAILED]" << endl;
+	}
+	delete gui;
+	gui = nullptr;
+}
 
+void NegativeCoins() {
+	cMain* gui = new cMain();
+	Game game(gui);
+	game.changeCoins(-100000);
+	if (game.getCoins() == 0) { //GAME TEST 2: Check to make sure coins can't be negative
+		cout << "NegativeCoins [PASSED]" << endl;
+	}
+	else {
+		cout << "NegativeCoins [FAILED]" << endl;
+	}
+	delete gui;
+	gui = nullptr;
+}
 
-
-
+void SetCoins() {
+	cMain* gui = new cMain();
+	Game game(gui);
+	game.setCoins(100);
+	if (game.getCoins() == 100) {
+		cout << "SetCoins [PASSED]" << endl;
+	}
+	else {
+		cout << "SetCoins [FAILED]" << endl;
+	}
+	delete gui;
+	gui = nullptr;
+}
 
 void runTests() {
 	AllocConsole();
@@ -95,9 +132,7 @@ void runTests() {
 	cout << "--------------WARRIOR FACTORY TESTS--------------" << endl << endl;
 
 	cout << "--------------GAME TESTS--------------" << endl;
+	InitializedCoins();
 
-
-
-
-	cout << "--------------GAME TESTS--------------" << endl << endl;
+	cout << "--------------GAME TESTS--------------" << endl << endl; 
 }
