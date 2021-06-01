@@ -69,6 +69,19 @@ void CreateArcherArmor() {
 	}
 }
 
+void CreateArcherWeapon() {
+	cMain* gui = new cMain();
+	ArcherFactory factory(gui);
+	Weapon* ptr = nullptr;
+	ptr = factory.createWeapon();
+	if (ptr != nullptr) {
+		cout << "CreateArcherWeapon [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateArcherWeapon [FAILED]" << endl;
+	}
+}
+
 
 void runTests() {
 	AllocConsole();
