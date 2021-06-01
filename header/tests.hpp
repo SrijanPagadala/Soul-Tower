@@ -95,6 +95,18 @@ void CreateArcherCharacter() {
 	}
 }
 
+void CreateWarriorArmor() {
+	cMain* gui = new cMain();
+	WarriorFactory factory(gui);
+	Armor* ptr = nullptr;
+	ptr = factory.createArmor();
+	if (ptr != nullptr) {
+		cout << "CreateWarriorArmor [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateWarriorArmor [FAILED]" << endl;
+	}
+}
 
 void runTests() {
 	AllocConsole();
