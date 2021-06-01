@@ -160,6 +160,18 @@ void CreateMageWeapon() {
 	}
 }
 
+void CreateMageCharacter() {
+	cMain* gui = new cMain();
+	MageFactory factory(gui);
+	CharacterType* ptr = nullptr;
+	ptr = factory.createCharacter();
+	if (ptr != nullptr) {
+		cout << "CreateMageCharacter [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateMageCharacter [FAILED]" << endl;
+	}
+}
 
 void runTests() {
 	AllocConsole();
