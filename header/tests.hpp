@@ -147,6 +147,20 @@ void CreateMageArmor() {
 	}
 }
 
+void CreateMageWeapon() {
+	cMain* gui = new cMain();
+	MageFactory factory(gui);
+	Weapon* ptr = nullptr;
+	ptr = factory.createWeapon();
+	if (ptr != nullptr) {
+		cout << "CreateMageWeapon [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateMageWeapon [FAILED]" << endl;
+	}
+}
+
+
 void runTests() {
 	AllocConsole();
 	freopen("CONOUT$", "w", stdout);
