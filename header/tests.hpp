@@ -267,8 +267,7 @@ void WarriorVSWarriorGoblin() {
 	player->setWeapon(weaponptr);
 	WarriorGoblin* enemy = new WarriorGoblin("test");
 	double resultToTest = player->takeDamage(enemy, 100);
-	cout << 
-	if (resultToTest == 135) {
+	if (resultToTest == 90) {
 		cout << "WarriorVSWarriorGoblin [PASSED]" << endl;
 	}
 	else {
@@ -287,7 +286,7 @@ void runTests() {
 
 
 	cout << "--------------WARRIOR TESTS--------------" << endl;
-
+	WarriorVSWarriorGoblin();
 
 
 
