@@ -55,7 +55,10 @@
    <br/>
   ![Example1](./demo_pic4.png?raw=true "Stage")
  ## Installation/Usage
- > Instructions on installing and running your application
+ * In order to run this reposity you will need to have wxWidgets. Here is a <a href="https://www.wxwidgets.org/downloads/">link<a/> for the various ways to install wxWidgets onto your system.
+ * Now clone this repository into a wxWidget project you've created and that's it, you're done.
+ * If you'd like to simply run the project as is without dealing with the source code, there's a game executable in soultower.zip. Extract this .zip to your C drive on windows and run the .exe at the extracted location.
+  
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
