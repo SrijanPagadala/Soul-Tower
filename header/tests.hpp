@@ -16,6 +16,43 @@
 using namespace std;
 
 
+void weaponInitSword() {
+	Sword sword;
+	if (sword.getAttackDamage() == 20, sword.getTier() == 1) {
+		cout << "WeaponInitSword [PASSED]" << endl;
+	}
+	else {
+		cout << "WeaponInitSword [FAILED]" << endl;
+	}
+}
+
+void weaponInitBow() {
+	Bow weapon;
+	if (weapon.getAttackDamage() == 20, weapon.getTier() == 1) {
+		cout << "WeaponInitSword [PASSED]" << endl;
+	}
+	else {
+		cout << "WeaponInitSword [FAILED]" << endl;
+	}
+}
+
+void weaponInitWand() {
+	Wand weapon;
+	if (weapon.getAttackDamage() == 20, weapon.getTier() == 1) {
+		cout << "WeaponInitSword [PASSED]" << endl;
+	}
+	else {
+		cout << "WeaponInitSword [FAILED]" << endl;
+	}
+}
+
+
+void swordAttack() {
+
+
+
+}
+
 
 
 
@@ -26,78 +63,33 @@ void runTests() {
 
 
 	cout << "--------------WARRIOR TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------WARRIOR TESTS--------------" << endl << endl;
 
-
 	cout << "--------------ARCHER TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------ARCHER TESTS--------------" << endl << endl;
 
-
 	cout << "--------------MAGE TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------MAGE TESTS--------------" << endl << endl;
 
-
 	cout << "--------------SWORD TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------SWORD TESTS--------------" << endl << endl;
 
-
 	cout << "--------------WAND TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------WAND TESTS--------------" << endl << endl;
 
-
 	cout << "--------------BOW TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------BOW TESTS--------------" << endl << endl;
 
 	cout << "--------------MAGE FACTORY TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------MAGE FACTORY TESTS--------------" << endl << endl;
 
-
 	cout << "--------------ARCHER FACTOR TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------ARCHER FACTORY TESTS--------------" << endl << endl;
 
 	cout << "--------------WARRIOR FACTORY TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------WARRIOR FACTORY TESTS--------------" << endl << endl;
 
 	cout << "--------------GAME TESTS--------------" << endl;
-
-
-
-
 	cout << "--------------GAME TESTS--------------" << endl << endl;
+
 }
