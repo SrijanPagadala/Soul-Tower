@@ -67,6 +67,8 @@ void CreateArcherArmor() {
 	else {
 		cout << "CreateArcherArmor [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateArcherWeapon() {
@@ -80,6 +82,8 @@ void CreateArcherWeapon() {
 	else {
 		cout << "CreateArcherWeapon [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateArcherCharacter() {
@@ -93,6 +97,8 @@ void CreateArcherCharacter() {
 	else {
 		cout << "CreateArcherCharacter [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateWarriorArmor() {
@@ -106,6 +112,8 @@ void CreateWarriorArmor() {
 	else {
 		cout << "CreateWarriorArmor [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateWarriorWeapon() {
@@ -119,6 +127,8 @@ void CreateWarriorWeapon() {
 	else {
 		cout << "CreateWarriorWeapon [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateWarriorCharacter() {
@@ -132,6 +142,8 @@ void CreateWarriorCharacter() {
 	else {
 		cout << "CreateWarriorCharacter [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateMageArmor() {
@@ -145,6 +157,8 @@ void CreateMageArmor() {
 	else {
 		cout << "CreateMageArmor [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateMageWeapon() {
@@ -158,6 +172,8 @@ void CreateMageWeapon() {
 	else {
 		cout << "CreateMageWeapon [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
 }
 
 void CreateMageCharacter() {
@@ -171,6 +187,30 @@ void CreateMageCharacter() {
 	else {
 		cout << "CreateMageCharacter [FAILED]" << endl;
 	}
+	delete gui;
+	gui = nullptr;
+}
+
+void ArcherVSWarriorGoblin() {
+	cMain* gui = new cMain();
+	ArcherFactory factory(gui);
+	CharacterType* player = factory.createCharacter();
+	Armor* armorptr = factory.createArmor();
+	Weapon* weaponptr = factory.createWeapon();
+	player->setArmor(armorptr);
+	player->setWeapon(weaponptr);
+	WarriorGoblin* enemy = new WarriorGoblin("test");
+	double resultToTest = player->takeDamage(enemy, 100);
+	if (resultToTest == 135) {
+		cout << "ArcherVSWarriorGoblin [PASSED]" << endl;
+	}
+	else {
+		cout << "ArcherVSWarriorGoblin [FAILED]" << endl;
+	}
+	delete player;
+	player = nullptr;
+	delete enemy;
+	enemy = nullptr;
 }
 
 void runTests() {
@@ -193,6 +233,7 @@ void runTests() {
 
 
 	cout << "--------------ARCHER TESTS--------------" << endl << endl;
+	ArcherVSWarriorGoblin();
 
 
 	cout << "--------------MAGE TESTS--------------" << endl;
@@ -233,7 +274,7 @@ void runTests() {
 
 	cout << "--------------MAGE FACTORY TESTS--------------" << endl << endl;
 
-	cout << "--------------ARCHER FACTOR TESTS--------------" << endl;
+	cout << "--------------ARCHER FACTORY TESTS--------------" << endl;
 	CreateArcherArmor();
 	CreateArcherWeapon();
 	CreateArcherCharacter();
