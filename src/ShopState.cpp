@@ -18,7 +18,7 @@ ShopState::ShopState(int levelToSet){
 void ShopState::display(Game* game, cMain* gui) {
     string input = "";
 
-    if (level == 1) {
+    if (level == 1 || level == 2) {
         gui->DisplayOut("You come discover a set of stairs leading to the next floor.\n");
         gui->DisplayOut("You blink and then all of a sudden a short hunchback man in a suit with a briefcase appears.\n");
         gui->DisplayOut("You are surprised because you swear there was no one there a second ago but nonetheless he looks friendly so you are relieved to see him.\n");

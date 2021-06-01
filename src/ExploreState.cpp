@@ -158,7 +158,7 @@ void ExploreState::display(Game* game, cMain* gui){
         gui->DisplayOut("You take out your weapon quickly, ready for battle!\n");
         
         // Sets enemy for fight
-        game->setEnemy(new WarriorGoblin("Coin Goblin"));
+        game->setEnemy(new ArcherGoblin("Coin Goblin"));
 
     }
     
