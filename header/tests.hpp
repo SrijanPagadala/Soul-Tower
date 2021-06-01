@@ -227,22 +227,25 @@ void runTests() {
 	cout << "--------------BOW TESTS--------------" << endl << endl;
 
 	cout << "--------------MAGE FACTORY TESTS--------------" << endl;
-
-
-
+	CreateMageArmor();
+	CreateMageWeapon();
+	CreateMageCharacter();
 
 	cout << "--------------MAGE FACTORY TESTS--------------" << endl << endl;
 
-
 	cout << "--------------ARCHER FACTOR TESTS--------------" << endl;
-
+	CreateArcherArmor();
+	CreateArcherWeapon();
+	CreateArcherCharacter();
 
 
 
 	cout << "--------------ARCHER FACTORY TESTS--------------" << endl << endl;
 
 	cout << "--------------WARRIOR FACTORY TESTS--------------" << endl;
-
+	CreateWarriorArmor();
+	CreateWarriorWeapon();
+	CreateWarriorCharacter();
 
 
 
@@ -250,6 +253,7 @@ void runTests() {
 
 	cout << "--------------GAME TESTS--------------" << endl;
 	InitializedCoins();
-
+	NegativeCoins();
+	SetCoins();
 	cout << "--------------GAME TESTS--------------" << endl << endl; 
 }
