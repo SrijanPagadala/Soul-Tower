@@ -13,9 +13,11 @@ class Weapon {
     public:
         Weapon(){
             attackDamage = 20;
-            tier = 20;
+            tier = 1;
         }
 
         virtual double attack(Enemy* enemy) = 0;
+        double getAttackDamage() { return attackDamage; }
+        int getTier() { return tier; }
 
 };
