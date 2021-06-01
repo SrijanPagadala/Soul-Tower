@@ -213,6 +213,28 @@ void ArcherVSWarriorGoblin() {
 	enemy = nullptr;
 }
 
+void ArcherVSMageGoblin() {
+	cMain* gui = new cMain();
+	ArcherFactory factory(gui);
+	CharacterType* player = factory.createCharacter();
+	Armor* armorptr = factory.createArmor();
+	Weapon* weaponptr = factory.createWeapon();
+	player->setArmor(armorptr);
+	player->setWeapon(weaponptr);
+	MageGoblin* enemy = new MageGoblin("test");
+	double resultToTest = player->takeDamage(enemy, 100);
+	if (resultToTest == 112.5) {
+		cout << "ArcherVSMageGoblin [PASSED]" << endl;
+	}
+	else {
+		cout << "ArcherVSMageGoblin [FAILED]" << endl;
+	}
+	delete player;
+	player = nullptr;
+	delete enemy;
+	enemy = nullptr;
+}
+
 void runTests() {
 	AllocConsole();
 	freopen("CONOUT$", "w", stdout);
@@ -228,12 +250,12 @@ void runTests() {
 
 
 	cout << "--------------ARCHER TESTS--------------" << endl;
-
+	ArcherVSWarriorGoblin();
+	ArcherVSMageGoblin();
 
 
 
 	cout << "--------------ARCHER TESTS--------------" << endl << endl;
-	ArcherVSWarriorGoblin();
 
 
 	cout << "--------------MAGE TESTS--------------" << endl;
