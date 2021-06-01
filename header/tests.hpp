@@ -108,6 +108,19 @@ void CreateWarriorArmor() {
 	}
 }
 
+void CreateWarriorWeapon() {
+	cMain* gui = new cMain();
+	WarriorFactory factory(gui);
+	Weapon* ptr = nullptr;
+	ptr = factory.createWeapon();
+	if (ptr != nullptr) {
+		cout << "CreateWarriorWeapon [PASSED]" << endl;
+	}
+	else {
+		cout << "CreateWarriorWeapon [FAILED]" << endl;
+	}
+}
+
 void runTests() {
 	AllocConsole();
 	freopen("CONOUT$", "w", stdout);
